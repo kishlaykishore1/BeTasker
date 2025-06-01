@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Graphik-Regular.otf">
+            <string>Graphik-Regular</string>
+        </array>
+        <array key="GraphikMedium.otf">
+            <string>Graphik-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StatusArchiveCell" rowHeight="62" id="bUM-bJ-ale" customClass="StatusArchiveCell" customModule="BeTasker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bUM-bJ-ale" id="aDC-Vu-SIw">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 juin 2024 · 12:45" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32S-Fd-A2q">
+                        <rect key="frame" x="19.999999999999993" y="12" width="110.33333333333331" height="12"/>
+                        <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="12"/>
+                        <color key="textColor" name="TextColor-Black"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Archivé par Martin Durand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHS-FE-h58">
+                        <rect key="frame" x="20" y="32" width="147.66666666666666" height="12"/>
+                        <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="12"/>
+                        <color key="textColor" name="Color000000-57"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="ZHS-FE-h58" firstAttribute="leading" secondItem="32S-Fd-A2q" secondAttribute="leading" id="Uuc-6U-MlV"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZHS-FE-h58" secondAttribute="bottom" constant="12" id="Uwa-22-THe"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="32S-Fd-A2q" secondAttribute="trailing" constant="16" id="Vwk-vf-QDy"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZHS-FE-h58" secondAttribute="trailing" constant="16" id="aEo-he-bI5"/>
+                    <constraint firstItem="32S-Fd-A2q" firstAttribute="leading" secondItem="aDC-Vu-SIw" secondAttribute="leading" constant="20" id="fUQ-SU-fb4"/>
+                    <constraint firstItem="32S-Fd-A2q" firstAttribute="top" secondItem="aDC-Vu-SIw" secondAttribute="top" constant="12" id="gcf-29-cMM"/>
+                    <constraint firstItem="ZHS-FE-h58" firstAttribute="top" secondItem="32S-Fd-A2q" secondAttribute="bottom" constant="8" id="qYS-8Z-d78"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="lblArchive" destination="ZHS-FE-h58" id="FLB-xb-TT8"/>
+                <outlet property="lblStatusDate" destination="32S-Fd-A2q" id="WRX-GL-EyA"/>
+            </connections>
+            <point key="canvasLocation" x="19.847328244274809" y="26.056338028169016"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Color000000-57">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.56999999284744263" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor-Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,84 @@
+
+/* Class = "UILabel"; text = "Ajouter un utilisateur"; ObjectID = "2LO-p2-PYi"; */
+"2LO-p2-PYi.text" = "Ajouter un utilisateur";
+
+/* Class = "UILabel"; text = "#34RRT56"; ObjectID = "3Ut-Rr-I5j"; */
+"3Ut-Rr-I5j.text" = "#34RRT56";
+
+/* Class = "UILabel"; text = "Membres"; ObjectID = "6g6-W0-Dk3"; */
+"6g6-W0-Dk3.text" = "Membres";
+
+/* Class = "UILabel"; text = "Julie P."; ObjectID = "70a-UX-k5I"; */
+"70a-UX-k5I.text" = "Julie P.";
+
+/* Class = "UILabel"; text = "Donnez la possibilité de renseigner une URL lors de la création d'une mission."; ObjectID = "7CD-HC-WJA"; */
+"7CD-HC-WJA.text" = "Donnez la possibilité de renseigner une URL lors de la création d'une mission.";
+
+/* Class = "UILabel"; text = "Invitation envoyée le 23 janvier 2022"; ObjectID = "7VD-YU-qNo"; */
+"7VD-YU-qNo.text" = "Invitation envoyée le 23 janvier 2022";
+
+/* Class = "UILabel"; text = "Ajouter un espace"; ObjectID = "A7t-n2-jMS"; */
+"A7t-n2-jMS.text" = "Ajouter un espace";
+
+/* Class = "UILabel"; text = "Options"; ObjectID = "AgF-pX-rud"; */
+"AgF-pX-rud.text" = "Options";
+
+/* Class = "UIButton"; normalTitle = "Ajouter un Espace de travail"; ObjectID = "FuA-FO-sfg"; */
+"FuA-FO-sfg.normalTitle" = "Ajouter un Espace de travail";
+
+/* Class = "UITextField"; placeholder = "Workspace"; ObjectID = "H8J-Yq-Gnx"; */
+"H8J-Yq-Gnx.placeholder" = "Workspace";
+
+/* Class = "UILabel"; text = "Demander un lien externe"; ObjectID = "Hrh-O1-7wo"; */
+"Hrh-O1-7wo.text" = "Demander un lien externe";
+
+/* Class = "UILabel"; text = "Aucun espace pour le moment.\nPour commencer, ajouter un espace de travail."; ObjectID = "LiE-dp-rbc"; */
+"LiE-dp-rbc.text" = "Aucun espace pour le moment.\nPour commencer, ajouter un espace de travail.";
+
+/* Class = "UILabel"; text = "Invitation envoyée le 23 janvier 2022"; ObjectID = "MWm-sD-Fi3"; */
+"MWm-sD-Fi3.text" = "Invitation envoyée le 23 janvier 2022";
+
+/* Class = "UILabel"; text = "Julie P."; ObjectID = "P02-Ox-8kl"; */
+"P02-Ox-8kl.text" = "Julie P.";
+
+/* Class = "UIButton"; normalTitle = "Ajouter une image"; ObjectID = "Tvi-3a-6dz"; */
+"Tvi-3a-6dz.normalTitle" = "Ajouter une image";
+
+/* Class = "UILabel"; text = "Accès complet"; ObjectID = "U9Y-Is-9bo"; */
+"U9Y-Is-9bo.text" = "Accès complet";
+
+/* Class = "UILabel"; text = "Accès complet"; ObjectID = "X0U-8g-7yS"; */
+"X0U-8g-7yS.text" = "Accès complet";
+
+/* Class = "UILabel"; text = "Lucas S."; ObjectID = "Y2v-nJ-Bes"; */
+"Y2v-nJ-Bes.text" = "Lucas S.";
+
+/* Class = "UILabel"; text = "Ajouter un utilisateur"; ObjectID = "a4d-ON-e9h"; */
+"a4d-ON-e9h.text" = "Ajouter un utilisateur";
+
+/* Class = "UILabel"; text = "Administrateurs"; ObjectID = "afJ-0U-HAk"; */
+"afJ-0U-HAk.text" = "Administrateurs";
+
+/* Class = "UILabel"; text = "Regroupez vos tasks dans des espaces\nde travail dédiés afin de gérer plusieurs projets."; ObjectID = "ebb-If-fPb"; */
+"ebb-If-fPb.text" = "Regroupez vos tasks dans des espaces\nde travail dédiés afin de gérer plusieurs projets.";
+
+/* Class = "UILabel"; text = "Espaces de travail"; ObjectID = "hSM-Gu-bIm"; */
+"hSM-Gu-bIm.text" = "Espaces de travail";
+
+/* Class = "UILabel"; text = "Ajouter un espace"; ObjectID = "iFn-Gx-MKY"; */
+"iFn-Gx-MKY.text" = "Ajouter un espace";
+
+/* Class = "UILabel"; text = "Nom"; ObjectID = "mX8-bE-AIO"; */
+"mX8-bE-AIO.text" = "Nom";
+
+/* Class = "UILabel"; text = "Lucas S."; ObjectID = "pQq-rl-tgW"; */
+"pQq-rl-tgW.text" = "Lucas S.";
+
+/* Class = "UIButton"; normalTitle = "J’ai compris"; ObjectID = "wRm-ib-ooc"; */
+"wRm-ib-ooc.normalTitle" = "J’ai compris";
+
+/* Class = "UILabel"; text = "#34RRT56"; ObjectID = "ySA-va-0tS"; */
+"ySA-va-0tS.text" = "#34RRT56";
+
+/* Class = "UILabel"; text = "Aucun espace pour le moment.\nPour commencer, ajouter un espace de travail."; ObjectID = "zYE-mf-Q0c"; */
+"zYE-mf-Q0c.text" = "Aucun espace pour le moment.\nPour commencer, ajouter un espace de travail.";

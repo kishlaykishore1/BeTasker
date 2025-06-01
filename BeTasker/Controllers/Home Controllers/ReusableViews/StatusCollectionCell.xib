@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GraphikMedium.otf">
+            <string>Graphik-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StatusCollectionCell" id="EtI-zI-dy5" customClass="StatusCollectionCell" customModule="BeTasker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="118" height="36"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="r6R-o0-IEI">
+                <rect key="frame" x="0.0" y="0.0" width="118" height="36"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bat-rM-KgZ">
+                        <rect key="frame" x="0.0" y="0.0" width="118" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⏳ En cours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQR-DN-mS9">
+                                <rect key="frame" x="12" y="2" width="98" height="32"/>
+                                <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="13"/>
+                                <color key="textColor" name="Color000000-71"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CQR-DN-mS9" secondAttribute="trailing" constant="8" id="FAb-Fn-Uhn"/>
+                            <constraint firstAttribute="bottom" secondItem="CQR-DN-mS9" secondAttribute="bottom" constant="2" id="Oyu-0l-ygH"/>
+                            <constraint firstItem="CQR-DN-mS9" firstAttribute="leading" secondItem="bat-rM-KgZ" secondAttribute="leading" constant="12" id="hF1-74-DzE"/>
+                            <constraint firstItem="CQR-DN-mS9" firstAttribute="top" secondItem="bat-rM-KgZ" secondAttribute="top" constant="2" id="rwW-BO-ir2"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <real key="value" value="6.3300000000000001"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bat-rM-KgZ" firstAttribute="top" secondItem="r6R-o0-IEI" secondAttribute="top" id="2T4-Az-K5i"/>
+                    <constraint firstItem="bat-rM-KgZ" firstAttribute="leading" secondItem="r6R-o0-IEI" secondAttribute="leading" id="32T-Rc-jbA"/>
+                    <constraint firstAttribute="trailing" secondItem="bat-rM-KgZ" secondAttribute="trailing" id="NdA-Km-P5a"/>
+                    <constraint firstAttribute="bottom" secondItem="bat-rM-KgZ" secondAttribute="bottom" id="weV-Zf-PPf"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="118" height="50"/>
+            <connections>
+                <outlet property="backView" destination="bat-rM-KgZ" id="Rfy-be-WUo"/>
+                <outlet property="lblStatusText" destination="CQR-DN-mS9" id="jeI-sB-pA0"/>
+            </connections>
+            <point key="canvasLocation" x="184.73282442748092" y="10.563380281690142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Color000000-71">
+            <color white="0.0" alpha="0.70999997854232788" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+    </resources>
+</document>

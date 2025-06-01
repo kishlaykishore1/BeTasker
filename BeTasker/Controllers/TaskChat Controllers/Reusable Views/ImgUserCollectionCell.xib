@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImgUserCollectionCell" id="dnK-wE-mhj" customClass="ImgUserCollectionCell" customModule="BeTasker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="IjR-ad-Mbx">
+                <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-user" translatesAutoresizingMaskIntoConstraints="NO" id="ubb-jl-O4R">
+                        <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="vdf-TK-RKX"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ubb-jl-O4R" secondAttribute="trailing" id="Agz-iH-wvo"/>
+                    <constraint firstItem="ubb-jl-O4R" firstAttribute="width" secondItem="ubb-jl-O4R" secondAttribute="height" multiplier="1:1" id="D76-LZ-Sxr"/>
+                    <constraint firstAttribute="bottom" secondItem="ubb-jl-O4R" secondAttribute="bottom" id="jVc-c6-dfh"/>
+                    <constraint firstItem="ubb-jl-O4R" firstAttribute="top" secondItem="IjR-ad-Mbx" secondAttribute="top" id="kCb-hm-dcq"/>
+                    <constraint firstItem="ubb-jl-O4R" firstAttribute="leading" secondItem="IjR-ad-Mbx" secondAttribute="leading" id="ukw-iU-Z2V"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="17" height="17"/>
+            <connections>
+                <outlet property="imgUser" destination="ubb-jl-O4R" id="9gH-3g-Jhm"/>
+            </connections>
+            <point key="canvasLocation" x="-31.297709923664122" y="36.267605633802816"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="no-user" width="300" height="300"/>
+    </resources>
+</document>

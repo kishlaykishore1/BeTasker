@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Graphik-Regular.otf">
+            <string>Graphik-Regular</string>
+        </array>
+        <array key="GraphikMedium.otf">
+            <string>Graphik-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChatDocCell" rowHeight="153" id="0HV-CT-Vk1" customClass="ChatDocCell" customModule="BeTasker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="153"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0HV-CT-Vk1" id="0dR-uR-X1M">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="153"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MyD-yr-S2r">
+                        <rect key="frame" x="148" y="12" width="246" height="60"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8q-pt-bTl">
+                                <rect key="frame" x="0.0" y="0.0" width="246" height="60"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_PdfIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7cg-x6-Toa">
+                                        <rect key="frame" x="12" y="12" width="30" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="0ey-GD-TIg"/>
+                                            <constraint firstAttribute="width" secondItem="7cg-x6-Toa" secondAttribute="height" multiplier="5:6" id="Gty-F2-cuX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pl9-ev-Cqb">
+                                        <rect key="frame" x="58" y="16" width="136" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="indice_23oct2025.pdf" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHh-hW-V77">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="13"/>
+                                                <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="13"/>
+                                                <color key="textColor" name="Color4A4A4A-FFFFFF"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23Mo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxG-ES-3vy">
+                                                <rect key="frame" x="0.0" y="15" width="34.333333333333336" height="13"/>
+                                                <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
+                                                <color key="textColor" name="Color4A4A4A-FFFFFF"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r80-dR-goB">
+                                        <rect key="frame" x="210" y="18" width="24" height="24"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxI-s5-mVB">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="0y1-a6-vf3"/>
+                                                    <constraint firstAttribute="width" secondItem="OxI-s5-mVB" secondAttribute="height" multiplier="1:1" id="Cyc-0C-Sda"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="ic_cloudDownload"/>
+                                                <connections>
+                                                    <action selector="btnDownload_Action:" destination="0HV-CT-Vk1" eventType="touchUpInside" id="KYF-Ed-dk9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="ColorFFFFFF-202020"/>
+                                <constraints>
+                                    <constraint firstItem="7cg-x6-Toa" firstAttribute="top" secondItem="S8q-pt-bTl" secondAttribute="top" constant="12" id="CBT-wg-hkl"/>
+                                    <constraint firstItem="r80-dR-goB" firstAttribute="leading" secondItem="pl9-ev-Cqb" secondAttribute="trailing" constant="16" id="DGH-js-lyp"/>
+                                    <constraint firstAttribute="trailing" secondItem="r80-dR-goB" secondAttribute="trailing" constant="12" id="JKY-hn-AK3"/>
+                                    <constraint firstItem="pl9-ev-Cqb" firstAttribute="centerY" secondItem="7cg-x6-Toa" secondAttribute="centerY" id="WmZ-TL-nbm"/>
+                                    <constraint firstAttribute="bottom" secondItem="7cg-x6-Toa" secondAttribute="bottom" constant="12" id="bUm-Bj-s3i"/>
+                                    <constraint firstItem="r80-dR-goB" firstAttribute="centerY" secondItem="pl9-ev-Cqb" secondAttribute="centerY" id="qaW-dy-VxE"/>
+                                    <constraint firstItem="7cg-x6-Toa" firstAttribute="leading" secondItem="S8q-pt-bTl" secondAttribute="leading" constant="12" id="wbi-w5-jn9"/>
+                                    <constraint firstItem="pl9-ev-Cqb" firstAttribute="leading" secondItem="7cg-x6-Toa" secondAttribute="trailing" constant="16" id="yKW-t7-Hia"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="S8q-pt-bTl" secondAttribute="trailing" id="0Aa-Ln-NEB"/>
+                            <constraint firstItem="S8q-pt-bTl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MyD-yr-S2r" secondAttribute="leading" id="ggw-xE-zj0"/>
+                            <constraint firstItem="S8q-pt-bTl" firstAttribute="top" secondItem="MyD-yr-S2r" secondAttribute="top" id="lNH-vs-J9k"/>
+                            <constraint firstItem="S8q-pt-bTl" firstAttribute="leading" secondItem="MyD-yr-S2r" secondAttribute="leading" id="naO-Fx-SMf"/>
+                            <constraint firstItem="S8q-pt-bTl" firstAttribute="top" secondItem="MyD-yr-S2r" secondAttribute="top" id="nid-7Z-Crm"/>
+                            <constraint firstAttribute="bottom" secondItem="S8q-pt-bTl" secondAttribute="bottom" id="ogo-8T-eh1"/>
+                            <constraint firstAttribute="trailing" secondItem="S8q-pt-bTl" secondAttribute="trailing" id="pyo-8g-obw"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vLl-ym-pnS">
+                        <rect key="frame" x="0.0" y="76" width="414" height="20"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gfb-tS-rSI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="hgo-n8-NQ3"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="LY1-3P-IVA">
+                                    <size key="itemSize" width="16" height="16"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vLl-ym-pnS" secondAttribute="bottom" constant="12" id="3V8-l9-hHN"/>
+                    <constraint firstItem="MyD-yr-S2r" firstAttribute="top" secondItem="0dR-uR-X1M" secondAttribute="top" constant="12" id="6kW-bs-7IV"/>
+                    <constraint firstAttribute="trailing" secondItem="vLl-ym-pnS" secondAttribute="trailing" id="7Ig-EC-gGE"/>
+                    <constraint firstItem="MyD-yr-S2r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0dR-uR-X1M" secondAttribute="leading" constant="16" id="HUN-tb-gMK"/>
+                    <constraint firstItem="vLl-ym-pnS" firstAttribute="top" secondItem="MyD-yr-S2r" secondAttribute="bottom" constant="4" id="LOR-di-13I"/>
+                    <constraint firstItem="vLl-ym-pnS" firstAttribute="leading" secondItem="0dR-uR-X1M" secondAttribute="leading" id="cmw-FZ-htQ"/>
+                    <constraint firstAttribute="trailing" secondItem="MyD-yr-S2r" secondAttribute="trailing" constant="20" id="pCV-6b-BkY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="btnDownload" destination="OxI-s5-mVB" id="Up9-42-hDE"/>
+                <outlet property="lblFileName" destination="QHh-hW-V77" id="wXU-w6-hif"/>
+                <outlet property="lblFileSize" destination="BxG-ES-3vy" id="unv-MH-0T3"/>
+                <outlet property="userCollectionView" destination="gfb-tS-rSI" id="wfT-XR-5aM"/>
+                <outlet property="viewOuter" destination="MyD-yr-S2r" id="qbc-es-2AU"/>
+                <outlet property="viewPdfContent" destination="S8q-pt-bTl" id="9oW-8Y-nzC"/>
+            </connections>
+            <point key="canvasLocation" x="48.854961832061065" y="98.943661971830991"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_PdfIcon" width="29" height="37"/>
+        <image name="ic_cloudDownload" width="20" height="19"/>
+        <namedColor name="Color4A4A4A-FFFFFF">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorFFFFFF-202020">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ViewUser" customModule="teamAlerts" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo-user" translatesAutoresizingMaskIntoConstraints="NO" id="GGC-qH-Imy">
+                    <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="26" id="NTV-dM-NKG"/>
+                        <constraint firstAttribute="height" constant="26" id="ke4-hJ-YWf"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="13"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="GGC-qH-Imy" secondAttribute="bottom" id="5HC-L9-blw"/>
+                <constraint firstAttribute="trailing" secondItem="GGC-qH-Imy" secondAttribute="trailing" id="9wo-ys-msD"/>
+                <constraint firstItem="GGC-qH-Imy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O5d-6r-Cm8"/>
+                <constraint firstItem="GGC-qH-Imy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kMx-X9-aNe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imgUser" destination="GGC-qH-Imy" id="jkB-Hk-TKM"/>
+            </connections>
+            <point key="canvasLocation" x="131" y="-12"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="demo-user" width="392" height="392"/>
+    </resources>
+</document>

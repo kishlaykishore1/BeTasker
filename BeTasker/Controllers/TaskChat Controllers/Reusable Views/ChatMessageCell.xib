@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GraphikMedium.otf">
+            <string>Graphik-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChatMessageCell" rowHeight="136" id="7hk-1j-Pki" customClass="ChatMessageCell" customModule="BeTasker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7hk-1j-Pki" id="b2w-5c-TpN">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shm-pu-e6Y">
+                        <rect key="frame" x="88" y="12" width="306" height="65.666666666666671"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKa-cF-Wkb">
+                                <rect key="frame" x="0.0" y="0.0" width="306" height="65.666666666666671"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CCg-Cy-INI">
+                                        <rect key="frame" x="16" y="15.999999999999996" width="278" height="33.666666666666657"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Of9-kq-2TV"/>
+                                        </constraints>
+                                        <color key="textColor" name="Color2D2D2D-F8F8F8"/>
+                                        <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" name="ColorFFFFFF-202020"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CCg-Cy-INI" secondAttribute="trailing" constant="12" id="F4T-cS-P3W"/>
+                                    <constraint firstItem="CCg-Cy-INI" firstAttribute="leading" secondItem="hKa-cF-Wkb" secondAttribute="leading" constant="16" id="G3E-S2-4wI"/>
+                                    <constraint firstItem="CCg-Cy-INI" firstAttribute="top" secondItem="hKa-cF-Wkb" secondAttribute="top" constant="16" id="SKX-p9-Ksk"/>
+                                    <constraint firstAttribute="bottom" secondItem="CCg-Cy-INI" secondAttribute="bottom" constant="16" id="t44-09-CvX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hKa-cF-Wkb" secondAttribute="trailing" id="IKH-B3-b1y"/>
+                            <constraint firstAttribute="bottom" secondItem="hKa-cF-Wkb" secondAttribute="bottom" id="Lje-g7-33c"/>
+                            <constraint firstItem="hKa-cF-Wkb" firstAttribute="top" secondItem="Shm-pu-e6Y" secondAttribute="top" id="W2f-WT-qxV"/>
+                            <constraint firstItem="hKa-cF-Wkb" firstAttribute="leading" secondItem="Shm-pu-e6Y" secondAttribute="leading" id="cTw-Rs-bDA"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Q2b-fN-q18">
+                        <rect key="frame" x="0.0" y="81.666666666666671" width="414" height="20"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D2c-A7-U7M">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="h7t-pm-Hmc"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="taL-Ex-ZAB">
+                                    <size key="itemSize" width="16" height="16"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Q2b-fN-q18" firstAttribute="top" secondItem="Shm-pu-e6Y" secondAttribute="bottom" constant="4" id="8Xb-ST-Ksv"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Q2b-fN-q18" secondAttribute="bottom" constant="12" id="JJa-qJ-8Ll"/>
+                    <constraint firstAttribute="trailing" secondItem="Shm-pu-e6Y" secondAttribute="trailing" constant="20" id="L2v-nY-mRp"/>
+                    <constraint firstItem="Shm-pu-e6Y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b2w-5c-TpN" secondAttribute="leading" constant="70" id="Mjj-uT-31P"/>
+                    <constraint firstItem="Shm-pu-e6Y" firstAttribute="top" secondItem="b2w-5c-TpN" secondAttribute="top" constant="12" id="cHa-f9-I0O"/>
+                    <constraint firstItem="Q2b-fN-q18" firstAttribute="leading" secondItem="b2w-5c-TpN" secondAttribute="leading" id="hNC-I5-7gV"/>
+                    <constraint firstAttribute="trailing" secondItem="Q2b-fN-q18" secondAttribute="trailing" id="kcZ-iC-V9N"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="messageTextView" destination="CCg-Cy-INI" id="feR-kC-V36"/>
+                <outlet property="userCollectionView" destination="D2c-A7-U7M" id="Iws-ro-Xij"/>
+                <outlet property="vwMessage" destination="Shm-pu-e6Y" id="eUJ-KV-bei"/>
+                <outlet property="vwMessageContent" destination="hKa-cF-Wkb" id="6va-0t-1XU"/>
+            </connections>
+            <point key="canvasLocation" x="45.801526717557252" y="52.112676056338032"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Color2D2D2D-F8F8F8">
+            <color red="0.17599999904632568" green="0.17599999904632568" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorFFFFFF-202020">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

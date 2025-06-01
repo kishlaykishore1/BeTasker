@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ReccurringHoursCollCell" id="DhU-as-VSk" customClass="ReccurringHoursCollCell" customModule="BeTasker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="464" height="121"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gM7-2T-LRc">
+                <rect key="frame" x="0.0" y="0.0" width="464" height="121"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nGN-Cd-2qO">
+                        <rect key="frame" x="0.0" y="0.0" width="464" height="82"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-ZX-eOm">
+                                <rect key="frame" x="0.0" y="0.0" width="464" height="82"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="bUb-g5-w74"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="p9a-5m-5l4">
+                                    <size key="itemSize" width="228" height="82"/>
+                                    <size key="estimatedItemSize" width="228" height="82"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oR3-ZX-eOm" firstAttribute="leading" secondItem="nGN-Cd-2qO" secondAttribute="leading" id="0Is-gR-eb6"/>
+                            <constraint firstAttribute="bottom" secondItem="oR3-ZX-eOm" secondAttribute="bottom" id="K9C-Ku-pJz"/>
+                            <constraint firstItem="oR3-ZX-eOm" firstAttribute="top" secondItem="nGN-Cd-2qO" secondAttribute="top" id="nBY-XV-47c"/>
+                            <constraint firstAttribute="trailing" secondItem="oR3-ZX-eOm" secondAttribute="trailing" id="vI0-KV-D1e"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="nGN-Cd-2qO" firstAttribute="top" secondItem="gM7-2T-LRc" secondAttribute="top" id="A9v-Lm-uOk"/>
+                    <constraint firstAttribute="trailing" secondItem="nGN-Cd-2qO" secondAttribute="trailing" id="LsB-Zd-vhI"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nGN-Cd-2qO" secondAttribute="bottom" id="Ure-jm-mBc"/>
+                    <constraint firstItem="nGN-Cd-2qO" firstAttribute="leading" secondItem="gM7-2T-LRc" secondAttribute="leading" id="yqj-BE-tVy"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="464" height="121"/>
+            <connections>
+                <outlet property="collectionView" destination="oR3-ZX-eOm" id="O4P-QM-XMW"/>
+            </connections>
+            <point key="canvasLocation" x="216.79389312977099" y="31.338028169014088"/>
+        </collectionViewCell>
+    </objects>
+</document>

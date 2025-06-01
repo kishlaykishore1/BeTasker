@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>minus-button</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Splashscreen-Copy-82" transform="translate(-621, -2156)" fill-rule="nonzero">
+            <g id="minus-button" transform="translate(621, 2156)">
+                <path d="M9.65,0 C4.32742187,0 0,4.32742187 0,9.65 C0,14.9725781 4.32742187,19.3 9.65,19.3 C14.9725781,19.3 19.3,14.9725781 19.3,9.65 C19.3,4.32742187 14.9725781,0 9.65,0 Z" id="Path" fill="#F34235"></path>
+                <path d="M14.3086207,9.65 C14.3086207,10.0160345 14.0382705,10.3155172 13.7078425,10.3155172 L5.2593989,10.3155172 C4.92897088,10.3155172 4.65862069,10.0160345 4.65862069,9.65 C4.65862069,9.28396552 4.92897088,8.98448276 5.2593989,8.98448276 L13.7078425,8.98448276 C14.0382705,8.98448276 14.3086207,9.27980603 14.3086207,9.65 Z" id="Path" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

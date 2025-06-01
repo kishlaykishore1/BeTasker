@@ -1,0 +1,219 @@
+
+/* Class = "UILabel"; text = "Pour continuer, \nentrez votre numéro de téléphone"; ObjectID = "48Y-5z-We5"; */
+"48Y-5z-We5.text" = "Pour continuer, \nentrez votre numéro de téléphone";
+
+/* Class = "UIButton"; normalTitle = "Démarrer"; ObjectID = "5pX-M1-6zQ"; */
+"5pX-M1-6zQ.normalTitle" = "Démarrer";
+
+/* Class = "UILabel"; text = "Vérification du numéro"; ObjectID = "6Le-v5-gCK"; */
+"6Le-v5-gCK.text" = "Vérification du numéro";
+
+/* Class = "UILabel"; text = "Informations personnelles"; ObjectID = "72f-I1-ALE"; */
+"72f-I1-ALE.text" = "Informations personnelles";
+
+/* Class = "UILabel"; text = "Nous vous enverrons des alertes automatisées."; ObjectID = "7yw-oJ-XBW"; */
+"7yw-oJ-XBW.text" = "Nous vous enverrons des alertes automatisées.";
+
+/* Class = "UILabel"; text = "Informations personnelles"; ObjectID = "9By-E7-F0h"; */
+"9By-E7-F0h.text" = "Informations personnelles";
+
+/* Class = "UILabel"; text = "Vous pourrez modifier ce réglage dans les paramètres de votre compte."; ObjectID = "9qf-mh-0tE"; */
+"9qf-mh-0tE.text" = "Vous pourrez modifier ce réglage dans les paramètres de votre compte.";
+
+/* Class = "UIButton"; normalTitle = "Renvoyer le code dans 29s"; ObjectID = "B7M-QL-YMm"; */
+"B7M-QL-YMm.normalTitle" = "Renvoyer le code dans 29s";
+
+/* Class = "UILabel"; text = "Pour rendre cette application encore plus utile, activez les notifications critiques. Vous serez donc prévenu des alertes les plus importantes de vos collaborateurs à toute heure."; ObjectID = "Bm8-tJ-u6r"; */
+"Bm8-tJ-u6r.text" = "Pour rendre cette application encore plus utile, activez les notifications critiques. Vous serez donc prévenu des alertes les plus importantes de vos collaborateurs à toute heure.";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "BpB-qZ-viv"; */
+"BpB-qZ-viv.text" = "5";
+
+/* Class = "UILabel"; text = "ÉTAPE 3 • "; ObjectID = "C5x-hl-rAe"; */
+"C5x-hl-rAe.text" = "ÉTAPE 3 • ";
+
+/* Class = "UILabel"; text = "Bravo !\nVotre compte a bien\nété créé"; ObjectID = "DAw-Ss-iyz"; */
+"DAw-Ss-iyz.text" = "Bravo !\nVotre compte a bien\nété créé";
+
+/* Class = "UILabel"; text = "Avec EasyZoning, vous gérez\nla température depuis votre\ntéléphone."; ObjectID = "Ec4-Na-wvA"; */
+"Ec4-Na-wvA.text" = "Avec EasyZoning, vous gérez\nla température depuis votre\ntéléphone.";
+
+/* Class = "UILabel"; text = "Connectez-vous à votre compte BeTasker \nou créer un compte."; ObjectID = "F4t-3k-9gb"; */
+"F4t-3k-9gb.text" = "Connectez-vous à votre compte BeTasker \nou créer un compte.";
+
+/* Class = "UILabel"; text = "Veuillez compléter les étapes suivantes pour finaliser votre inscription."; ObjectID = "GsX-23-tdO"; */
+"GsX-23-tdO.text" = "Veuillez compléter les étapes suivantes pour finaliser votre inscription.";
+
+/* Class = "UILabel"; text = "Je certifie avoir lu et j’accepte les présentes Conditions, d’Utilisation."; ObjectID = "IJ1-fz-Dl4"; */
+"IJ1-fz-Dl4.text" = "Je certifie avoir lu et j’accepte les présentes Conditions, d’Utilisation.";
+
+/* Class = "UILabel"; text = "Vous pouvez maintenant vous rendre\nsur la page d’accueil de l’application"; ObjectID = "JKi-5L-8SA"; */
+"JKi-5L-8SA.text" = "Vous pouvez maintenant vous rendre\nsur la page d’accueil de l’application";
+
+/* Class = "UIButton"; normalTitle = "Suivant"; ObjectID = "Lhp-vR-QXg"; */
+"Lhp-vR-QXg.normalTitle" = "Suivant";
+
+/* Class = "UILabel"; text = "Veuillez compléter les étapes suivantes pour finaliser votre inscription."; ObjectID = "NWu-3z-2Xr"; */
+"NWu-3z-2Xr.text" = "Veuillez compléter les étapes suivantes pour finaliser votre inscription.";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "OI0-UZ-7fw"; */
+"OI0-UZ-7fw.text" = "5";
+
+/* Class = "UIButton"; normalTitle = "Suivant"; ObjectID = "OiB-Vg-5KZ"; */
+"OiB-Vg-5KZ.normalTitle" = "Suivant";
+
+/* Class = "UILabel"; text = "OU"; ObjectID = "PfM-n1-3M2"; */
+"PfM-n1-3M2.text" = "OU";
+
+/* Class = "UILabel"; text = "Informations personnelles"; ObjectID = "Qx3-cz-YJo"; */
+"Qx3-cz-YJo.text" = "Informations personnelles";
+
+/* Class = "UILabel"; text = "Votre date de naissance"; ObjectID = "SLU-cb-LNg"; */
+"SLU-cb-LNg.text" = "Votre date de naissance";
+
+/* Class = "UIButton"; normalTitle = "🇫🇷+33"; ObjectID = "U8n-Ed-p30"; */
+"U8n-Ed-p30.normalTitle" = "🇫🇷+33";
+
+/* Class = "UILabel"; text = "Veuillez compléter les étapes suivantes pour finaliser votre inscription."; ObjectID = "Wrv-ro-Fli"; */
+"Wrv-ro-Fli.text" = "Veuillez compléter les étapes suivantes pour finaliser votre inscription.";
+
+/* Class = "UILabel"; text = "J’ai lu et j’accepte les Conditions Générales d'Utilisation"; ObjectID = "X2F-J2-bCS"; */
+"X2F-J2-bCS.text" = "J’ai lu et j’accepte les Conditions Générales d'Utilisation";
+
+/* Class = "UILabel"; text = "Autoriser les notification critiques"; ObjectID = "Y72-6J-4Zj"; */
+"Y72-6J-4Zj.text" = "Autoriser les notification critiques";
+
+/* Class = "UIButton"; normalTitle = "Suivant"; ObjectID = "YRU-tu-YnY"; */
+"YRU-tu-YnY.normalTitle" = "Suivant";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "Ygb-ii-Tpf"; */
+"Ygb-ii-Tpf.text" = "5";
+
+/* Class = "UILabel"; text = "En continuant vous reconnaissez avoir lu notre Politique de confidentialité et vous acceptez nos Conditions générales d'utilisation."; ObjectID = "ZZu-FI-Qsf"; */
+"ZZu-FI-Qsf.text" = "En continuant vous reconnaissez avoir lu notre Politique de confidentialité et vous acceptez nos Conditions Générales d’Utilisation.";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "ZqE-e3-jAA"; */
+"ZqE-e3-jAA.text" = "5";
+
+/* Class = "UILabel"; text = "La collecte et le traitement de vos données personnelles sont nécessaires pour vous fournir un service à la hauteur de vos attentes."; ObjectID = "c9S-S5-hO9"; */
+"c9S-S5-hO9.text" = "La collecte et le traitement de vos données personnelles sont nécessaires pour vous fournir un service à la hauteur de vos attentes.";
+
+/* Class = "UITextField"; placeholder = "Votre e-mail (Facultatif)"; ObjectID = "cFu-wD-pxe"; */
+"cFu-wD-pxe.placeholder" = "Votre e-mail (Facultatif)";
+
+/* Class = "UILabel"; text = "Nous vous enverrons des alertes automatisées."; ObjectID = "cRm-TF-hRX"; */
+"cRm-TF-hRX.text" = "Nous vous enverrons des alertes automatisées.";
+
+/* Class = "UITextField"; placeholder = "Votre prénom"; ObjectID = "dax-Lk-2lc"; */
+"dax-Lk-2lc.placeholder" = "Votre prénom";
+
+/* Class = "UILabel"; text = "Informations personnelles"; ObjectID = "df9-cr-wf9"; */
+"df9-cr-wf9.text" = "Informations personnelles";
+
+/* Class = "UITextField"; placeholder = "Votre téléphone"; ObjectID = "fJa-W1-xE5"; */
+"fJa-W1-xE5.placeholder" = "Votre téléphone";
+
+/* Class = "UIButton"; normalTitle = "Je commence !"; ObjectID = "fdI-oW-QWq"; */
+"fdI-oW-QWq.normalTitle" = "Je commence !";
+
+/* Class = "UILabel"; text = "Bienvenue sur\nBeTasker"; ObjectID = "gng-Lz-nUV"; */
+"gng-Lz-nUV.text" = "Bienvenue sur\nBeTasker";
+
+/* Class = "UILabel"; text = "Veuillez compléter les étapes suivantes pour finaliser votre inscription."; ObjectID = "goF-aY-riw"; */
+"goF-aY-riw.text" = "Veuillez compléter les étapes suivantes pour finaliser votre inscription.";
+
+/* Class = "UIButton"; normalTitle = "Je l’ajouterai plus tard"; ObjectID = "iOa-X9-Vqx"; */
+"iOa-X9-Vqx.normalTitle" = "Je l’ajouterai plus tard";
+
+/* Class = "UILabel"; text = "J’ai lu et j’accepte la Politique de confidentialité"; ObjectID = "iyS-WI-xBz"; */
+"iyS-WI-xBz.text" = "J’ai lu et j’accepte la Politique de confidentialité";
+
+/* Class = "UILabel"; text = "Bienvenue !"; ObjectID = "j24-j3-ixR"; */
+"j24-j3-ixR.text" = "Bienvenue !";
+
+/* Class = "UILabel"; text = "Prenez le contrôle"; ObjectID = "kaG-Ov-Msl"; */
+"kaG-Ov-Msl.text" = "Prenez le contrôle";
+
+/* Class = "UITextField"; placeholder = "Votre nom"; ObjectID = "n0G-9R-LEl"; */
+"n0G-9R-LEl.placeholder" = "Votre nom";
+
+/* Class = "UIButton"; normalTitle = "Suivant"; ObjectID = "ogA-do-vbc"; */
+"ogA-do-vbc.normalTitle" = "Suivant";
+
+/* Class = "UILabel"; text = "ÉTAPE 1 • "; ObjectID = "qEn-Pd-0sh"; */
+"qEn-Pd-0sh.text" = "ÉTAPE 1 • ";
+
+/* Class = "UIButton"; normalTitle = "Continuer avec mon téléphone"; ObjectID = "ra0-Rp-22c"; */
+"ra0-Rp-22c.normalTitle" = "Continuer avec mon téléphone";
+
+/* Class = "UIButton"; normalTitle = "Connexion"; ObjectID = "tdP-b0-Vnq"; */
+"tdP-b0-Vnq.normalTitle" = "Connexion";
+
+/* Class = "UILabel"; text = "ÉTAPE 5 • "; ObjectID = "tdX-bu-jcX"; */
+"tdX-bu-jcX.text" = "ÉTAPE 5 • ";
+
+/* Class = "UIButton"; normalTitle = "Suivant"; ObjectID = "txi-O2-eXD"; */
+"txi-O2-eXD.normalTitle" = "Suivant";
+
+/* Class = "UILabel"; text = "Veuillez accepter les conditions suivantes."; ObjectID = "u2f-lD-akw"; */
+"u2f-lD-akw.text" = "Veuillez accepter les conditions suivantes.";
+
+/* Class = "UIButton"; normalTitle = "Suivant"; ObjectID = "vDA-EO-7U5"; */
+"vDA-EO-7U5.normalTitle" = "Suivant";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "wcD-iq-9S7"; */
+"wcD-iq-9S7.text" = "5";
+
+/* Class = "UILabel"; text = "Veuillez compléter les étapes suivantes pour finaliser votre inscription."; ObjectID = "wsC-Vr-V0L"; */
+"wsC-Vr-V0L.text" = "Veuillez compléter les étapes suivantes pour finaliser votre inscription.";
+
+/* Class = "UIButton"; normalTitle = "Continuer"; ObjectID = "wvY-H8-tUZ"; */
+"wvY-H8-tUZ.normalTitle" = "Continuer";
+
+/* Class = "UILabel"; text = "ÉTAPE 2 • "; ObjectID = "xh7-un-OUD"; */
+"xh7-un-OUD.text" = "ÉTAPE 2 • ";
+
+/* Class = "UILabel"; text = "Autoriser les notifications"; ObjectID = "xnK-eN-0Fk"; */
+"xnK-eN-0Fk.text" = "Autoriser les notifications";
+
+/* Class = "UILabel"; text = "Dernière étape"; ObjectID = "xzY-Ma-xB5"; */
+"xzY-Ma-xB5.text" = "Dernière étape";
+
+/* Class = "UIButton"; normalTitle = "Continuer"; ObjectID = "y2E-mZ-BtH"; */
+"y2E-mZ-BtH.normalTitle" = "Continuer";
+
+/* Class = "UILabel"; text = "ÉTAPE 4 • "; ObjectID = "zsq-nF-Z0c"; */
+"zsq-nF-Z0c.text" = "ÉTAPE 4 • ";
+
+/* Class = "UILabel"; text = "Bienvenue sur BeTasker !"; ObjectID = "dBV-9w-VSk"; */
+"dBV-9w-VSk.text" = "Bienvenue sur BeTasker !";
+
+/* Class = "UILabel"; text = "Pour démarrer, créer ou rejoindre un nouveau\n Workplace."; ObjectID = "QlF-zm-foe"; */
+"QlF-zm-foe.text" = "Pour démarrer, créer ou rejoindre un nouvel\n espace de travail.";
+
+/* Class = "UILabel"; text = "Personnel/employé ?"; ObjectID = "ch5-Iw-1TC"; */
+"ch5-Iw-1TC.text" = "Personnel/employé ?";
+
+/* Class = "UILabel"; text = "Partagez votre identifiant pour rejoindre un lieu de travail"; ObjectID = "lIP-4R-a35"; */
+"lIP-4R-a35.text" = "Partagez votre identifiant pour rejoindre un espace de travail";
+
+/* Class = "UILabel"; text = "Partagez votre identifiant"; ObjectID = "dXc-FO-MSn"; */
+"dXc-FO-MSn.text" = "Partagez votre identifiant";
+
+/* Class = "UILabel"; text = "OU"; ObjectID = "gfW-vW-Scl"; */
+"gfW-vW-Scl.text" = "OU";
+
+/* Class = "UILabel"; text = "Chef d'équipe ?"; ObjectID = "TMS-O7-eQz"; */
+"TMS-O7-eQz.text" = "Chef d'équipe ?";
+
+/* Class = "UILabel"; text = "Créer un nouveau lieu de travail"; ObjectID = "R7e-Pu-85S"; */
+"R7e-Pu-85S.text" = "Créer un nouvel espace de travail";
+
+/* Class = "UILabel"; text = "Nouveau lieu de travail"; ObjectID = "4l9-1c-ucR"; */
+"4l9-1c-ucR.text" = "Nouvel espace de travail";
+
+/* Class = "UIButton"; normalTitle = "Se déconnecter"; ObjectID = "Rzr-7H-KWQ"; */
+"Rzr-7H-KWQ.normalTitle" = "Se déconnecter";
+
+/* Class = "UIButton"; normalTitle = "Supprimer mon compte"; ObjectID = "uf0-0y-NqF"; */
+"uf0-0y-NqF.normalTitle" = "Supprimer mon compte";

@@ -1,0 +1,257 @@
+
+/* Class = "UILabel"; text = "Pensez à activer une programmation pour simplifier votre quotidien."; ObjectID = "3BH-rS-bHb"; */
+"3BH-rS-bHb.text" = "Set up a scheduled task to ease your daily life.";
+
+/* Class = "UILabel"; text = "Espaces de travail"; ObjectID = "4iJ-gd-a4v"; */
+"4iJ-gd-a4v.text" = "Workspaces";
+
+/* Class = "UISegmentedControl"; 4px-Qc-yby.segmentTitles[0] = "Quotidienne"; ObjectID = "4px-Qc-yby"; */
+"4px-Qc-yby.segmentTitles[0]" = "Daily";
+
+/* Class = "UISegmentedControl"; 4px-Qc-yby.segmentTitles[1] = "Hebdomadaire"; ObjectID = "4px-Qc-yby"; */
+"4px-Qc-yby.segmentTitles[1]" = "Weekly";
+
+/* Class = "UISegmentedControl"; 4px-Qc-yby.segmentTitles[2] = "Mensuelle"; ObjectID = "4px-Qc-yby"; */
+"4px-Qc-yby.segmentTitles[2]" = "Monthly";
+
+/* Class = "UILabel"; text = "Archives"; ObjectID = "5Go-g4-OhT"; */
+"5Go-g4-OhT.text" = "Archives";
+
+/* Class = "UILabel"; text = "Le destinataire recevra une notification critique"; ObjectID = "7ME-bg-38E"; */
+"7ME-bg-38E.text" = "The recipient will receive a critical notification";
+
+/* Class = "UILabel"; text = "23 juin 2024 · 12:45"; ObjectID = "87g-7J-25n"; */
+"87g-7J-25n.text" = "23 june 2024 · 12:45";
+
+/* Class = "UILabel"; text = "Slide to send"; ObjectID = "8Np-qH-ZlB"; */
+"8Np-qH-ZlB.text" = "Slide to send";
+
+/* Class = "UILabel"; text = "Programmer"; ObjectID = "8mi-z2-ydv"; */
+"8mi-z2-ydv.text" = "Schedule";
+
+/* Class = "UILabel"; text = "URGENT"; ObjectID = "9eQ-sS-uMJ"; */
+"9eQ-sS-uMJ.text" = "URGENT";
+
+/* Class = "UITextField"; placeholder = "https://"; ObjectID = "9iG-B3-CKq"; */
+"9iG-B3-CKq.placeholder" = "https://";
+
+/* Class = "UILabel"; text = "Options"; ObjectID = "BTV-tB-bL6"; */
+"BTV-tB-bL6.text" = "Options";
+
+/* Class = "UILabel"; text = "Aucune notification pour le moment.\nMerci de revenir plus tard."; ObjectID = "Bt2-7H-Bg1"; */
+"Bt2-7H-Bg1.text" = "No notifications yet.\nPlease come back later.";
+
+/* Class = "UILabel"; text = "Lundi 23 juin 2024"; ObjectID = "CYF-yo-lAR"; */
+"CYF-yo-lAR.text" = "Lundi 23 juin 2024";
+
+/* Class = "UITextField"; placeholder = "Rechercher…"; ObjectID = "CjL-qE-MIR"; */
+"CjL-qE-MIR.placeholder" = "Search…";
+
+/* Class = "UIButton"; normalTitle = "Ajouter un escape"; ObjectID = "CrI-1H-T77"; */
+"CrI-1H-T77.normalTitle" = "Add a Workspace";
+
+/* Class = "UIButton"; normalTitle = "Réinnitialiser les filtres"; ObjectID = "D8l-oN-KeX"; */
+"D8l-oN-KeX.normalTitle" = "Reset filters";
+
+/* Class = "UILabel"; text = "Martin Durand  •"; ObjectID = "Eep-bJ-4Db"; */
+"Eep-bJ-4Db.text" = "Martin Durand  •";
+
+/* Class = "UILabel"; text = "Alright ! All done !"; ObjectID = "F25-K4-4Ya"; */
+"F25-K4-4Ya.text" = "Alright ! All done !";
+
+/* Class = "UILabel"; text = "PAR STATUT"; ObjectID = "FsK-do-bIg"; */
+"FsK-do-bIg.text" = "BY STATUS";
+
+/* Class = "UILabel"; text = "Liens"; ObjectID = "Gln-dO-U7e"; */
+"Gln-dO-U7e.text" = "Links";
+
+/* Class = "UIButton"; normalTitle = "Filtrer les résultats"; ObjectID = "HSj-cN-nRv"; */
+"HSj-cN-nRv.normalTitle" = "Filter results";
+
+/* Class = "UILabel"; text = "Activer la programmation"; ObjectID = "Hyu-Ia-rDR"; */
+"Hyu-Ia-rDR.text" = "Enable schedule";
+
+/* Class = "UILabel"; text = "12"; ObjectID = "ImS-MT-1u5"; */
+"ImS-MT-1u5.text" = "12";
+
+/* Class = "UILabel"; text = "Vous êtes dans l’espace"; ObjectID = "JEb-pR-bdv"; */
+"JEb-pR-bdv.text" = "You are in Workspace";
+
+/* Class = "UILabel"; text = "📸 Nécessite un rapport photo"; ObjectID = "LvH-0u-hKH"; */
+"LvH-0u-hKH.text" = "📸 Requires a photo report";
+
+/* Class = "UILabel"; text = "Clean the room 3306"; ObjectID = "MMG-kE-XkX"; */
+"MMG-kE-XkX.text" = "Clean the room 3306";
+
+/* Class = "UILabel"; text = "Nécessite un rapport message"; ObjectID = "Mpt-Uh-Ge7"; */
+"Mpt-Uh-Ge7.text" = "Requires message report";
+
+/* Class = "UINavigationItem"; title = "Notifications"; ObjectID = "N8R-wh-52t"; */
+"N8R-wh-52t.title" = "Notifications";
+
+/* Class = "UILabel"; text = "Lucas S."; ObjectID = "NCH-33-aQA"; */
+"NCH-33-aQA.text" = "Lucas S.";
+
+/* Class = "UILabel"; text = "Julie P."; ObjectID = "NHN-4d-fZf"; */
+"NHN-4d-fZf.text" = "Julie P.";
+
+/* Class = "UIButton"; normalTitle = "Valider"; ObjectID = "O0R-VO-yc5"; */
+"O0R-VO-yc5.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "PAR DATE"; ObjectID = "O7A-UP-rSf"; */
+"O7A-UP-rSf.text" = "BY DATE";
+
+/* Class = "UIButton"; normalTitle = "Retour au ticket"; ObjectID = "PAO-jv-we6"; */
+"PAO-jv-we6.normalTitle" = "Return to task";
+
+/* Class = "UITextField"; placeholder = "Depuis le"; ObjectID = "PgS-4I-LXp"; */
+"PgS-4I-LXp.placeholder" = "Since the";
+
+/* Class = "UILabel"; text = "WorkSpace 1"; ObjectID = "Qyg-Yu-RNc"; */
+"Qyg-Yu-RNc.text" = "WorkSpace 1";
+
+/* Class = "UILabel"; text = "Partager mon ID"; ObjectID = "Rdz-aD-b4n"; */
+"Rdz-aD-b4n.text" = "Share my ID";
+
+/* Class = "UITextField"; placeholder = "Jusqu'au"; ObjectID = "Ryh-2q-c94"; */
+"Ryh-2q-c94.placeholder" = "Until";
+
+/* Class = "UILabel"; text = "23 juin 2024 · 12:45"; ObjectID = "SIQ-0s-goF"; */
+"SIQ-0s-goF.text" = "23 june 2024 · 12:45";
+
+/* Class = "UILabel"; text = "Ajouter un utilisateur"; ObjectID = "TwH-L3-BCt"; */
+"TwH-L3-BCt.text" = "Add user";
+
+/* Class = "UILabel"; text = "Bravo ! Vous pouvez maintenant  retourner à l’accueil."; ObjectID = "Tyh-6Z-J7p"; */
+"Tyh-6Z-J7p.text" = "Congratulations! You can now return to
+
+the home page.";
+
+/* Class = "UIButton"; normalTitle = "Retour à l’accueil"; ObjectID = "VWX-Xj-jRe"; */
+"VWX-Xj-jRe.normalTitle" = "Return to home";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "WbN-X3-pWX"; */
+"WbN-X3-pWX.title" = "Item";
+
+/* Class = "UILabel"; text = "Julie P."; ObjectID = "Y23-sC-N2f"; */
+"Y23-sC-N2f.text" = "Julie P.";
+
+/* Class = "UILabel"; text = "Reçus"; ObjectID = "Y6X-nT-cuW"; */
+"Y6X-nT-cuW.text" = "Receipts";
+
+/* Class = "UILabel"; text = "Alright ! \nThat’s done !"; ObjectID = "Z9z-eL-rL8"; */
+"Z9z-eL-rL8.text" = "Alright ! \nThat’s done !";
+
+/* Class = "UILabel"; text = "Alright ! All done !"; ObjectID = "a27-Ji-uMY"; */
+"a27-Ji-uMY.text" = "Alright ! All done !";
+
+/* Class = "UILabel"; text = "Photos"; ObjectID = "a4I-r3-79y"; */
+"a4I-r3-79y.text" = "Photos";
+
+/* Class = "UILabel"; text = "Retour au ticket"; ObjectID = "a4W-ge-OlT"; */
+"a4W-ge-OlT.text" = "Return to ticket";
+
+/* Class = "UIButton"; normalTitle = "Enregistrer"; ObjectID = "bmU-7a-YVN"; */
+"bmU-7a-YVN.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "3 members"; ObjectID = "d83-TB-ctu"; */
+"d83-TB-ctu.text" = "3 members";
+
+/* Class = "UILabel"; text = "Task envoyée 💃"; ObjectID = "d9j-Xj-prz"; */
+"d9j-Xj-prz.text" = "Task sent 💃";
+
+/* Class = "UILabel"; text = "Filtrer"; ObjectID = "dQK-Xh-lNO"; */
+"dQK-Xh-lNO.text" = "Filter";
+
+/* Class = "UITextField"; placeholder = "Rechercher…"; ObjectID = "eGa-df-S9h"; */
+"eGa-df-S9h.placeholder" = "Search…";
+
+/* Class = "UILabel"; text = "Pour recevoir de nouvelles task,\npartagez votre ID BeTasker avec vos équipes."; ObjectID = "eRo-ES-ubK"; */
+"eRo-ES-ubK.text" = "To receive new tasks,\nshare your BeTasker ID with your teams.";
+
+/* Class = "UILabel"; text = "URGENT"; ObjectID = "fnl-X0-gNg"; */
+"fnl-X0-gNg.text" = "URGENT";
+
+/* Class = "UILabel"; text = "🚨 Urgent 🚨"; ObjectID = "fpI-vy-iwA"; */
+"fpI-vy-iwA.text" = "🚨 Urgent 🚨";
+
+/* Class = "UILabel"; text = "Option de programmation"; ObjectID = "hAh-Bd-J13"; */
+"hAh-Bd-J13.text" = "Schedule option";
+
+/* Class = "UILabel"; text = "Vous ne faite partie d’aucune équipe.\nPour commencer créez ou rejoingnez une équipe."; ObjectID = "hN2-tt-G5t"; */
+"hN2-tt-G5t.text" = "You are not part of a workspace.\To get started, create or join a workspace.";
+
+/* Class = "UILabel"; text = "Choisir..."; ObjectID = "hRu-pi-pkD"; */
+"hRu-pi-pkD.text" = "Choose...";
+
+/* Class = "UILabel"; text = "Programmer une récurence"; ObjectID = "iTE-v1-Anb"; */
+"iTE-v1-Anb.text" = "Schedule a recurrence";
+
+/* Class = "UILabel"; text = "Clean the room 3306"; ObjectID = "jeD-yy-yAG"; */
+"jeD-yy-yAG.text" = "Clean the room 3306";
+
+/* Class = "UILabel"; text = "Photos"; ObjectID = "jwi-Zl-x4P"; */
+"jwi-Zl-x4P.text" = "Photos";
+
+/* Class = "UITextField"; placeholder = "Rechercher…"; ObjectID = "k7k-O8-QVR"; */
+"k7k-O8-QVR.placeholder" = "Search…";
+
+/* Class = "UILabel"; text = "PAR EXPÉDITEUR"; ObjectID = "kLI-9m-Wye"; */
+"kLI-9m-Wye.text" = "BY SENDER";
+
+/* Class = "UILabel"; text = "⏰ Ajoutez une programmation"; ObjectID = "nAl-Nd-TAC"; */
+"nAl-Nd-TAC.text" = "⏰ Add a schedule";
+
+/* Class = "UILabel"; text = "Envoyées"; ObjectID = "oT2-b6-6yu"; */
+"oT2-b6-6yu.text" = "Sent";
+
+/* Class = "UILabel"; text = "Martin Durand  •"; ObjectID = "p7K-Nb-cLH"; */
+"p7K-Nb-cLH.text" = "Martin Durand  •";
+
+/* Class = "UILabel"; text = "4"; ObjectID = "rCJ-3T-2JA"; */
+"rCJ-3T-2JA.text" = "4";
+
+/* Class = "UILabel"; text = "Aucun utilisateur pour le moment.\nPour commencer, ajouter un utilisateur."; ObjectID = "rmt-jS-5wG"; */
+"rmt-jS-5wG.text" = "No users yet.\nTo get started, add a user.";
+
+/* Class = "UITabBarItem"; title = "Notifications"; ObjectID = "rwY-ZC-a4I"; */
+"rwY-ZC-a4I.title" = "Notifications";
+
+/* Class = "UILabel"; text = "Destinataires"; ObjectID = "shA-L9-1Yr"; */
+"shA-L9-1Yr.text" = "Recipients";
+
+/* Class = "UILabel"; text = "#34RRT56"; ObjectID = "sxh-YW-d5O"; */
+"sxh-YW-d5O.text" = "#34RRT56";
+
+/* Class = "UILabel"; text = "12"; ObjectID = "tRh-8a-oHj"; */
+"tRh-8a-oHj.text" = "12";
+
+/* Class = "UILabel"; text = "Choisissez la récurence souhaitée pour envoyer automatiquement votre Task."; ObjectID = "uKH-Jx-OKL"; */
+"uKH-Jx-OKL.text" = "Choose the desired reference to automatically send your Task.";
+
+/* Class = "UILabel"; text = "Lundi 23 juin 2024"; ObjectID = "vML-P3-f3V"; */
+"vML-P3-f3V.text" = "Lundi 23 juin 2024";
+
+/* Class = "UILabel"; text = "Ajouter un destinataire"; ObjectID = "vwD-2m-X7A"; */
+"vwD-2m-X7A.text" = "Add a recipient";
+
+/* Class = "UILabel"; text = "Partager mon ID"; ObjectID = "wvv-ad-yxu"; */
+"wvv-ad-yxu.text" = "Share my ID";
+
+/* Class = "UILabel"; text = "WorkSpace 1"; ObjectID = "xJL-Dt-yQh"; */
+"xJL-Dt-yQh.text" = "WorkSpace 1";
+
+/* Class = "UILabel"; text = "Mardi 23 juin 2023 - 12h34"; ObjectID = "xQg-cy-FG9"; */
+"xQg-cy-FG9.text" = "Mardi 23 juin 2023 - 12h34";
+
+/* Class = "UILabel"; text = "WorkSpace 1"; ObjectID = "y8v-cw-vxD"; */
+"y8v-cw-vxD.text" = "WorkSpace 1";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ynq-P4-wMT"; */
+"ynq-P4-wMT.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "To do…"; ObjectID = "zZR-F4-AXD"; */
+"zZR-F4-AXD.placeholder" = "To do…";
+
+/* Class = "UILabel"; text = "Message"; ObjectID = "ztH-Az-D7t"; */
+"ztH-Az-D7t.text" = "Message";

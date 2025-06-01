@@ -1,0 +1,18 @@
+{
+  "sourceLanguage" : "fr",
+  "strings" : {
+    "0LJ-fM-258.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Ajouter une occurrence\"; ObjectID = \"0LJ-fM-258\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Ajouter une occurrence"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

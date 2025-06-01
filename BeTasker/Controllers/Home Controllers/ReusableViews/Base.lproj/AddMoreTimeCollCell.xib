@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddMoreTimeCollCell" id="5co-yw-DwP" customClass="AddMoreTimeCollCell" customModule="BeTasker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="182" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nfc-Hc-2ax">
+                <rect key="frame" x="0.0" y="0.0" width="182" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIj-HA-6Fh">
+                        <rect key="frame" x="0.0" y="17" width="182" height="16"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus_schedule" translatesAutoresizingMaskIntoConstraints="NO" id="GQd-lT-MaE">
+                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                <color key="tintColor" name="Color000000-36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GQd-lT-MaE" secondAttribute="height" multiplier="1:1" id="DU0-dM-CX1"/>
+                                    <constraint firstAttribute="height" constant="16" id="Yu0-HN-e8k"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Ajouter une occurrence" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="0LJ-fM-258">
+                                <rect key="frame" x="24" y="0.66666666666666696" width="158" height="14.666666666666664"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
+                                <color key="textColor" name="Color000000-36"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0LJ-fM-258" firstAttribute="leading" secondItem="GQd-lT-MaE" secondAttribute="trailing" constant="8" id="7yv-Kt-O3s"/>
+                            <constraint firstItem="GQd-lT-MaE" firstAttribute="leading" secondItem="gIj-HA-6Fh" secondAttribute="leading" id="88W-wv-5Nc"/>
+                            <constraint firstAttribute="bottom" secondItem="GQd-lT-MaE" secondAttribute="bottom" id="LYr-fg-yqM"/>
+                            <constraint firstItem="0LJ-fM-258" firstAttribute="centerY" secondItem="GQd-lT-MaE" secondAttribute="centerY" id="ROF-ye-e82"/>
+                            <constraint firstAttribute="trailing" secondItem="0LJ-fM-258" secondAttribute="trailing" id="rOD-yc-e4P"/>
+                            <constraint firstItem="GQd-lT-MaE" firstAttribute="top" secondItem="gIj-HA-6Fh" secondAttribute="top" id="wge-Wg-3I2"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="gIj-HA-6Fh" secondAttribute="trailing" id="AOD-1h-rVC"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gIj-HA-6Fh" secondAttribute="bottom" id="C8I-Zk-0En"/>
+                    <constraint firstItem="gIj-HA-6Fh" firstAttribute="centerY" secondItem="nfc-Hc-2ax" secondAttribute="centerY" id="ZXP-7P-Nep"/>
+                    <constraint firstItem="gIj-HA-6Fh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nfc-Hc-2ax" secondAttribute="top" id="oHx-Cf-gGR"/>
+                    <constraint firstItem="gIj-HA-6Fh" firstAttribute="leading" secondItem="nfc-Hc-2ax" secondAttribute="leading" id="zTa-5u-AtY"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="182" height="50"/>
+            <point key="canvasLocation" x="44" y="20"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="plus_schedule" width="12" height="12"/>
+        <namedColor name="Color000000-36">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.36000001430511475" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

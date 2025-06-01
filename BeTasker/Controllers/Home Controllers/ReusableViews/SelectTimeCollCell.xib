@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GraphikMedium.otf">
+            <string>Graphik-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SelectTimeCollCell" id="eP8-10-Pgp" customClass="SelectTimeCollCell" customModule="BeTasker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="114" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0mP-rP-Ll4">
+                <rect key="frame" x="0.0" y="0.0" width="114" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htl-R7-LaT">
+                        <rect key="frame" x="0.0" y="11" width="100" height="69"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hi5-Xn-apm">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
+                                <locale key="locale" localeIdentifier="fr"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bt9-cq-IzE" customClass="DatePickerButton" customModule="BeTasker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
+                                <color key="backgroundColor" name="ColorF5F5F5616161"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Nc1-UY-qLS"/>
+                                    <constraint firstAttribute="width" constant="100" id="fvg-iZ-pBZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="24"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="15:30">
+                                    <color key="titleColor" name="Color2D2D2D-F8F8F8"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showDatePicker:" destination="eP8-10-Pgp" eventType="touchUpInside" id="jyN-LO-B75"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hi5-Xn-apm" firstAttribute="top" secondItem="bt9-cq-IzE" secondAttribute="top" id="08o-Gv-uUe"/>
+                            <constraint firstItem="Hi5-Xn-apm" firstAttribute="trailing" secondItem="bt9-cq-IzE" secondAttribute="trailing" id="1n1-9Z-sko"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bt9-cq-IzE" secondAttribute="bottom" id="2Tc-hT-Jc2"/>
+                            <constraint firstItem="Hi5-Xn-apm" firstAttribute="bottom" secondItem="bt9-cq-IzE" secondAttribute="bottom" id="3VJ-Dh-C5A"/>
+                            <constraint firstItem="bt9-cq-IzE" firstAttribute="top" secondItem="htl-R7-LaT" secondAttribute="top" id="5Q4-rN-cNN"/>
+                            <constraint firstItem="bt9-cq-IzE" firstAttribute="leading" secondItem="htl-R7-LaT" secondAttribute="leading" id="F0t-YR-lCS"/>
+                            <constraint firstAttribute="trailing" secondItem="bt9-cq-IzE" secondAttribute="trailing" id="gCT-dR-OQw"/>
+                            <constraint firstItem="Hi5-Xn-apm" firstAttribute="leading" secondItem="bt9-cq-IzE" secondAttribute="leading" id="ytZ-a6-hO7"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIQ-hu-ak4">
+                        <rect key="frame" x="90" y="1" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="QCh-wY-KDP"/>
+                            <constraint firstAttribute="width" secondItem="cIQ-hu-ak4" secondAttribute="height" multiplier="1:1" id="R1k-wj-GWQ"/>
+                        </constraints>
+                        <state key="normal" image="ic_minusButton"/>
+                        <connections>
+                            <action selector="removeItem:" destination="eP8-10-Pgp" eventType="touchUpInside" id="wuC-tC-nJM"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cIQ-hu-ak4" secondAttribute="trailing" constant="4" id="AMs-2C-5d2"/>
+                    <constraint firstItem="cIQ-hu-ak4" firstAttribute="top" secondItem="0mP-rP-Ll4" secondAttribute="top" constant="1" id="BBf-nV-61t"/>
+                    <constraint firstAttribute="bottom" secondItem="htl-R7-LaT" secondAttribute="bottom" id="Luk-Hu-hH4"/>
+                    <constraint firstItem="cIQ-hu-ak4" firstAttribute="top" secondItem="htl-R7-LaT" secondAttribute="top" constant="-10" id="al9-Fl-4wb"/>
+                    <constraint firstItem="cIQ-hu-ak4" firstAttribute="trailing" secondItem="htl-R7-LaT" secondAttribute="trailing" constant="10" id="u1A-gc-PIX"/>
+                    <constraint firstItem="htl-R7-LaT" firstAttribute="leading" secondItem="0mP-rP-Ll4" secondAttribute="leading" id="vek-yU-b43"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="114" height="84"/>
+            <connections>
+                <outlet property="bkgView" destination="htl-R7-LaT" id="mVJ-DS-iCG"/>
+                <outlet property="btnDate" destination="bt9-cq-IzE" id="q5l-og-MgD"/>
+                <outlet property="btnDelete" destination="cIQ-hu-ak4" id="PIf-ga-TK6"/>
+                <outlet property="dtPicker" destination="Hi5-Xn-apm" id="bxh-G1-0SH"/>
+            </connections>
+            <point key="canvasLocation" x="27.480916030534349" y="7.746478873239437"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_minusButton" width="20" height="20"/>
+        <namedColor name="Color2D2D2D-F8F8F8">
+            <color red="0.17599999904632568" green="0.17599999904632568" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorF5F5F5616161">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

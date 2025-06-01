@@ -1,0 +1,291 @@
+
+/* Class = "UITextField"; placeholder = "Date de naissance"; ObjectID = "38I-0A-YFS"; */
+"38I-0A-YFS.placeholder" = "Date de naissance";
+
+/* Class = "UIButton"; normalTitle = "Continuer"; ObjectID = "3Pm-4c-Qp7"; */
+"3Pm-4c-Qp7.normalTitle" = "Continuer";
+
+/* Class = "UILabel"; text = "Scannez un code Be Tasker\npour ajouter un nouveau contact."; ObjectID = "3Yj-if-G7C"; */
+"3Yj-if-G7C.text" = "Scannez un code Be Tasker\npour ajouter un nouveau contact.";
+
+/* Class = "UITextField"; placeholder = "Identifiant BeTasker"; ObjectID = "3aI-GX-d0l"; */
+"3aI-GX-d0l.placeholder" = "Identifiant BeTasker";
+
+/* Class = "UILabel"; text = "Rôle"; ObjectID = "3dv-1B-fAw"; */
+"3dv-1B-fAw.text" = "Rôle";
+
+/* Class = "UILabel"; text = "Nouvelle programmation"; ObjectID = "3j4-6B-TxZ"; */
+"3j4-6B-TxZ.text" = "Nouvelle programmation";
+
+/* Class = "UIButton"; normalTitle = "Se déconnecter"; ObjectID = "3mP-SR-icr"; */
+"3mP-SR-icr.normalTitle" = "Se déconnecter";
+
+/* Class = "UILabel"; text = "Votre contact n’est pas encore sur BeTasker ?\nInvitez-le à télécharger l’app "; ObjectID = "48b-XI-4qZ"; */
+"48b-XI-4qZ.text" = "Votre contact n’est pas encore sur BeTasker ?\nInvitez-le à télécharger l’app ";
+
+/* Class = "UITextField"; placeholder = "Votre téléphone"; ObjectID = "5Iu-Dy-VAI"; */
+"5Iu-Dy-VAI.placeholder" = "Votre téléphone";
+
+/* Class = "UILabel"; text = "Nous vous avons envoyé un code de vérification\nau +33 6 69 55 10 85"; ObjectID = "5Z2-Vl-OBH"; */
+"5Z2-Vl-OBH.text" = "Nous vous avons envoyé un code de vérification\nau +33 6 69 55 10 85";
+
+/* Class = "UILabel"; text = "Préférences"; ObjectID = "68w-FQ-Ltp"; */
+"68w-FQ-Ltp.text" = "Préférences";
+
+/* Class = "UILabel"; text = "Configurer le mode sombre pour qu’il utilise la sélection Clair ou Foncé des réglages Luminosité et affichage de votre appareil."; ObjectID = "6xW-Sx-JdH"; */
+"6xW-Sx-JdH.text" = "Configurer le mode sombre pour qu’il utilise la sélection Clair ou Foncé des réglages Luminosité et affichage de votre appareil.";
+
+/* Class = "UIButton"; normalTitle = "Importer depuis la galerie"; ObjectID = "7Pl-pT-WFB"; */
+"7Pl-pT-WFB.normalTitle" = "Importer depuis la galerie";
+
+/* Class = "UILabel"; text = "Partager l’application"; ObjectID = "7gi-G5-nLM"; */
+"7gi-G5-nLM.text" = "Partager l’application";
+
+/* Class = "UILabel"; text = "9h40"; ObjectID = "8A8-Yr-zZv"; */
+"8A8-Yr-zZv.text" = "9h40";
+
+/* Class = "UILabel"; text = "Politique de confidentialité"; ObjectID = "9F7-cq-49Q"; */
+"9F7-cq-49Q.text" = "Politique de confidentialité";
+
+/* Class = "UITextField"; placeholder = "Prénom"; ObjectID = "9mM-HR-LuX"; */
+"9mM-HR-LuX.placeholder" = "Prénom";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "9tc-Xu-ZDF"; */
+"9tc-Xu-ZDF.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Scheduled task"; ObjectID = "AEw-ir-ABG"; */
+"AEw-ir-ABG.text" = "Scheduled task";
+
+/* Class = "UIButton"; normalTitle = "Renvoyer le code dans 29s"; ObjectID = "AL9-SC-VGV"; */
+"AL9-SC-VGV.normalTitle" = "Renvoyer le code dans 29s";
+
+/* Class = "UILabel"; text = "Rechercher"; ObjectID = "B6o-Wi-3sb"; */
+"B6o-Wi-3sb.text" = "Rechercher";
+
+/* Class = "UILabel"; text = "Pas de pub"; ObjectID = "BJc-LL-UVv"; */
+"BJc-LL-UVv.text" = "Pas de pub";
+
+/* Class = "UIButton"; normalTitle = "Restaurer les achats"; ObjectID = "Bxd-zi-4op"; */
+"Bxd-zi-4op.normalTitle" = "Restaurer les achats";
+
+/* Class = "UILabel"; text = "Comment modifier ma photo de profil ?"; ObjectID = "C4w-vI-BIZ"; */
+"C4w-vI-BIZ.text" = "Comment modifier ma photo de profil ?";
+
+/* Class = "UILabel"; text = "Paramètres notifications"; ObjectID = "CXt-z1-AEM"; */
+"CXt-z1-AEM.text" = "Paramètres notifications";
+
+/* Class = "UIButton"; normalTitle = "🇫🇷+33"; ObjectID = "CyJ-5s-pdZ"; */
+"CyJ-5s-pdZ.normalTitle" = "🇫🇷+33";
+
+/* Class = "UILabel"; text = "Votre contact n’est pas encore sur BeTasker ?\nInvitez-le à télécharger l’app "; ObjectID = "D6q-E0-1Wm"; */
+"D6q-E0-1Wm.text" = "Votre contact n’est pas encore sur BeTasker ?\nInvitez-le à télécharger l’app ";
+
+/* Class = "UILabel"; text = "Aide et mentions"; ObjectID = "DDV-II-8Ez"; */
+"DDV-II-8Ez.text" = "Aide et mentions";
+
+/* Class = "UILabel"; text = "Nombre d’utilisateurs illimités"; ObjectID = "E7Q-hx-e3x"; */
+"E7Q-hx-e3x.text" = "Nombre d’utilisateurs illimités";
+
+/* Class = "UIButton"; normalTitle = "Non, rechercher à nouveau"; ObjectID = "EhM-tu-j5u"; */
+"EhM-tu-j5u.normalTitle" = "Non, rechercher à nouveau";
+
+/* Class = "UILabel"; text = "Politique de confidentialité"; ObjectID = "GjV-5H-zW3"; */
+"GjV-5H-zW3.text" = "Politique de confidentialité";
+
+/* Class = "UILabel"; text = "Tous les dimanche  · "; ObjectID = "HrN-AA-xNJ"; */
+"HrN-AA-xNJ.text" = "Tous les dimanche  · ";
+
+/* Class = "UIButton"; normalTitle = "Enregistrer"; ObjectID = "JJ1-oi-5ZN"; */
+"JJ1-oi-5ZN.normalTitle" = "Enregistrer";
+
+/* Class = "UILabel"; text = "Réalisation : 55 · agency\n© 2023 BeTasker"; ObjectID = "JdR-gX-XfK"; */
+"JdR-gX-XfK.text" = "Réalisation : 55 · agency\n© 2023 BeTasker";
+
+/* Class = "UITextField"; placeholder = "Rechercher…"; ObjectID = "KNY-cH-q1S"; */
+"KNY-cH-q1S.placeholder" = "Rechercher…";
+
+/* Class = "UILabel"; text = "Mes contacts"; ObjectID = "L9C-To-gfW"; */
+"L9C-To-gfW.text" = "Mes contacts";
+
+/* Class = "UILabel"; text = "Nous contacter"; ObjectID = "LgA-Oe-wTu"; */
+"LgA-Oe-wTu.text" = "Nous contacter";
+
+/* Class = "UILabel"; text = "Partagez votre ID pour recevoir \nde nouvelles missions."; ObjectID = "M0U-BH-bg3"; */
+"M0U-BH-bg3.text" = "Partagez votre ID pour recevoir \nde nouvelles missions.";
+
+/* Class = "UIButton"; normalTitle = "J’ai compris"; ObjectID = "P9h-b3-9Jr"; */
+"P9h-b3-9Jr.normalTitle" = "J’ai compris";
+
+/* Class = "UILabel"; text = "Julie P."; ObjectID = "PDb-t8-KCP"; */
+"PDb-t8-KCP.text" = "Julie P.";
+
+/* Class = "UILabel"; text = "Conditions Générales d’Utilisation"; ObjectID = "PJE-qJ-adn"; */
+"PJE-qJ-adn.text" = "Conditions Générales d’Utilisation";
+
+/* Class = "UILabel"; text = "Autoriser les notifications push"; ObjectID = "PtW-5K-7jt"; */
+"PtW-5K-7jt.text" = "Autoriser les notifications push";
+
+/* Class = "UILabel"; text = "URGENT"; ObjectID = "QdN-GM-9BR"; */
+"QdN-GM-9BR.text" = "URGENT";
+
+/* Class = "UILabel"; text = "Utiliser les réglages de l’appareil"; ObjectID = "Rax-9v-d41"; */
+"Rax-9v-d41.text" = "Utiliser les réglages de l’appareil";
+
+/* Class = "UILabel"; text = "Ajouter l’utilisateur"; ObjectID = "T9B-12-TnI"; */
+"T9B-12-TnI.text" = "Ajouter l’utilisateur";
+
+/* Class = "UILabel"; text = "L’outil indispenssable pour gérer vos équipes."; ObjectID = "UIU-Gw-66X"; */
+"UIU-Gw-66X.text" = "L’outil indispenssable pour gérer vos équipes.";
+
+/* Class = "UILabel"; text = "Aucun résulat pour votre recherche…\nMerci de bien vouloir réessayer."; ObjectID = "UvI-TB-MVg"; */
+"UvI-TB-MVg.text" = "Aucun résulat pour votre recherche…\nMerci de bien vouloir réessayer.";
+
+/* Class = "UILabel"; text = "Espaces de travail"; ObjectID = "VXf-Zv-vzS"; */
+"VXf-Zv-vzS.text" = "Espaces de travail";
+
+/* Class = "UIButton"; normalTitle = "Partager votre ID"; ObjectID = "WBn-3A-mhq"; */
+"WBn-3A-mhq.normalTitle" = "Partager votre ID";
+
+/* Class = "UILabel"; text = "Pour ajouter un utilisateur, recherchez-la avec son identifiant BeTasker."; ObjectID = "Wgf-Ig-cw4"; */
+"Wgf-Ig-cw4.text" = "Pour ajouter un utilisateur, recherchez-la avec son identifiant BeTasker.";
+
+/* Class = "UILabel"; text = "Mes contacts"; ObjectID = "Wtp-Mx-Kb2"; */
+"Wtp-Mx-Kb2.text" = "Mes contacts";
+
+/* Class = "UILabel"; text = "Ajouter un espace"; ObjectID = "Xfm-Mu-4f8"; */
+"Xfm-Mu-4f8.text" = "Ajouter un espace";
+
+/* Class = "UILabel"; text = "Ajouter un\nutilisateur"; ObjectID = "YVA-Om-DII"; */
+"YVA-Om-DII.text" = "Ajouter un\nutilisateur";
+
+/* Class = "UILabel"; text = "Rapport 9h"; ObjectID = "YlW-ov-b3R"; */
+"YlW-ov-b3R.text" = "Rapport 9h";
+
+/* Class = "UILabel"; text = "Signaler un bug"; ObjectID = "aX6-HF-Bcf"; */
+"aX6-HF-Bcf.text" = "Signaler un bug";
+
+/* Class = "UIButton"; normalTitle = "Valider"; ObjectID = "b1T-eM-Gul"; */
+"b1T-eM-Gul.normalTitle" = "Valider";
+
+/* Class = "UILabel"; text = "Donnez un accès à vos équipes pour leurs permettrent de recevoir vos alertes."; ObjectID = "bI5-Qz-5qr"; */
+"bI5-Qz-5qr.text" = "Donnez un accès à vos équipes pour leurs permettrent de recevoir vos alertes.";
+
+/* Class = "UILabel"; text = "Votre compte iTunes sera automatiquement facturé au même prix dans les 24 heures précédant la fin de la période en cours à moins que vous changiez les préférences d’abonnement dans vos paramètres de compte App Store."; ObjectID = "bVj-cW-hBc"; */
+"bVj-cW-hBc.text" = "Votre compte iTunes sera automatiquement facturé au même prix dans les 24 heures précédant la fin de la période en cours à moins que vous changiez les préférences d’abonnement dans vos paramètres de compte App Store.";
+
+/* Class = "UILabel"; text = "Possibilité de programmer des Task"; ObjectID = "ctd-2b-fUU"; */
+"ctd-2b-fUU.text" = "Possibilité de programmer des Task";
+
+/* Class = "UILabel"; text = "Aucune programmation pour le moment.\nPour commencer, ajoutez une programmation."; ObjectID = "cy9-xy-RDX"; */
+"cy9-xy-RDX.text" = "Aucune programmation pour le moment.\nPour commencer, ajoutez une programmation.";
+
+/* Class = "UILabel"; text = "BeTasker Premium"; ObjectID = "dbR-iS-cj9"; */
+"dbR-iS-cj9.text" = "BeTasker Premium";
+
+/* Class = "UILabel"; text = "Julien P."; ObjectID = "eJi-Rf-XpN"; */
+"eJi-Rf-XpN.text" = "Julien P.";
+
+/* Class = "UILabel"; text = "Mon numéro de téléphone"; ObjectID = "eb8-sA-bOy"; */
+"eb8-sA-bOy.text" = "Mon numéro de téléphone";
+
+/* Class = "UILabel"; text = "Mode sombre"; ObjectID = "euW-uB-e73"; */
+"euW-uB-e73.text" = "Mode sombre";
+
+/* Class = "UILabel"; text = "Mes modèles"; ObjectID = "f9j-Or-aWB"; */
+"f9j-Or-aWB.text" = "Mes modèles";
+
+/* Class = "UILabel"; text = "Aucun utilisateur pour le moment.\nPour commencer, ajouter un utilisateur."; ObjectID = "fjN-ZZ-BUa"; */
+"fjN-ZZ-BUa.text" = "Aucun utilisateur pour le moment.\nPour commencer, ajouter un utilisateur.";
+
+/* Class = "UILabel"; text = "Passer Premium"; ObjectID = "gEX-p6-iFS"; */
+"gEX-p6-iFS.text" = "Passer Premium";
+
+/* Class = "UILabel"; text = "Clément G."; ObjectID = "gMD-Gw-F1h"; */
+"gMD-Gw-F1h.text" = "Clément G.";
+
+/* Class = "UILabel"; text = "Espaces de travail associé"; ObjectID = "h3z-L9-W7Q"; */
+"h3z-L9-W7Q.text" = "Espaces de travail associé";
+
+/* Class = "UILabel"; text = "Voir notre site internet"; ObjectID = "hZe-5I-aQa"; */
+"hZe-5I-aQa.text" = "Voir notre site internet";
+
+/* Class = "UILabel"; text = "Mes informations"; ObjectID = "hjG-oA-4T9"; */
+"hjG-oA-4T9.text" = "Mes informations";
+
+/* Class = "UILabel"; text = "1 mois"; ObjectID = "hjv-IK-EyY"; */
+"hjv-IK-EyY.text" = "1 mois";
+
+/* Class = "UILabel"; text = "#34RRT56"; ObjectID = "ia5-HU-gsS"; */
+"ia5-HU-gsS.text" = "#34RRT56";
+
+/* Class = "UIButton"; normalTitle = "Ajouter une image"; ObjectID = "inE-Qf-yKy"; */
+"inE-Qf-yKy.normalTitle" = "Ajouter une image";
+
+/* Class = "UIButton"; normalTitle = "Supprimer mon compte"; ObjectID = "jp0-bi-4wL"; */
+"jp0-bi-4wL.normalTitle" = "Supprimer mon compte";
+
+/* Class = "UILabel"; text = "Mon profil"; ObjectID = "jtx-E1-Dgu"; */
+"jtx-E1-Dgu.text" = "Mon profil";
+
+/* Class = "UILabel"; text = "Task urgent avec notification critiques"; ObjectID = "kNA-QS-4zp"; */
+"kNA-QS-4zp.text" = "Task urgent avec notification critiques";
+
+/* Class = "UILabel"; text = "Réessayer"; ObjectID = "lFM-ot-P5W"; */
+"lFM-ot-P5W.text" = "Réessayer";
+
+/* Class = "UIButton"; normalTitle = "Enregistrer"; ObjectID = "llk-XI-MV2"; */
+"llk-XI-MV2.normalTitle" = "Enregistrer";
+
+/* Class = "UILabel"; text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."; ObjectID = "mYZ-ER-veq"; */
+"mYZ-ER-veq.text" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+/* Class = "UILabel"; text = "Lucas S."; ObjectID = "o8I-YI-eIx"; */
+"o8I-YI-eIx.text" = "Lucas S.";
+
+/* Class = "UILabel"; text = "Ajouter un utilisateur"; ObjectID = "p8J-Ak-dwB"; */
+"p8J-Ak-dwB.text" = "Ajouter un utilisateur";
+
+/* Class = "UILabel"; text = "Autoriser les notifications critiques"; ObjectID = "pfn-E4-oyg"; */
+"pfn-E4-oyg.text" = "Autoriser les notifications critiques";
+
+/* Class = "UIButton"; normalTitle = "Enregistrer"; ObjectID = "rlt-cz-Ehx"; */
+"rlt-cz-Ehx.normalTitle" = "Enregistrer";
+
+/* Class = "UITextField"; placeholder = "Nom"; ObjectID = "s4O-X0-9sA"; */
+"s4O-X0-9sA.placeholder" = "Nom";
+
+/* Class = "UILabel"; text = "Conditions Générales d’Utilisation"; ObjectID = "sQ1-Bm-1wd"; */
+"sQ1-Bm-1wd.text" = "Conditions Générales d’Utilisation";
+
+/* Class = "UILabel"; text = "Nombre de Task illimitées"; ObjectID = "sxc-Pi-TdN"; */
+"sxc-Pi-TdN.text" = "Nombre de Task illimitées";
+
+/* Class = "UILabel"; text = "Foire aux questions"; ObjectID = "tgJ-I8-HJX"; */
+"tgJ-I8-HJX.text" = "Foire aux questions";
+
+/* Class = "UILabel"; text = "Ajouter un utilisateur"; ObjectID = "u10-4d-FWF"; */
+"u10-4d-FWF.text" = "Ajouter un utilisateur";
+
+/* Class = "UILabel"; text = "À propos de nous"; ObjectID = "ueo-fo-cEf"; */
+"ueo-fo-cEf.text" = "À propos de nous";
+
+/* Class = "UILabel"; text = "#435GHO"; ObjectID = "vjX-aJ-Y5W"; */
+"vjX-aJ-Y5W.text" = "#435GHO";
+
+/* Class = "UILabel"; text = "12 mois"; ObjectID = "xIE-Q8-sk6"; */
+"xIE-Q8-sk6.text" = "12 mois";
+
+/* Class = "UISegmentedControl"; xne-Oc-fjc.segmentTitles[0] = "Membre"; ObjectID = "xne-Oc-fjc"; */
+"xne-Oc-fjc.segmentTitles[0]" = "Membre";
+
+/* Class = "UISegmentedControl"; xne-Oc-fjc.segmentTitles[1] = "Administrateur"; ObjectID = "xne-Oc-fjc"; */
+"xne-Oc-fjc.segmentTitles[1]" = "Administrateur";
+
+/* Class = "UILabel"; text = "Mes réglages"; ObjectID = "xz6-G9-rf6"; */
+"xz6-G9-rf6.text" = "Mes réglages";
+
+/* Class = "UILabel"; text = "#435GHO"; ObjectID = "zoU-Ej-waE"; */
+"zoU-Ej-waE.text" = "#435GHO";
+
+/* Class = "UILabel"; text = "Pour modifier votre numéro de téphone\nvous devez le vérifier"; ObjectID = "zqR-mg-af6"; */
+"zqR-mg-af6.text" = "Pour modifier votre numéro de téphone\nvous devez le vérifier";

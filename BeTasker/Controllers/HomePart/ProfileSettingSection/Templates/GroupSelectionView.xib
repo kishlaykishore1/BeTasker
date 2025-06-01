@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Graphik-Regular.otf">
+            <string>Graphik-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GroupSelectionView" customModule="teamAlerts" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuu-1J-Q8F">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chambre de Lucas" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS0-Xm-eVV">
+                            <rect key="frame" x="0.0" y="0.0" width="367" height="40"/>
+                            <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="15"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_gray 1" highlightedImage="check_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="kxD-YM-nzW">
+                            <rect key="frame" x="371" y="9" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="22" id="LZn-VF-Ta9"/>
+                                <constraint firstAttribute="height" constant="22" id="try-KP-r5t"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qe2-bb-U8e">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="40"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <connections>
+                                <action selector="itemSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ie6-gI-FY6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="kxD-YM-nzW" secondAttribute="trailing" id="6fY-lZ-tTB"/>
+                        <constraint firstAttribute="trailing" secondItem="Qe2-bb-U8e" secondAttribute="trailing" id="GIL-AY-6mQ"/>
+                        <constraint firstItem="Qe2-bb-U8e" firstAttribute="leading" secondItem="nuu-1J-Q8F" secondAttribute="leading" id="StU-Tl-ciE"/>
+                        <constraint firstItem="Qe2-bb-U8e" firstAttribute="top" secondItem="nuu-1J-Q8F" secondAttribute="top" id="W1e-rE-Mrm"/>
+                        <constraint firstItem="kxD-YM-nzW" firstAttribute="leading" secondItem="DS0-Xm-eVV" secondAttribute="trailing" constant="4" id="bcZ-LJ-qw3"/>
+                        <constraint firstAttribute="height" constant="40" id="fgP-rp-xLh"/>
+                        <constraint firstItem="DS0-Xm-eVV" firstAttribute="top" secondItem="nuu-1J-Q8F" secondAttribute="top" id="iOX-x5-Bkd"/>
+                        <constraint firstAttribute="bottom" secondItem="DS0-Xm-eVV" secondAttribute="bottom" id="ihr-Ch-sR0"/>
+                        <constraint firstAttribute="bottom" secondItem="Qe2-bb-U8e" secondAttribute="bottom" id="ijD-4D-2Wg"/>
+                        <constraint firstItem="kxD-YM-nzW" firstAttribute="centerY" secondItem="nuu-1J-Q8F" secondAttribute="centerY" id="lWj-IZ-YqN"/>
+                        <constraint firstItem="DS0-Xm-eVV" firstAttribute="leading" secondItem="nuu-1J-Q8F" secondAttribute="leading" id="ykm-uU-cgE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="nuu-1J-Q8F" secondAttribute="trailing" id="YHo-Yb-oY3"/>
+                <constraint firstAttribute="bottom" secondItem="nuu-1J-Q8F" secondAttribute="bottom" id="gCu-VV-Vyf"/>
+                <constraint firstItem="nuu-1J-Q8F" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="piN-wl-qHK"/>
+                <constraint firstItem="nuu-1J-Q8F" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uuO-ba-cgj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imgCheck" destination="kxD-YM-nzW" id="XaL-rA-O6V"/>
+                <outlet property="lblGroupName" destination="DS0-Xm-eVV" id="6AL-oc-icZ"/>
+            </connections>
+            <point key="canvasLocation" x="52.671755725190835" y="-216.19718309859155"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="check_gray 1" width="56" height="56"/>
+        <image name="check_yellow" width="70" height="70"/>
+    </resources>
+</document>

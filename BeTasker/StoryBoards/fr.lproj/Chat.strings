@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "Ajouter un utilisateur"; ObjectID = "6JU-id-rBa"; */
+"6JU-id-rBa.text" = "Ajouter un utilisateur";
+
+/* Class = "UILabel"; text = " ✅ Terminé ?"; ObjectID = "Fgc-Ft-EJP"; */
+"Fgc-Ft-EJP.text" = " ✅ Terminé ?";
+
+/* Class = "UIButton"; normalTitle = "Valider"; ObjectID = "JmR-hK-XQF"; */
+"JmR-hK-XQF.normalTitle" = "Valider";
+
+/* Class = "UILabel"; text = "URGENT"; ObjectID = "Lok-wv-Qpe"; */
+"Lok-wv-Qpe.text" = "URGENT";
+
+/* Class = "UILabel"; text = "Lucas S."; ObjectID = "PUv-Z9-kZq"; */
+"PUv-Z9-kZq.text" = "Lucas S.";
+
+/* Class = "UILabel"; text = "Aucun utilisateur pour le moment.\nPour commencer, ajouter un utilisateur."; ObjectID = "Pq3-M8-XKw"; */
+"Pq3-M8-XKw.text" = "Aucun utilisateur pour le moment.\nPour commencer, ajouter un utilisateur.";
+
+/* Class = "UILabel"; text = "#34RRT56"; ObjectID = "QQR-pR-uub"; */
+"QQR-pR-uub.text" = "#34RRT56";
+
+/* Class = "UILabel"; text = "Slide to send"; ObjectID = "Tm9-sh-JEX"; */
+"Tm9-sh-JEX.text" = "Slide to send";
+
+/* Class = "UILabel"; text = "Lucas S."; ObjectID = "VB0-jg-jhF"; */
+"VB0-jg-jhF.text" = "Lucas S.";
+
+/* Class = "UILabel"; text = "Historiques des statuts"; ObjectID = "cOF-D1-bQ9"; */
+"cOF-D1-bQ9.text" = "Historiques des statuts";
+
+/* Class = "UITextField"; placeholder = "Rechercher…"; ObjectID = "e8y-e4-Fd4"; */
+"e8y-e4-Fd4.placeholder" = "Rechercher…";
+
+/* Class = "UILabel"; text = "#34RRT56"; ObjectID = "loy-KK-lEo"; */
+"loy-KK-lEo.text" = "#34RRT56";
+
+/* Class = "UILabel"; text = "Historique des statuts"; ObjectID = "qhq-Ld-W4d"; */
+"qhq-Ld-W4d.text" = "Historique des statuts";
+
+/* Class = "UILabel"; text = "Tache archivée le 28 juin 2024 à 23:45.\nVous ne pouvez plus commenter."; ObjectID = "wTB-qg-cEa"; */
+"wTB-qg-cEa.text" = "Tache archivée le 28 juin 2024 à 23:45.\nVous ne pouvez plus commenter.";
+
+/* Class = "UILabel"; text = "Photos"; ObjectID = "zxe-Th-mpW"; */
+"zxe-Th-mpW.text" = "Photos";
+
+/* Class = "UIButton"; normalTitle = "Restorer"; ObjectID = "ugT-wH-yyk"; */
+"ugT-wH-yyk.normalTitle" = "Restorer";
