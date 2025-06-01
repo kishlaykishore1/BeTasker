@@ -604,7 +604,7 @@ extension TasksVC: PrTabSelected {
 
 extension TasksVC: PrRefreshData {
     func refreshData() {
-        let filterData = FilterDataCache.get()
+        _ = FilterDataCache.get()
         //self.imgFilter.isHighlighted = filterData.isFilterApplied
         pullRefresh()
     }
@@ -762,7 +762,7 @@ extension TasksVC {
     }
     
     /// Get Workspace List API
-    func getWorkSpacesPublisher(shouldShowLoader: Bool) -> AnyPublisher<([WorkSpaceDataViewModel], Int), Error> {
+    func getWorkSpacesPublisher(shouldShowLoader: Bool) -> AnyPublisher<([WorkSpaceDataViewModel], Int), Never> {
         Future { promise in
             WorkSpaceViewModel.GetWorkSpaceList(page: 1, limit: 1000, sender: self, shouldShowLoader: shouldShowLoader) { workspaces, totalTaskPending in
                 promise(.success((workspaces, totalTaskPending)))
@@ -887,15 +887,11 @@ extension TasksVC {
                 }
                 self.totalTaskAvailable = totalTask
                 self.tblView.reloadData()
-                if self.tblView.numberOfSections > 0, self.tblView.numberOfRows(inSection: 0) > 0 {
-                    let topIndexPath = IndexPath(row: 0, section: 0)
-                    self.tblView.scrollToRow(at: topIndexPath, at: .top, animated: false)
-                }
                 self.updateEmptyTexts()
             })
-            .flatMap { [weak self] _ -> AnyPublisher<([WorkSpaceDataViewModel], Int), Error> in
+            .flatMap { [weak self] _ -> AnyPublisher<([WorkSpaceDataViewModel], Int), Never> in
                 guard let self = self else {
-                    return Fail(error: NSError(domain: "Self is nil", code: -1)).eraseToAnyPublisher()
+                    return Just(([], Int())).eraseToAnyPublisher()
                 }
                 return self.getWorkSpacesPublisher(shouldShowLoader: false)
             }
@@ -936,14 +932,14 @@ extension TasksVC {
         let searchText = txtSearch.text?.trim() ?? ""
         
         getWorkSpacesPublisher(shouldShowLoader: false)
-            .flatMap { [weak self] workspaces, totalTaskPending -> AnyPublisher<([WorkSpaceDataViewModel], Void), Error> in
+            .flatMap { [weak self] workspaces, totalTaskPending -> AnyPublisher<([GroupedTasksViewModel], Int, Int, [WorkSpaceDataViewModel]), Error> in
                 guard let self = self else {
-                    return Fail(error: NSError(domain: "", code: -1, userInfo: nil)).eraseToAnyPublisher()
+                    return Fail(error: NSError(domain: "", code: -1)).eraseToAnyPublisher()
                 }
-                
+
                 self.overallTaskPendingCount = totalTaskPending
                 self.handelRedDotView()
-                
+
                 if currenWorkSpaceId != 0 {
                     let workspace = workspaces.first { $0.id == currenWorkSpaceId }
                     NotificationCenter.default.post(name: .workspaceSelectedNotification, object: workspace)
@@ -954,29 +950,21 @@ extension TasksVC {
                     HpGlobal.shared.selectedWorkspace = first
                 } else {
                     self.openInitialWorkspaceScreen()
-                    return Fail(error: NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No workspaces found."]))
-                        .eraseToAnyPublisher()
                 }
-                
+
+                // Assuming getHomeStatusListPublisher() is error-free
                 return self.getHomeStatusListPublisher()
-                    .setFailureType(to: Error.self)
-                    .map { _ in (workspaces, ()) }
+                    .flatMap { _ in
+                        self.getTasksPublisher(
+                            listFor: self.listFor.rawValue,
+                            currenWorkSpaceId: currenWorkSpaceId,
+                            searchText: searchText
+                        )
+                        .map { tasks, count, total in
+                            (tasks, count, total, workspaces)
+                        }
+                    }
                     .eraseToAnyPublisher()
-            }
-            .flatMap { [weak self] workspaces, _ -> AnyPublisher<([GroupedTasksViewModel], Int, Int, [WorkSpaceDataViewModel]), Error> in
-                guard let self = self else {
-                    return Fail(error: NSError(domain: "", code: -1, userInfo: nil)).eraseToAnyPublisher()
-                }
-                
-                return self.getTasksPublisher(
-                    listFor: self.listFor.rawValue,
-                    currenWorkSpaceId: currenWorkSpaceId,
-                    searchText: searchText
-                )
-                .map { tasks, count, total in
-                    (tasks, count, total, workspaces)
-                }
-                .eraseToAnyPublisher()
             }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
@@ -994,33 +982,22 @@ extension TasksVC {
                 self.arrSection = tasks
                 self.viewEmpty.isHidden = !tasks.isEmpty
                 self.vwButton.isHidden = !tasks.isEmpty
-                
+
                 switch self.listFor {
-                case .assignedToMe:
-                    self.totalAssignedToMe = count
-                case .assignedByMe:
-                    self.totalAssignedByMe = count
+                case .assignedToMe: self.totalAssignedToMe = count
+                case .assignedByMe: self.totalAssignedByMe = count
                 }
-                
+
                 self.totalTaskAvailable = total
-                
-                if currenWorkSpaceId == 0 {
-                    self.currentWorkSpace = workspaces.first
-                } else {
-                    self.currentWorkSpace = workspaces.first(where: { $0.id == currenWorkSpaceId })
-                }
-                
+                self.currentWorkSpace = currenWorkSpaceId == 0
+                    ? workspaces.first
+                    : workspaces.first(where: { $0.id == currenWorkSpaceId })
+
                 if let selectedWS = self.currentWorkSpace {
                     UserDefaults.standard.set(selectedWS.id, forKey: Constants.kSelectedWorkSpaceId)
                     self.wsTitleLabel.text = selectedWS.workSpaceName
-                    if selectedWS.isAdmin {
-                        if let tabVC = self.tabBarController as? TabBarController {
-                            tabVC.showAddTaskButton(true)
-                        }
-                    } else {
-                        if let tabVC = self.tabBarController as? TabBarController {
-                            tabVC.showAddTaskButton(false)
-                        }
+                    if let tabVC = self.tabBarController as? TabBarController {
+                        tabVC.showAddTaskButton(selectedWS.isAdmin)
                     }
                 }
                 

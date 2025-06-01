@@ -91,7 +91,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0V-yC-Pez" customClass="UIControl">
-                                <rect key="frame" x="20" y="284" width="145.5" height="40"/>
+                                <rect key="frame" x="20" y="284" width="142.5" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="#435GHO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjX-aJ-Y5W">
                                         <rect key="frame" x="16" y="12" width="75.5" height="16"/>
@@ -100,9 +100,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2t9-oj-t8T">
-                                        <rect key="frame" x="107.5" y="9" width="22" height="22"/>
+                                        <rect key="frame" x="107.5" y="9" width="19" height="22"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="copy_icon"/>
+                                        <state key="highlighted" image="copy_icon"/>
                                         <connections>
                                             <action selector="copyRandomIdButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lWL-32-Iz2"/>
                                         </connections>
@@ -128,7 +129,7 @@
                                 </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="u4R-uf-fbT">
-                                <rect key="frame" x="181.5" y="293" width="54" height="22"/>
+                                <rect key="frame" x="178.5" y="293" width="54" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ee-ir-iYA">
                                         <rect key="frame" x="0.0" y="0.0" width="19" height="22"/>
@@ -4109,7 +4110,7 @@ de nouvelles missions.</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwR-bc-pc9" customClass="UIControl">
-                                        <rect key="frame" x="134.5" y="335" width="145.5" height="40"/>
+                                        <rect key="frame" x="136" y="335" width="142.5" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="#435GHO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoU-Ej-waE">
                                                 <rect key="frame" x="16" y="12" width="75.5" height="16"/>
@@ -4118,9 +4119,10 @@ de nouvelles missions.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEz-yI-ZxW">
-                                                <rect key="frame" x="107.5" y="9" width="22" height="22"/>
+                                                <rect key="frame" x="107.5" y="9" width="19" height="22"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="copy_icon"/>
+                                                <state key="highlighted" image="copy_icon"/>
                                                 <connections>
                                                     <action selector="btnCopyRandomId_Action:" destination="E2Z-kH-QQV" eventType="touchUpInside" id="Vvs-tJ-alg"/>
                                                 </connections>
@@ -4212,7 +4214,7 @@ de nouvelles missions.</string>
         <image name="camera_picture" width="239" height="239"/>
         <image name="check-mark-green" width="200" height="180"/>
         <image name="close-circled" width="120" height="120"/>
-        <image name="copy_icon" width="22" height="21"/>
+        <image name="copy_icon" width="19" height="20"/>
         <image name="cross-black" width="96" height="96"/>
         <image name="demo-user" width="392" height="392"/>
         <image name="diary" width="270" height="251"/>

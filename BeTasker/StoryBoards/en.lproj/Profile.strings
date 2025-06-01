@@ -111,7 +111,7 @@
 "LgA-Oe-wTu.text" = "Contact us";
 
 /* Class = "UILabel"; text = "Partagez votre ID pour recevoir \nde nouvelles missions."; ObjectID = "M0U-BH-bg3"; */
-"M0U-BH-bg3.text" = "Share your ID to receive \nnew missions.";
+"M0U-BH-bg3.text" = "Share your ID to receive \nnew task.";
 
 /* Class = "UIButton"; normalTitle = "J’ai compris"; ObjectID = "P9h-b3-9Jr"; */
 "P9h-b3-9Jr.normalTitle" = "Got it";
