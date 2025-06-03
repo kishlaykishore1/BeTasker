@@ -62,6 +62,7 @@ class ChatVC: BaseViewController {
     var mentionQuery = String()
     var isMentioning = Bool()
     var allMentionedUsers: [Mention] = []
+    var filteredMentionedUsers: [Mention] = []
     private var pendingStatusReloads: [Int: [IndexPath]] = [:]
 
     
@@ -154,10 +155,10 @@ class ChatVC: BaseViewController {
             self.view.layoutIfNeeded()  // Apply the constraint change
         }
         
-        self.arrTaskMembers = taskData?.arrUsers ?? []
-        self.allMentionedUsers = self.arrTaskMembers.map { Mention(id: "\($0.memberId)", displayName: $0.fullNameFormatted, profileImage: $0.profilePic) }
+        setupMembersForTagging()
         
         NotificationCenter.default.addObserver(self, selector: #selector(refreshChatData), name: .updateTaskChat, object: nil)
+        NotificationCenter.default.addObserver(self,selector: #selector(handleTaskUpdate(_:)), name: .taskUpdatedNotification, object: nil)
         
         TaskStatusViewModel.taskStatusList { [weak self] list in
             guard let self = self else { return }
@@ -289,6 +290,14 @@ class ChatVC: BaseViewController {
         self.setupStartView()
     }
     
+    @objc private func handleTaskUpdate(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let updatedTask = userInfo["updatedTask"] as? TasksViewModel,
+              updatedTask.taskId == self.taskData?.taskId else { return }
+        self.taskData = updatedTask
+    }
+
+    
     var checkForIsAdmin: Bool {
         if let data = taskData {
             let profileData = HpGlobal.shared.userInfo
@@ -297,6 +306,12 @@ class ChatVC: BaseViewController {
         } else {
             return false
         }
+    }
+    
+    func setupMembersForTagging() {
+        self.arrTaskMembers = taskData?.arrUsers ?? []
+        self.allMentionedUsers = self.arrTaskMembers.map { Mention(id: "\($0.memberId)", displayName: $0.fullNameFormatted, randomId: $0.randomId, profileImage: $0.profilePicURL) }
+        self.filteredMentionedUsers = self.allMentionedUsers
     }
     
     func setupTheTopTicketStatusView(data: TaskStatusViewModel?) {
@@ -785,6 +800,15 @@ class ChatVC: BaseViewController {
             pendingStatusReloads[statusId, default: []].append(indexPath)
         }
     }
+    
+    func filterList(query: String) {
+        if query.isEmpty {
+            filteredMentionedUsers = allMentionedUsers
+        } else {
+            filteredMentionedUsers = allMentionedUsers.filter { $0.displayName.lowercased().contains(query.lowercased()) }
+        }
+        taggingTableView.reloadData()
+    }
 }
 
 // MARK: - Camera Function
@@ -801,16 +825,6 @@ extension ChatVC {
         picker.dismiss(animated: true)
         openDrawingOn(image: selectedImage ?? UIImage()) { [weak self] image in
             self?.sendDirectImageMessage(image: image)
-            //            let imgData = image.jpegData(compressionQuality: 0.5)
-            //            FileViewModel.UploadImage(mediaType: .Image, data: imgData, idx: 0) { [weak self] (imageRes, idx) in
-            //                DispatchQueue.main.async {
-            //                    Global.dismissLoadingSpinner(self?.view)
-            //                    if let url = imageRes?.imgFullPath {
-            //                        self?.sendMessageFireBase(message: url, type: .image)
-            //                        self?.taskChatNotify(message: "envoyé une image".localized)
-            //                    }
-            //                }
-            //            }
         }
     }
 }
@@ -828,7 +842,7 @@ extension ChatVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == taggingTableView {
-            return arrTaskMembers.count
+            return filteredMentionedUsers.count
         } else {
             return self.sections[section].arrChatMessage.count
         }
@@ -838,7 +852,7 @@ extension ChatVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == taggingTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TagMembersTableCell", for: indexPath) as! TagMembersTableCell
-            cell.configureMember(member: arrTaskMembers[indexPath.row])
+            cell.configureMember(member: filteredMentionedUsers[indexPath.row])
             return cell
         } else {
             let data = sections[indexPath.section].arrChatMessage[indexPath.row]
@@ -1005,16 +1019,25 @@ extension ChatVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == taggingTableView {
             Global.setVibration()
-            if tfMessage.selectedRange.location > 0 {
-                let range = NSRange(location: tfMessage.selectedRange.location - 1, length: 1)
-                let mutableAttrText = NSMutableAttributedString(attributedString: tfMessage.attributedText)
-                mutableAttrText.deleteCharacters(in: range)
-                tfMessage.attributedText = mutableAttrText
-                tfMessage.selectedRange = NSRange(location: range.location, length: 0)
+            if let text = tfMessage.text {
+                let queryToDelete = "@\(mentionQuery)"
+                let cursorLocation = tfMessage.selectedRange.location
+                let searchRange = NSRange(location: 0, length: cursorLocation)
+                if let nsRange = (text as NSString).range(of: queryToDelete, options: .backwards, range: searchRange).toOptional(),
+                   let range = Range(nsRange, in: text) {
+                    // Delete the text in the found range
+                    let mutableAttrText = NSMutableAttributedString(attributedString: tfMessage.attributedText)
+                    mutableAttrText.replaceCharacters(in: nsRange, with: "")
+                    tfMessage.attributedText = mutableAttrText
+                    tfMessage.selectedRange = NSRange(location: nsRange.location, length: 0)
+                }
             }
             
-            MentionHelper.insertMention(allMentionedUsers[indexPath.row], into: tfMessage, allMentions: allMentionedUsers)
+            MentionHelper.insertMention(filteredMentionedUsers[indexPath.row], into: tfMessage, allMentions: allMentionedUsers)
             self.tohandelTagTableView(show: false)
+            self.filteredMentionedUsers.removeAll()
+            self.mentionQuery = ""
+            self.isMentioning = false
         } else {
             let data = sections[indexPath.section].arrChatMessage[indexPath.row]
             switch data.chatType {
@@ -1119,6 +1142,7 @@ extension ChatVC: UITextViewDelegate {
         btnSend.tintColor = txt == "" ? UIColor.colorE8E8E8 : UIColor.color796262
         btnSend.isUserInteractionEnabled = txt != ""
         btnClearMsgText.isHidden = txt == ""
+        tfMessage.setNeedsDisplay()
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -1134,16 +1158,16 @@ extension ChatVC: UITextViewDelegate {
                 self.tohandelTagTableView()
             } else if text.count == 0 {
                 self.mentionQuery.remove(at: self.mentionQuery.index(before: self.mentionQuery.endIndex))
-                //self.filterList(query: self.mentionQuery)
+                self.filterList(query: self.mentionQuery)
             } else {
                 self.mentionQuery += text
-                //self.filterList(query: self.mentionQuery)
+                self.filterList(query: self.mentionQuery)
             }
         } else {
             /* (Beginning of textView) OR (space then @) OR (Beginning of new line) */
             if text == "@" && ( range.location == 0 || lastCharacter == " " || lastCharacter == "\n") {
                 self.isMentioning = true
-                //self.filterList(query: self.mentionQuery)
+                self.filterList(query: self.mentionQuery)
                 self.tohandelTagTableView(show: true)
             }
         }
@@ -1597,5 +1621,11 @@ extension ChatVC: QLPreviewControllerDataSource {
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
         return pdfURL! as NSURL
+    }
+}
+
+extension NSRange {
+    func toOptional() -> NSRange? {
+        return location != NSNotFound ? self : nil
     }
 }

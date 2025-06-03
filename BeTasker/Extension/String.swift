@@ -137,3 +137,17 @@ extension Double {
         return (self*divisor).rounded(.towardZero) / divisor
     }
 }
+
+extension UILabel {
+    func calculateLineCount() -> Int {
+        guard let text = self.text, let font = self.font else { return 0 }
+
+        let maxSize = CGSize(width: self.frame.width, height: CGFloat.greatestFiniteMagnitude)
+        let textAttributes: [NSAttributedString.Key: Any] = [.font: font]
+        let attributedText = NSAttributedString(string: text, attributes: textAttributes)
+
+        let boundingRect = attributedText.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
+        let lineHeight = font.lineHeight
+        return Int(ceil(boundingRect.height / lineHeight))
+    }
+}

@@ -176,8 +176,9 @@
                                                 </constraints>
                                                 <color key="tintColor" name="ColorFFD01E"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="ic_UploadMedia"/>
+                                                <state key="normal" image="ic_UploadMediaDuplicate"/>
                                                 <state key="disabled" image="camera-black"/>
+                                                <state key="highlighted" image="ic_UploadMediaDuplicate"/>
                                                 <connections>
                                                     <action selector="btnCameraAction:" destination="Ord-Qf-GNp" eventType="touchUpInside" id="5eY-yd-g73"/>
                                                 </connections>
@@ -786,13 +787,13 @@ Vous ne pouvez plus commenter.</string>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqL-JX-Tl5">
                                                     <rect key="frame" x="86" y="20.333333333333329" width="251" height="35"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lucas S." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUv-Z9-kZq">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lucas S." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUv-Z9-kZq">
                                                             <rect key="frame" x="0.0" y="0.0" width="251" height="18"/>
                                                             <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="18"/>
                                                             <color key="textColor" name="TextColor-Black"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="#34RRT56" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQR-pR-uub">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#34RRT56" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQR-pR-uub">
                                                             <rect key="frame" x="0.0" y="22.000000000000004" width="251" height="12.999999999999996"/>
                                                             <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                             <color key="textColor" name="Color777777"/>
@@ -1022,7 +1023,7 @@ Pour commencer, ajouter un utilisateur.</string>
         <image name="down-arrow" width="17.666666030883789" height="10"/>
         <image name="empty_member" width="270" height="251"/>
         <image name="ic_AttachFiles" width="20" height="18"/>
-        <image name="ic_UploadMedia" width="18" height="18"/>
+        <image name="ic_UploadMediaDuplicate" width="18" height="18"/>
         <image name="ic_restore" width="17" height="16"/>
         <image name="indicator-dot" width="86" height="86"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
@@ -1084,7 +1085,7 @@ Pour commencer, ajouter un utilisateur.</string>
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ColorFFFFFF-202020(89)">
-            <color red="1" green="1" blue="1" alpha="0.89000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="0.88999998569488525" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextColor-Black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

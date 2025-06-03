@@ -2652,7 +2652,7 @@ Workplace.</string>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRS-0b-vLC">
                                                 <rect key="frame" x="0.0" y="6" width="20" height="4"/>
-                                                <color key="backgroundColor" name="Color62DD3C"/>
+                                                <color key="backgroundColor" name="ColorFFD01E"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="8w9-HT-82i"/>
                                                     <constraint firstAttribute="height" constant="4" id="Mlm-HB-SHk"/>

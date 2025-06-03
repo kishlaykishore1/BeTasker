@@ -43,6 +43,7 @@ extension Notification.Name {
     static let updateTaskChat = Notification.Name("updateTaskChat")
     static let updateTaskMembersList = Notification.Name("updateTaskMembersList")
     static let receivedArchiveNotification = Notification.Name("archiveNotify")
+    static let taskUpdatedNotification = Notification.Name("taskUpdatedNotification")
 }
 
 

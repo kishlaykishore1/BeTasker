@@ -162,7 +162,7 @@ extension AddStatusVC {
         guard let id = taskId else { return }
         let imageNames = arrImages.compactMap({$0?.data?.imageName}).joined(separator: ",")
         
-        if statusData?.id == 4 && imageNames == "" {
+        if statusData?.id == 4 && isPhotoEnabled && imageNames == "" {
             Common.showAlertMessage(message: "Veuillez ajouter au moins une photo.".localized, alertType: .error, isPreferLightStyle: false)
             undoSlider()
             return

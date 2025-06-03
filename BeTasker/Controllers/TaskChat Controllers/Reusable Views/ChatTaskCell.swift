@@ -18,6 +18,7 @@ class ChatTaskCell: UITableViewCell {
     @IBOutlet weak var lblTaskTitle: UILabel!
     @IBOutlet weak var lblTaskDescp: UILabel!
     @IBOutlet weak var seeMoreButton: UIButton!
+    @IBOutlet weak var imgSeeMoreArrow: UIImageView!
     @IBOutlet weak var lblTaskLink: UILabel!
     @IBOutlet weak var lblUserName: UILabel!
     @IBOutlet weak var imgUser: UIImageView!
@@ -44,7 +45,9 @@ class ChatTaskCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         seeMoreButton.setTitle("Voir plus".localized, for: .normal)
+        imgSeeMoreArrow.image = UIImage(named: "ic_TaskdownArrow")
         seeMoreButton.isHidden = true
+        imgSeeMoreArrow.isHidden = true
         self.clnView.register(UINib(nibName: "CollectionBigFileCell", bundle: nil), forCellWithReuseIdentifier: "CollectionBigFileCell")
         DispatchQueue.main.async { [weak self] in
             self?.backView.applyShadow(radius: 3, opacity: 0.1, offset: .zero)
@@ -81,25 +84,31 @@ class ChatTaskCell: UITableViewCell {
         lblTaskDescp.text = text.isEmpty ? nil : text
         lblTaskDescp.numberOfLines = viewModel.isExpanded ? 0 : 3
         seeMoreButton.setTitle(viewModel.isExpanded ? "Voir moins".localized : "Voir plus".localized, for: .normal)
-
-        // 🔐 Manual text height calculation
-        let maxLines = 3
-        let font = lblTaskDescp.font ?? UIFont.systemFont(ofSize: 16, weight: .regular)
-        let labelWidth = UIScreen.main.bounds.width - 20 // Adjust for actual padding/margins in your cell
-
-        let textAttributes: [NSAttributedString.Key: Any] = [.font: font]
-        let attributedText = NSAttributedString(string: text, attributes: textAttributes)
-
-        let boundingRect = attributedText.boundingRect(
-            with: CGSize(width: labelWidth, height: CGFloat.greatestFiniteMagnitude),
-            options: [.usesLineFragmentOrigin, .usesFontLeading],
-            context: nil
-        )
-
-        let lineHeight = font.lineHeight
-        let totalLines = Int(ceil(boundingRect.height / lineHeight))
-
-        seeMoreButton.isHidden = totalLines <= maxLines
+        imgSeeMoreArrow.image = viewModel.isExpanded ? UIImage(named: "ic_TaskupArrow") : UIImage(named: "ic_TaskdownArrow")
+        
+        guard !text.isEmpty else {
+            seeMoreButton.isHidden = true
+            imgSeeMoreArrow.isHidden = true
+            return
+        }
+        
+        let labelWidth = lblTaskDescp.frame.width > 0 ? lblTaskDescp.frame.width : UIScreen.main.bounds.width - 20
+        let textStorage = NSTextStorage(string: text, attributes: [.font: lblTaskDescp.font ?? UIFont.systemFont(ofSize: 16)])
+        let textContainer = NSTextContainer(size: CGSize(width: labelWidth, height: CGFloat.greatestFiniteMagnitude))
+        textContainer.lineFragmentPadding = 0
+        textContainer.lineBreakMode = lblTaskDescp.lineBreakMode
+        textContainer.maximumNumberOfLines = 0
+        
+        let layoutManager = NSLayoutManager()
+        layoutManager.addTextContainer(textContainer)
+        textStorage.addLayoutManager(layoutManager)
+        
+        _ = layoutManager.glyphRange(for: textContainer)
+        let lineCount = layoutManager.numberOfLines(for: textContainer)
+        
+        let shouldShowMore = lineCount > 3
+        seeMoreButton.isHidden = !shouldShowMore
+        imgSeeMoreArrow.isHidden = !shouldShowMore
     }
 
 
@@ -181,5 +190,22 @@ extension ChatTaskCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 188.0, height: 190.0)
+    }
+}
+
+private extension NSLayoutManager {
+    func numberOfLines(for textContainer: NSTextContainer) -> Int {
+        var numberOfLines = 0
+        var index = 0
+        let numberOfGlyphs = self.numberOfGlyphs
+
+        while index < numberOfGlyphs {
+            var lineRange = NSRange()
+            self.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange)
+            index = NSMaxRange(lineRange)
+            numberOfLines += 1
+        }
+
+        return numberOfLines
     }
 }

@@ -170,9 +170,7 @@ extension TaskMembersListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let isMe = filteredarrMembers[indexPath.row].isMe
-        if isTaskAdmin && !isMe {
-            return swipeActionsForMemberList(indexPath: indexPath)
-        } else if !isTaskAdmin && isMe {
+        if isTaskAdmin || (!isTaskAdmin && isMe) {
             return swipeActionsForMemberList(indexPath: indexPath)
         }
         // No swipe actions for other cases

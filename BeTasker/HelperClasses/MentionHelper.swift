@@ -12,7 +12,8 @@ import SDWebImage
 struct Mention {
     let id: String
     let displayName: String
-    let profileImage: String?
+    let randomId: String?
+    let profileImage: URL?
 }
 
 class MentionHelper {
@@ -137,7 +138,7 @@ class MentionHelper {
         attributedText.enumerateAttributes(in: NSRange(location: 0, length: attributedText.length), options: []) { attrs, range, _ in
             if let mentionId = attrs[.mention] as? String {
                 let name = attributedText.attributedSubstring(from: range).string.replacingOccurrences(of: "@", with: "")
-                let mention = Mention(id: mentionId, displayName: name, profileImage: nil)
+                let mention = Mention(id: mentionId, displayName: name, randomId: nil, profileImage: nil)
                 mentions.append(mention)
             }
         }

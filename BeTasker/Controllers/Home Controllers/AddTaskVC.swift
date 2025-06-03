@@ -324,7 +324,8 @@ class AddTaskVC: BaseViewController {
                 case .success(let res):
                     let data = TasksViewModel(data: res)
                     NotificationCenter.default.post(name: .updateTaksList, object: nil)
-                    
+                    NotificationCenter.default.post(name: .taskUpdatedNotification, object: nil, userInfo: ["updatedTask": data])
+
                     let newdata = ["taskTitle": data.title, "description": data.description, "displayLink": data.displayLink, "chatType": EnumChatType.taskDescription.rawValue, "isEdited": true, "message": "", "arrFiles": data.arrFileDict]
                     
                     Global().updateTaskDescriptionMessage(for: data.taskId, with: newdata, view: self.view ?? UIView()) { [weak self] result in

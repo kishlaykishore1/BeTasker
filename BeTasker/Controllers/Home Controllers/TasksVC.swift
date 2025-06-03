@@ -30,8 +30,6 @@ struct TaskMessageData {
 class TasksVC: BaseViewController {
     
     // MARK: - Outlets
-    //@IBOutlet weak var imgFilter: UIImageView!
-    //@IBOutlet weak var vwFilter: UIView!
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var statusCollectionView: UICollectionView!
@@ -48,20 +46,16 @@ class TasksVC: BaseViewController {
     @IBOutlet weak var emptyButtonImgView: UIImageView!
     @IBOutlet weak var emptyLogoImageview: UIImageView!
     @IBOutlet weak var txtSearch: UITextField!
-    //@IBOutlet weak var viewAddTask: UIView!
     
     // MARK: - Variables
     let refreshControl:UIRefreshControl = UIRefreshControl()
     var listFor: EnumTaskListType = .assignedToMe //"AssignReceived" //AssignReceived,AssignSend
     var arrSection: [GroupedTasksViewModel] = []
-    //var arrTasksAssignedToMe: [TasksViewModel] = []
-    //var arrTasksAssignedByMe: [TasksViewModel] = []
     var totalAssignedToMe = 0
     var totalAssignedByMe = 0
     var totalTaskAvailable = 0
     var overallTaskPendingCount: Int = 0
     var currentWorkSpace: WorkSpaceDataViewModel?
-    //var arrTaskMessageData: [TaskMessageData] = []
     weak var searchTimer: Timer?
     var selectedTabIndex: Int = 0 // 0 = received, 2 = sent
     var arrStatus = [TaskStatusViewModel]()
@@ -324,12 +318,6 @@ extension TasksVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        switch listFor {
-        //        case .assignedToMe:
-        //            return arrTasksAssignedToMe.count
-        //        case .assignedByMe:
-        //            return arrTasksAssignedByMe.count
-        //        }
         arrSection[section].arrTasks.count
     }
     
@@ -411,7 +399,6 @@ extension TasksVC: UITableViewDelegate {
             style: .normal,
             title: nil,
             handler: { [weak self] (_, _, completionHandler) in
-                //let data = self?.listFor == .assignedToMe ? self?.arrTasksAssignedToMe[indexPath.row] : self?.arrTasksAssignedByMe[indexPath.row]
                 let data = self?.arrSection[indexPath.section].arrTasks[indexPath.row]
                 self?.triggerArchiveAction(taskToArchive: data, at: indexPath)
                 completionHandler(true)

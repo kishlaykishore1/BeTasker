@@ -27,12 +27,12 @@ class TagMembersTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureMember(member: TempProfileViewModel) {
-        lblName.text = member.fullNameFormatted
+    func configureMember(member: Mention) {
+        lblName.text = member.displayName
         lblRandomId.text = member.randomId
         imgProfile.sd_imageIndicator = SDWebImageActivityIndicator.gray
         imgProfile.sd_imageTransition = SDWebImageTransition.fade
-        imgProfile.sd_setImage(with: member.profilePicURL, placeholderImage: UIImage(named: "no-user"))
+        imgProfile.sd_setImage(with: member.profileImage, placeholderImage: UIImage(named: "no-user"))
     }
 
 }
