@@ -88,7 +88,8 @@ class SignUp6VC: BaseViewController {
     
     @IBAction func btnModifyImage_Action(_ sender: UIButton) {
         Global.setVibration()
-        checkCameraPermission()
+        showFileSelectionSheet()
+        //checkCameraPermission()
     }
     
 }

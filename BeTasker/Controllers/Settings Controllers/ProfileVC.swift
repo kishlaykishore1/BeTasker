@@ -70,8 +70,8 @@ class ProfileVC: BaseViewController {
     
     @IBAction func addProfilePic_Action(_ sender: UIControl) {
         Global.setVibration()
-        //showFileSelectionSheet()
-        checkCameraPermission()
+        showFileSelectionSheet()
+        //checkCameraPermission()
     }
     
     

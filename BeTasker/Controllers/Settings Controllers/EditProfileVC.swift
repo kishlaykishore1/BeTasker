@@ -124,7 +124,8 @@ class EditProfileVC: BaseViewController {
     
     @IBAction func btnAddImageAction(_ sender: UIButton) {
         Global.setVibration()
-        checkCameraPermission()
+        //checkCameraPermission()
+        showFileSelectionSheet()
     }
 }
 

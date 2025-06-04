@@ -526,10 +526,10 @@ extension AddTaskVC {
 }
 
 extension AddTaskVC: WorkSpaceSelectclose {
-    func workSpaceSelectionChange(selectedWS:WorkSpaceDataViewModel)
-    {
+    func workSpaceSelectionChange(selectedWS:WorkSpaceDataViewModel) {
         self.currentWorkSpace = selectedWS
         self.workSpacetitleLabel.text = selectedWS.workSpaceName
+        self.getWorkspaceMembers(shouldShowLoader: true)
     }
 }
 
