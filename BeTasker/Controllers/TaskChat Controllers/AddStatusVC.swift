@@ -145,7 +145,8 @@ extension AddStatusVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
-        self.showFileSelectionSheet()
+        self.checkCameraPermission()
+        //self.showFileSelectionSheet()
     }
     
     func RemovePhoto(idx: Int) {
