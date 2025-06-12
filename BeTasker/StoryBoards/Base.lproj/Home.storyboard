@@ -264,20 +264,20 @@ Merci de revenir plus tard.</string>
                             <color key="backgroundColor" name="ColorFFFFFF-000000"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQB-C2-meC">
-                            <rect key="frame" x="0.0" y="0.0" width="108" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="132" height="100"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hx9-WZ-Ob3">
-                                    <rect key="frame" x="37.5" y="41" width="54.5" height="48"/>
+                                    <rect key="frame" x="52" y="41" width="54.5" height="48"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab1-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ws5-Re-uCk">
-                                            <rect key="frame" x="15.5" y="0.0" width="24" height="24"/>
+                                            <rect key="frame" x="15" y="0.0" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="ws5-Re-uCk" secondAttribute="height" multiplier="1:1" id="4WB-PX-thH"/>
                                                 <constraint firstAttribute="height" constant="24" id="ET4-jq-yvy"/>
                                             </constraints>
                                         </imageView>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVy-bM-KMW">
-                                            <rect key="frame" x="35.5" y="10" width="20" height="20"/>
+                                            <rect key="frame" x="35" y="10" width="20" height="20"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAq-J8-N7l">
                                                     <rect key="frame" x="4" y="4" width="12" height="12"/>
@@ -300,7 +300,7 @@ Merci de revenir plus tard.</string>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reçus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6X-nT-cuW">
                                             <rect key="frame" x="8" y="32" width="38.5" height="16"/>
                                             <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="13"/>
-                                            <color key="textColor" name="ColorFFD200"/>
+                                            <color key="textColor" name="Color333333"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7b-fb-2GW">
@@ -336,13 +336,13 @@ Merci de revenir plus tard.</string>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPD-Hg-kxB">
-                            <rect key="frame" x="285" y="0.0" width="108" height="100"/>
+                            <rect key="frame" x="261" y="0.0" width="132" height="100"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CmM-YY-iJF">
-                                    <rect key="frame" x="5.5" y="41" width="75.5" height="48"/>
+                                    <rect key="frame" x="15" y="41" width="75.5" height="48"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2v9-T6-qLW">
-                                            <rect key="frame" x="25.5" y="0.0" width="24" height="24"/>
+                                            <rect key="frame" x="26" y="0.0" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="2v9-T6-qLW" secondAttribute="height" multiplier="1:1" id="bSg-6Y-p9P"/>
                                                 <constraint firstAttribute="height" constant="24" id="bga-nV-jSf"/>
@@ -350,7 +350,7 @@ Merci de revenir plus tard.</string>
                                             <imageReference key="image" image="tab2-icon" renderingMode="original"/>
                                         </imageView>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuG-gS-zPW">
-                                            <rect key="frame" x="45.5" y="10" width="20" height="20"/>
+                                            <rect key="frame" x="46" y="10" width="20" height="20"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FG-HJ-EV6">
                                                     <rect key="frame" x="4" y="4" width="12" height="12"/>
@@ -409,27 +409,26 @@ Merci de revenir plus tard.</string>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlr-dg-fRq">
-                            <rect key="frame" x="108" y="2" width="177" height="60"/>
+                            <rect key="frame" x="132" y="2" width="129" height="60"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zh3-L6-P48">
-                                    <rect key="frame" x="12" y="8" width="84" height="44"/>
+                                    <rect key="frame" x="12" y="8" width="44" height="44"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="84" id="eY0-rj-fKP"/>
-                                        <constraint firstAttribute="height" constant="44" id="rjL-K6-Iqn"/>
+                                        <constraint firstAttribute="width" constant="44" id="BmL-nd-aSb"/>
+                                        <constraint firstAttribute="width" secondItem="Zh3-L6-P48" secondAttribute="height" multiplier="1:1" id="FFN-As-8ZW"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="19"/>
-                                    <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <inset key="imageEdgeInsets" minX="55" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="New" image="ic_PlusWhiteHome">
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="ic_AddTaskHome">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
-                                    <state key="highlighted" title="New" image="ic_PlusWhiteHome"/>
+                                    <state key="highlighted" title="New" image="ic_AddTaskHome"/>
                                     <connections>
                                         <action selector="btnAddtask_Action:" destination="jp0-iZ-FN8" eventType="touchUpInside" id="anY-b1-gLu"/>
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nz5-ih-3EF">
-                                    <rect key="frame" x="108" y="15" width="1" height="30"/>
+                                    <rect key="frame" x="64" y="15" width="1" height="30"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="1" id="XQy-WI-a1I"/>
@@ -437,14 +436,14 @@ Merci de revenir plus tard.</string>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zU-a2-fHD">
-                                    <rect key="frame" x="121" y="8" width="44" height="44"/>
+                                    <rect key="frame" x="73" y="8" width="44" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="6zU-a2-fHD" secondAttribute="height" multiplier="1:1" id="CtJ-Rh-4Cd"/>
                                         <constraint firstAttribute="width" constant="44" id="qug-gP-UV9"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="ic_CameraWhite"/>
-                                    <state key="highlighted" image="ic_CameraWhite"/>
+                                    <state key="normal" image="ic_CameraAddTask"/>
+                                    <state key="highlighted" image="ic_CameraAddTask"/>
                                     <connections>
                                         <action selector="btnAddByCamera:" destination="jp0-iZ-FN8" eventType="touchUpInside" id="aVE-gn-lkA"/>
                                     </connections>
@@ -453,10 +452,10 @@ Merci de revenir plus tard.</string>
                             <color key="backgroundColor" name="ColorFFD01E"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Zh3-L6-P48" secondAttribute="bottom" constant="8" id="QVL-7F-Buv"/>
-                                <constraint firstItem="6zU-a2-fHD" firstAttribute="leading" secondItem="nz5-ih-3EF" secondAttribute="trailing" constant="12" id="aEV-Vn-xek"/>
+                                <constraint firstItem="6zU-a2-fHD" firstAttribute="leading" secondItem="nz5-ih-3EF" secondAttribute="trailing" constant="8" id="aEV-Vn-xek"/>
                                 <constraint firstItem="Zh3-L6-P48" firstAttribute="leading" secondItem="hlr-dg-fRq" secondAttribute="leading" constant="12" id="eZV-A9-wcQ"/>
                                 <constraint firstAttribute="trailing" secondItem="6zU-a2-fHD" secondAttribute="trailing" constant="12" id="fi0-Db-0if"/>
-                                <constraint firstItem="nz5-ih-3EF" firstAttribute="leading" secondItem="Zh3-L6-P48" secondAttribute="trailing" constant="12" id="odf-hK-9d2"/>
+                                <constraint firstItem="nz5-ih-3EF" firstAttribute="leading" secondItem="Zh3-L6-P48" secondAttribute="trailing" constant="8" id="odf-hK-9d2"/>
                                 <constraint firstItem="Zh3-L6-P48" firstAttribute="top" secondItem="hlr-dg-fRq" secondAttribute="top" constant="8" id="r9u-nh-yiM"/>
                                 <constraint firstItem="nz5-ih-3EF" firstAttribute="centerY" secondItem="Zh3-L6-P48" secondAttribute="centerY" id="uMb-oS-yrR"/>
                                 <constraint firstItem="6zU-a2-fHD" firstAttribute="centerY" secondItem="Zh3-L6-P48" secondAttribute="centerY" id="zfG-8w-pjx"/>
@@ -3566,13 +3565,13 @@ Pour commencer créez ou rejoingnez une équipe.</string>
         <image name="empty_member" width="270" height="251"/>
         <image name="filter" width="160" height="160"/>
         <image name="filter-applied" width="160" height="160"/>
+        <image name="ic_AddTaskHome" width="22" height="22"/>
         <image name="ic_Appointment" width="18" height="18"/>
         <image name="ic_Archive" width="23" height="21"/>
-        <image name="ic_CameraWhite" width="21" height="17"/>
+        <image name="ic_CameraAddTask" width="23.666666030883789" height="21"/>
         <image name="ic_DoubleTick" width="15" height="8"/>
         <image name="ic_Gallery" width="28" height="28"/>
         <image name="ic_PhotoCamera" width="30" height="24"/>
-        <image name="ic_PlusWhiteHome" width="19" height="19"/>
         <image name="ic_SearchNew" width="20" height="20"/>
         <image name="ic_shareWhite" width="23" height="23"/>
         <image name="imageView:uRw-8n-KBa:image" width="79" height="63">
@@ -8528,6 +8527,9 @@ AAR8qAAEfK0ABHy1AAR8uAAEfL0ABHzFAAAAAAAABAEAAAAAAAAAaAAAAAAAAAAAAAAAAAAEfMg
         <namedColor name="Color2D2D2D-F8F8F8">
             <color red="0.17599999904632568" green="0.17599999904632568" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Color333333">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="Color345CE6">
             <color red="0.20399999618530273" green="0.36100000143051147" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -8578,9 +8580,6 @@ AAR8qAAEfK0ABHy1AAR8uAAEfL0ABHzFAAAAAAAABAEAAAAAAAAAaAAAAAAAAAAAAAAAAAAEfMg
         </namedColor>
         <namedColor name="ColorFFD01E">
             <color red="1" green="0.81568627450980391" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="ColorFFD200">
-            <color red="1" green="0.82400000095367432" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ColorFFFFFF-000000">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

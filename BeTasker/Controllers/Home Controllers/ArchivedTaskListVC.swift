@@ -96,7 +96,7 @@ class ArchivedTaskListVC: UIViewController {
             self.emptyTextButton.text = "Nouvelle task".localized
             self.emptyTextTitleLabel.text = "Faites-le !".localized
             self.emptyLogoImageview.image = UIImage(named: "green-share-icon")
-            self.emptyButtonImgView.image = UIImage(named: "ic_PlusWhite")
+            self.emptyButtonImgView.image = UIImage(named: "ic_AddTaskHome")
         } else {
             self.emptytextLbl.text = "Pour recevoir de nouvelles task\npartagez votre compte avec vos équipes.".localized
             self.emptyTextButton.text = "Partager mon ID".localized

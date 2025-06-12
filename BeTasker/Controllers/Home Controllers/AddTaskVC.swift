@@ -58,6 +58,7 @@ class AddTaskVC: BaseViewController {
             setTheReceivedImage(image: imageFromCameraRoll)
         }
         self.vwSliderContainerView.applyShadow(radius: 3, opacity: 0.1, offset: CGSize(width: 0.0, height: 3.0))
+        self.vwScheduleTask.applyShadow(radius: 3, opacity: 0.1, offset: CGSize(width: 0.0, height: 3.0))
         self.clnUsers.register(UINib(nibName: "DestinatairesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "DestinatairesCollectionCell")
         DispatchQueue.main.async {
             self.btnNext.setShadowWithColor(color: .black, opacity: 0.1, offset: CGSize(width: 0.0, height: 3.0), radius: 3, viewCornerRadius: self.btnNext.frame.height / 2)
@@ -158,6 +159,27 @@ class AddTaskVC: BaseViewController {
             navController.modalPresentationStyle = .fullScreen
             self.present(navController, animated: true)
         }
+    }
+    
+    func redirectToChatScreen(taskdata: TasksViewModel) {
+        let vc = Constants.Chat.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
+        vc.taskData = taskdata
+        self.dismiss(animated: true, completion: {
+            let nav = UINavigationController(rootViewController: vc)
+            nav.isModalInPresentation = true
+            UIApplication.topViewController()?.present(nav, animated: true)
+        })
+    }
+    
+    func redirectToSuceessScreen() {
+        let vc = Constants.Home.instantiateViewController(withIdentifier: "AddTaskSuccessVC") as! AddTaskSuccessVC
+        vc.tabBarVC = self.tabBarVC
+        self.dismiss(animated: true, completion: {
+            if let nav = UIApplication.topViewController()?.navigationController {
+                vc.modalPresentationStyle = .fullScreen
+                nav.present(vc, animated: true)
+            }
+        })
     }
     
     // MARK: - Button Action Methods
@@ -336,14 +358,13 @@ class AddTaskVC: BaseViewController {
                         }
                     }
                     
-                    let vc = Constants.Home.instantiateViewController(withIdentifier: "AddTaskSuccessVC") as! AddTaskSuccessVC
-                    vc.tabBarVC = self.tabBarVC
-                    self.navigationController?.dismiss(animated: true, completion: {
-                        if let nav = UIApplication.topViewController()?.navigationController {
-                            vc.modalPresentationStyle = .fullScreen
-                            nav.present(vc, animated: true)
-                        }
-                    })
+                    if self.isFromChat {
+                        self.dismiss(animated: true)
+                    } else if self.isFromPeogrammimgMenu {
+                        self.redirectToSuceessScreen()
+                    } else {
+                        self.redirectToChatScreen(taskdata: data)
+                    }
                     break
                 case .failure(_):
                     self.undoSlider()

@@ -81,6 +81,7 @@
 		6E7E11F02DC1CF15008D7D91 /* ChatDocCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E11EF2DC1CF15008D7D91 /* ChatDocCell.swift */; };
 		6E7E11F22DC26B3A008D7D91 /* ChatDocSenderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7E11F12DC26B3A008D7D91 /* ChatDocSenderCell.xib */; };
 		6E7E77D72DD44A87003B5D89 /* TaskNotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6E7E77D02DD44A86003B5D89 /* TaskNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6E8F74C22DF96C8E00608B74 /* CollectionSmallFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E8F74C12DF96C8E00608B74 /* CollectionSmallFileCell.xib */; };
 		6E8FF1E62D9CC374002E0A28 /* TaskMembersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FF1E52D9CC374002E0A28 /* TaskMembersListVC.swift */; };
 		6E9A255D2D7FC213009C91CF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A255C2D7FC213009C91CF /* BaseViewController.swift */; };
 		6EAEED4A2DD9F3CC00CD5496 /* TagMembersTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAEED492DD9F3CC00CD5496 /* TagMembersTableCell.swift */; };
@@ -96,10 +97,20 @@
 		6EC5AA592DE353A900FB213D /* NewTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC5AA582DE353A800FB213D /* NewTaskCell.xib */; };
 		6EC5AA5B2DE353B600FB213D /* NewTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC5AA5A2DE353B600FB213D /* NewTaskCell.swift */; };
 		6EC5AA5D2DE358F800FB213D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EC5AA5C2DE358F800FB213D /* Montserrat-SemiBold.ttf */; };
+		6EC9A6592DF5485B006773DA /* SwipeToReplySupportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC9A6582DF5485B006773DA /* SwipeToReplySupportable.swift */; };
 		6ED372802D75A97700E97644 /* NewFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3727F2D75A97700E97644 /* NewFilterVC.swift */; };
 		6ED372832D75A9BE00E97644 /* StatusCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED372822D75A9BE00E97644 /* StatusCollectionCell.xib */; };
 		6ED372852D75A9E300E97644 /* StatusCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED372842D75A9E300E97644 /* StatusCollectionCell.swift */; };
 		6ED966292DDE2AF1002E0CB2 /* SignUp6VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED966282DDE2AF1002E0CB2 /* SignUp6VC.swift */; };
+		6EE1630C2DF2AE3800677880 /* ReplyTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE1630B2DF2AE3800677880 /* ReplyTextView.xib */; };
+		6EE1630E2DF2AE4F00677880 /* ReplyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE1630D2DF2AE4F00677880 /* ReplyTextView.swift */; };
+		6EE163102DF2AE6700677880 /* ReplyImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE1630F2DF2AE6700677880 /* ReplyImageView.xib */; };
+		6EE163122DF2AE7400677880 /* ReplyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE163112DF2AE7400677880 /* ReplyImageView.swift */; };
+		6EE163142DF2AED700677880 /* ReplyFileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE163132DF2AED700677880 /* ReplyFileView.xib */; };
+		6EE163162DF2AEE400677880 /* ReplyFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE163152DF2AEE400677880 /* ReplyFileView.swift */; };
+		6EE163182DF2AEF400677880 /* ReplyStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE163172DF2AEF400677880 /* ReplyStatusView.swift */; };
+		6EE1631A2DF2B37600677880 /* ReplyStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE163192DF2B37600677880 /* ReplyStatusView.xib */; };
+		6EE7837B2DFA93C4004465FB /* AppUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE7837A2DFA93C4004465FB /* AppUpdateManager.swift */; };
 		6EE97A0F2D8E836700494535 /* SelectWorkspaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE97A0E2D8E836700494535 /* SelectWorkspaceVC.swift */; };
 		6EE97A122D8E851900494535 /* SelectWorkspaceTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE97A112D8E851900494535 /* SelectWorkspaceTableCell.swift */; };
 		6EE97A142D8E852300494535 /* SelectWorkspaceTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE97A132D8E852300494535 /* SelectWorkspaceTableCell.xib */; };
@@ -337,6 +348,7 @@
 		6E7E11EF2DC1CF15008D7D91 /* ChatDocCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDocCell.swift; sourceTree = "<group>"; };
 		6E7E11F12DC26B3A008D7D91 /* ChatDocSenderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatDocSenderCell.xib; sourceTree = "<group>"; };
 		6E7E77D02DD44A86003B5D89 /* TaskNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TaskNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E8F74C12DF96C8E00608B74 /* CollectionSmallFileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionSmallFileCell.xib; sourceTree = "<group>"; };
 		6E8FF1E52D9CC374002E0A28 /* TaskMembersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMembersListVC.swift; sourceTree = "<group>"; };
 		6E9A255C2D7FC213009C91CF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6EAEED482DD9F3CC00CD5496 /* TagMembersTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagMembersTableCell.xib; sourceTree = "<group>"; };
@@ -352,10 +364,20 @@
 		6EC5AA582DE353A800FB213D /* NewTaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTaskCell.xib; sourceTree = "<group>"; };
 		6EC5AA5A2DE353B600FB213D /* NewTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskCell.swift; sourceTree = "<group>"; };
 		6EC5AA5C2DE358F800FB213D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		6EC9A6582DF5485B006773DA /* SwipeToReplySupportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToReplySupportable.swift; sourceTree = "<group>"; };
 		6ED3727F2D75A97700E97644 /* NewFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFilterVC.swift; sourceTree = "<group>"; };
 		6ED372822D75A9BE00E97644 /* StatusCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusCollectionCell.xib; sourceTree = "<group>"; };
 		6ED372842D75A9E300E97644 /* StatusCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCollectionCell.swift; sourceTree = "<group>"; };
 		6ED966282DDE2AF1002E0CB2 /* SignUp6VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp6VC.swift; sourceTree = "<group>"; };
+		6EE1630B2DF2AE3800677880 /* ReplyTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyTextView.xib; sourceTree = "<group>"; };
+		6EE1630D2DF2AE4F00677880 /* ReplyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyTextView.swift; sourceTree = "<group>"; };
+		6EE1630F2DF2AE6700677880 /* ReplyImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyImageView.xib; sourceTree = "<group>"; };
+		6EE163112DF2AE7400677880 /* ReplyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyImageView.swift; sourceTree = "<group>"; };
+		6EE163132DF2AED700677880 /* ReplyFileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyFileView.xib; sourceTree = "<group>"; };
+		6EE163152DF2AEE400677880 /* ReplyFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyFileView.swift; sourceTree = "<group>"; };
+		6EE163172DF2AEF400677880 /* ReplyStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyStatusView.swift; sourceTree = "<group>"; };
+		6EE163192DF2B37600677880 /* ReplyStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyStatusView.xib; sourceTree = "<group>"; };
+		6EE7837A2DFA93C4004465FB /* AppUpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdateManager.swift; sourceTree = "<group>"; };
 		6EE97A0E2D8E836700494535 /* SelectWorkspaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkspaceVC.swift; sourceTree = "<group>"; };
 		6EE97A112D8E851900494535 /* SelectWorkspaceTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWorkspaceTableCell.swift; sourceTree = "<group>"; };
 		6EE97A132D8E852300494535 /* SelectWorkspaceTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectWorkspaceTableCell.xib; sourceTree = "<group>"; };
@@ -619,6 +641,7 @@
 				6E5D719C2D83EA9200C4FA10 /* ChatTableHeaderCell.xib */,
 				6E5D719E2D83EAA400C4FA10 /* ChatTableHeaderCell.swift */,
 				6E5D71A82D83F91800C4FA10 /* CollectionFileCell.xib */,
+				6E8F74C12DF96C8E00608B74 /* CollectionSmallFileCell.xib */,
 				6E4CCF222DD520FF00E06B5B /* CollectionBigFileCell.xib */,
 				6E5D71AA2D83F93600C4FA10 /* CollectionFileCell.swift */,
 				6E5E02142D8A61D300C521BD /* PhotoCollectionCell.swift */,
@@ -631,6 +654,14 @@
 				6E7E11EF2DC1CF15008D7D91 /* ChatDocCell.swift */,
 				6E68A2A62DD5E13C00887B9A /* ImgUserCollectionCell.xib */,
 				6E68A2A82DD5E16B00887B9A /* ImgUserCollectionCell.swift */,
+				6EE1630B2DF2AE3800677880 /* ReplyTextView.xib */,
+				6EE1630D2DF2AE4F00677880 /* ReplyTextView.swift */,
+				6EE1630F2DF2AE6700677880 /* ReplyImageView.xib */,
+				6EE163112DF2AE7400677880 /* ReplyImageView.swift */,
+				6EE163132DF2AED700677880 /* ReplyFileView.xib */,
+				6EE163152DF2AEE400677880 /* ReplyFileView.swift */,
+				6EE163192DF2B37600677880 /* ReplyStatusView.xib */,
+				6EE163172DF2AEF400677880 /* ReplyStatusView.swift */,
 			);
 			path = "Reusable Views";
 			sourceTree = "<group>";
@@ -935,6 +966,8 @@
 				6E5445CF2DB0E99300F16638 /* DrawingVC.swift */,
 				6EAEED4C2DD9FF6400CD5496 /* MentionHelper.swift */,
 				6E4FDB312DE6ED4000B765C3 /* ReviewManager.swift */,
+				6EC9A6582DF5485B006773DA /* SwipeToReplySupportable.swift */,
+				6EE7837A2DFA93C4004465FB /* AppUpdateManager.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -1127,6 +1160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2BC0C9B2BE8AC240006D065 /* Assets.xcassets in Resources */,
+				6EE163142DF2AED700677880 /* ReplyFileView.xib in Resources */,
 				6E5D71912D83DDAD00C4FA10 /* ChatStatusCell.xib in Resources */,
 				6E3459BE2D9AB13B005EE12E /* SelectTimeCollCell.xib in Resources */,
 				6E3459BA2D9AB0E4005EE12E /* ReoccurTimeCollCell.xib in Resources */,
@@ -1152,6 +1186,8 @@
 				D2E032BF2D3E431600C7B9C2 /* GraphikMediumItalic.otf in Resources */,
 				6E69F6932DE0212300ED3283 /* DestinatairesCollectionCell.xib in Resources */,
 				D2E032C02D3E431600C7B9C2 /* Gilroy-SemiBold.ttf in Resources */,
+				6EE1631A2DF2B37600677880 /* ReplyStatusView.xib in Resources */,
+				6EE1630C2DF2AE3800677880 /* ReplyTextView.xib in Resources */,
 				0445E75F2D521B6F00D5AA26 /* GoogleService-Info.plist in Resources */,
 				D2E032C12D3E431600C7B9C2 /* Graphik-Semibold.otf in Resources */,
 				6ED372832D75A9BE00E97644 /* StatusCollectionCell.xib in Resources */,
@@ -1162,6 +1198,7 @@
 				6E5D719D2D83EA9200C4FA10 /* ChatTableHeaderCell.xib in Resources */,
 				D2E032C32D3E431600C7B9C2 /* Gilroy-Medium.ttf in Resources */,
 				6E5D71A52D83F20B00C4FA10 /* ChatFileSenderCell.xib in Resources */,
+				6E8F74C22DF96C8E00608B74 /* CollectionSmallFileCell.xib in Resources */,
 				6EFA872F2D8C875300C65638 /* StatusHistoryTableCell.xib in Resources */,
 				6E693BF22DEB3F0800233F34 /* AddMoreTimeCollCell.xib in Resources */,
 				6E68A2A72DD5E13C00887B9A /* ImgUserCollectionCell.xib in Resources */,
@@ -1174,6 +1211,7 @@
 				D2E032C62D3E431600C7B9C2 /* Graphik-Regular.otf in Resources */,
 				D2E032C72D3E431600C7B9C2 /* DMSans-Medium.ttf in Resources */,
 				D2E032C82D3E431600C7B9C2 /* DMSans-Regular.ttf in Resources */,
+				6EE163102DF2AE6700677880 /* ReplyImageView.xib in Resources */,
 				D2E032C92D3E431600C7B9C2 /* GraphikMedium.otf in Resources */,
 				6E3459AE2D9AAFD1005EE12E /* ReccuringDaysCollCell.xib in Resources */,
 				D2E032CA2D3E431600C7B9C2 /* SFProText-Medium.ttf in Resources */,
@@ -1244,6 +1282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EE1630E2DF2AE4F00677880 /* ReplyTextView.swift in Sources */,
 				6E3459BC2D9AB0EF005EE12E /* ReoccurTimeCollCell.swift in Sources */,
 				D29D267B2BE8BAA20090C5E2 /* SignUp2VC.swift in Sources */,
 				D28B8F482CF497A60096E37D /* GradientMaskedLabel.swift in Sources */,
@@ -1319,6 +1358,7 @@
 				D29D26E32BE8BAD50090C5E2 /* UIImage.swift in Sources */,
 				D29D266A2BE8BAA20090C5E2 /* SettingVC.swift in Sources */,
 				8F8E6DC92D76E10900DB8D5B /* MyContactsIntro.swift in Sources */,
+				6EE163162DF2AEE400677880 /* ReplyFileView.swift in Sources */,
 				D25CD8452CF584BD00113243 /* AddTaskSuccessVC.swift in Sources */,
 				D29D26D22BE8BAD40090C5E2 /* IconsViewModel.swift in Sources */,
 				D2122ECE2CF84346004C15C9 /* ViewTaskHistory.swift in Sources */,
@@ -1337,6 +1377,7 @@
 				6E6B0DF72DA4FAA900462562 /* ScannerOverlayView.swift in Sources */,
 				D29D27142BE8C6E90090C5E2 /* Constants.swift in Sources */,
 				6E5D719B2D83E64200C4FA10 /* ChatTaskCell.swift in Sources */,
+				6EE163182DF2AEF400677880 /* ReplyStatusView.swift in Sources */,
 				D29D26EC2BE8BAD50090C5E2 /* GradientCircularSlider.swift in Sources */,
 				D29D26F32BE8BAD50090C5E2 /* PulseAnimation.swift in Sources */,
 				6E9A255D2D7FC213009C91CF /* BaseViewController.swift in Sources */,
@@ -1345,6 +1386,7 @@
 				D29D26E52BE8BAD50090C5E2 /* UIView.swift in Sources */,
 				D246CB862CF9ABA3000B1923 /* SubscriptionVC.swift in Sources */,
 				6E5D718F2D83DAFC00C4FA10 /* ChatFileCell.swift in Sources */,
+				6EE7837B2DFA93C4004465FB /* AppUpdateManager.swift in Sources */,
 				D29D26EA2BE8BAD50090C5E2 /* CircularTrig.swift in Sources */,
 				D29D26742BE8BAA20090C5E2 /* NotificationVC.swift in Sources */,
 				6E49CC002DA75D8700F1CB5A /* DisplayScannerVC.swift in Sources */,
@@ -1364,6 +1406,7 @@
 				04F177302D49EA9100767E30 /* WorkSpaceIntroVC.swift in Sources */,
 				D26056FC2CFD6C9D00E584D5 /* MyProgramsVC.swift in Sources */,
 				D29D26E82BE8BAD50090C5E2 /* CircularSlider.swift in Sources */,
+				6EE163122DF2AE7400677880 /* ReplyImageView.swift in Sources */,
 				D29D26652BE8BAA20090C5E2 /* EditProfileVC.swift in Sources */,
 				6E3459C62D9AD6C5005EE12E /* AddMoreTimeCollCell.swift in Sources */,
 				D29D26802BE8BAA20090C5E2 /* TutorialVC.swift in Sources */,
@@ -1395,6 +1438,7 @@
 				D24E51CE2D3F80B8009DCB5E /* ChatVC.swift in Sources */,
 				D29D26CF2BE8BAD40090C5E2 /* EquipmentsViewModel.swift in Sources */,
 				D2499A812D43611000EC4150 /* TaskStatusModel.swift in Sources */,
+				6EC9A6592DF5485B006773DA /* SwipeToReplySupportable.swift in Sources */,
 				D29D26D52BE8BAD50090C5E2 /* PlanViewModel.swift in Sources */,
 				D24E51D22D3F835D009DCB5E /* GrowingTextView.swift in Sources */,
 				6E3459B82D9AB051005EE12E /* InitialOccurCollCell.swift in Sources */,

@@ -21,10 +21,11 @@ class ChatStatusCell: UITableViewCell {
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var vwStatus: UIView!
     @IBOutlet weak var userCollectionView: UICollectionView!
+    @IBOutlet weak var mainBackView: UIView!
     
     // MARK: - Variables
     weak var delegate: CollectionTableViewCellDelegate?
-    
+    private var swipeHandler: SwipeToReplyHandler?
     var arrImages: [FileViewModel] = [] {
         didSet {
             clnView.delegate = self
@@ -45,6 +46,7 @@ class ChatStatusCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        swipeHandler = SwipeToReplyHandler(for: mainBackView, in: self)
         self.clnView.register(UINib(nibName: "CollectionFileCell", bundle: nil), forCellWithReuseIdentifier: "CollectionFileCell")
         self.userCollectionView.register(UINib(nibName: "ImgUserCollectionCell", bundle: nil), forCellWithReuseIdentifier: "ImgUserCollectionCell")
     }

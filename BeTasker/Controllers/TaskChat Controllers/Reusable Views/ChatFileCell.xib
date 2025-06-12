@@ -75,6 +75,7 @@
             <connections>
                 <outlet property="imgFile" destination="PZk-QP-C4m" id="wqm-W0-Cat"/>
                 <outlet property="userCollectionView" destination="Sbd-Wb-RWM" id="Gig-fV-H63"/>
+                <outlet property="viewWithImage" destination="bak-VD-wxB" id="pT3-sg-XFs"/>
             </connections>
             <point key="canvasLocation" x="45.801526717557252" y="78.873239436619727"/>
         </tableViewCell>

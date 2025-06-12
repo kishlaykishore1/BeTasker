@@ -42,6 +42,7 @@ struct ChatModel: Codable {
     var isEdited: Bool?
     var readBy: [String]?
     var mentionIds: [String]?
+    var replyOf: RepliedToMessageModel?
     var isExpanded: Bool = false
     
     enum CodingKeys: String, CodingKey {
@@ -70,6 +71,7 @@ struct ChatModel: Codable {
         case isEdited
         case readBy
         case mentionIds
+        case replyOf
     }
 }
 
@@ -125,6 +127,15 @@ struct ChatViewModel {
     
     var displayLink: String {
         return data.displayLink ?? ""
+    }
+    
+    var arrFileDict: [[String: Any]] {
+        return data.arrFiles?.compactMap { file in
+            var dict: [String: Any] = [:]
+            if let id = file.id { dict["id"] = id }
+            if let image = file.image { dict["image"] = image }
+            return dict
+        } ?? []
     }
     
     var arrFiles: [FileModel] {
@@ -203,6 +214,11 @@ struct ChatViewModel {
     var userPicURL: URL? {
         return data.userImage?.makeUrl()
     }
+    
+    var rawImageURL: String {
+        return data.imageURL ?? ""
+    }
+    
     var imageURL: URL? {
         return data.imageURL?.makeUrl()
     }
@@ -212,6 +228,11 @@ struct ChatViewModel {
     var pdfSize: String {
         return "\(data.pdfSize ?? 0) MB"
     }
+    
+    var rawPdfSize: Double {
+        return data.pdfSize ?? 0
+    }
+    
     var imageData: Data? {
         return data.latestImageData
     }
@@ -237,6 +258,21 @@ struct ChatViewModel {
         return data.timestamp ?? 0
     }
     
+    var replyOf: RepliedToMessageModel? {
+        return data.replyOf
+    }
+    
+    var hasReply: Bool {
+        return data.replyOf != nil
+    }
+    
+    var replyOfMessage: RepliedToMessageViewModel? {
+        if let reply = data.replyOf {
+            return RepliedToMessageViewModel(data: reply)
+        }
+        return nil
+    }
+    
     var chatDate: (date: Date?, dateString: String?) {
         //let date = Date(milliseconds: Int(timestamp))
         //return Global.GetFormattedDate(date: date, outputFormate: "dd MMM yyyy • HH:mm", isInputUTC: true, isOutputUTC: false)
@@ -252,7 +288,7 @@ struct ChatViewModel {
         //let date = Date(milliseconds: Int(timestamp))
         //return Global.GetFormattedDate(date: date, outputFormate: "HH:mm", isInputUTC: true, isOutputUTC: false).dateString ?? ""
         let localDate = Date.fromUTCTimestampInMillis(Int64(timestamp))
-
+        
         // Convert the Date to a local time string
         let localDateString = localDate.toLocalString(format: "HH:mm")
         return localDateString
@@ -351,3 +387,252 @@ struct ChatReadStatusModel: Codable {
         self.status = status
     }
 }
+
+struct RepliedToMessageModel: Codable {
+    var chatId: String?
+    var message: String?
+    var receiverId: Int?
+    var senderId: Int?
+    var timestamp: Double?
+    var chatType: String?
+    var fullName: String?
+    var userImage: String?
+    var imageURL: String?
+    var pdfName: String?
+    var pdfSize: Double?
+    var arrFiles: [FileModel]?
+    var taskStatusId: Int?
+    var taskArchiveId: Int?
+    var taskTitle: String?
+    var description: String?
+    var displayLink: String?
+    var color_code: String?
+    var notExists: Bool?
+    var tempID: String?
+    var latestImageData: Data?
+    var isRead: Bool?
+    var isEdited: Bool?
+    var readBy: [String]?
+    var mentionIds: [String]?
+    
+    enum CodingKeys: String, CodingKey {
+        case chatId
+        case message
+        case receiverId
+        case senderId
+        case timestamp
+        case chatType
+        case fullName
+        case userImage
+        case imageURL
+        case pdfName
+        case pdfSize
+        case arrFiles
+        case taskStatusId
+        case taskArchiveId
+        case taskTitle
+        case description
+        case displayLink
+        case color_code
+        case notExists
+        case tempID
+        case latestImageData
+        case isRead
+        case isEdited
+        case readBy
+        case mentionIds
+    }
+}
+
+struct RepliedToMessageViewModel {
+    private var data = RepliedToMessageModel()
+    init(data: RepliedToMessageModel) {
+        self.data = data
+    }
+    var chatId: String {
+        return data.chatId ?? ""
+    }
+    
+    var message: String {
+        get {
+            return data.message ?? ""
+        }
+        set {
+            data.message = newValue
+        }
+    }
+    var colorCode: String {
+        return data.color_code ?? ""
+    }
+    var colorValue: UIColor {
+        return UIColor(hexString: colorCode)
+    }
+    
+    var tempId: String? {
+        get {
+            return data.tempID ?? ""
+        }
+        set {
+            data.tempID = newValue
+        }
+    }
+    
+    var mentionedUserIds: [String] {
+        get {
+            return data.mentionIds ?? []
+        }
+        set {
+            data.mentionIds = newValue
+        }
+    }
+    
+    var title: String {
+        return data.taskTitle ?? ""
+    }
+    
+    var description: String {
+        return data.description ?? ""
+    }
+    
+    var displayLink: String {
+        return data.displayLink ?? ""
+    }
+    
+    var arrFiles: [FileModel] {
+        return data.arrFiles ?? []
+    }
+    
+    var arrImages: [FileViewModel] {
+        if let arr = data.arrFiles {
+            return arr.map({FileViewModel(data: $0)})
+        }
+        return []
+    }
+    
+    var readBy: [String] {
+        get {
+            return data.readBy ?? []
+        }
+        set {
+            data.readBy = newValue
+        }
+    }
+        
+    var taskStatusId: Int {
+        return data.taskStatusId ?? 0
+    }
+    
+    var isStatusUpdate: Bool {
+        return data.taskStatusId != nil
+    }
+    
+    var isArchivActionAvailable: Bool {
+        return data.taskArchiveId != nil
+    }
+    
+    var taskArchiveId: Int? {
+        return data.taskArchiveId
+    }
+    
+    var isRead: Bool {
+        return data.isRead ?? false
+    }
+    
+    var isEdited: Bool {
+        return data.isEdited ?? false
+    }
+    
+    var chatType: EnumChatType {
+        return EnumChatType(rawValue: data.chatType ?? "") ?? .message
+    }
+    
+    var fullName: String {
+        get {
+            return data.fullName ?? ""
+        }
+        set {
+            data.fullName = newValue
+        }
+    }
+    var userImage: String? {
+        get {
+            return data.userImage ?? ""
+        }
+        set {
+            data.userImage = newValue
+        }
+    }
+    var userPicURL: URL? {
+        return data.userImage?.makeUrl()
+    }
+    
+    var rawImageURL: String {
+        return data.imageURL ?? ""
+    }
+    
+    var imageURL: URL? {
+        return data.imageURL?.makeUrl()
+    }
+    var pdfName: String {
+        return data.pdfName ?? ""
+    }
+    var pdfSize: String {
+        return "\(data.pdfSize ?? 0) MB"
+    }
+    var imageData: Data? {
+        return data.latestImageData
+    }
+    var notExists: Bool {
+        get {
+            return data.notExists ?? false
+        }
+        set {
+            data.notExists = newValue
+        }
+    }
+    var receiverId: Int {
+        return data.receiverId ?? 0
+    }
+    var senderId: Int {
+        return data.senderId ?? 0
+    }
+    var isMine: Bool {
+        return senderId == HpGlobal.shared.userInfo?.userId
+    }
+    
+    var timestamp: Double {
+        return data.timestamp ?? 0
+    }
+    
+    var chatDate: (date: Date?, dateString: String?) {
+        //let date = Date(milliseconds: Int(timestamp))
+        //return Global.GetFormattedDate(date: date, outputFormate: "dd MMM yyyy • HH:mm", isInputUTC: true, isOutputUTC: false)
+        let localDate = Date.fromUTCTimestampInMillis(Int64(timestamp))
+        let localDateString = localDate.toLocalString(format: "dd MMM yyyy • HH:mm")
+        return (date: localDate, dateString: localDateString)
+    }
+    var chatDateOnly: Date {
+        let date = Date(milliseconds: Int(timestamp))
+        return Global.GetFormattedDate(date: date, outputFormate: "dd MMM yyyy", isInputUTC: true, isOutputUTC: false).date ?? Date()
+    }
+    var chatTimeOnly: String {
+        //let date = Date(milliseconds: Int(timestamp))
+        //return Global.GetFormattedDate(date: date, outputFormate: "HH:mm", isInputUTC: true, isOutputUTC: false).dateString ?? ""
+        let localDate = Date.fromUTCTimestampInMillis(Int64(timestamp))
+        
+        // Convert the Date to a local time string
+        let localDateString = localDate.toLocalString(format: "HH:mm")
+        return localDateString
+    }
+    var chatDateTime: Date {
+        let date = Date(milliseconds: Int(timestamp))
+        return Global.GetFormattedDate(date: date, outputFormate: "dd MMM yyyy HH:mm:ss", isInputUTC: true, isOutputUTC: false).date ?? Date()
+    }
+    
+    static func == (lhs: RepliedToMessageViewModel, rhs: RepliedToMessageViewModel) -> Bool {
+        return lhs.tempId != nil && lhs.tempId == rhs.tempId
+    }
+    
+}
+
+

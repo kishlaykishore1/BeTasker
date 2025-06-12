@@ -44,6 +44,7 @@ extension Notification.Name {
     static let updateTaskMembersList = Notification.Name("updateTaskMembersList")
     static let receivedArchiveNotification = Notification.Name("archiveNotify")
     static let taskUpdatedNotification = Notification.Name("taskUpdatedNotification")
+    static let didSwipeToReply = Notification.Name("didSwipeToReply")
 }
 
 

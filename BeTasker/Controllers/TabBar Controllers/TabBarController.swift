@@ -43,7 +43,7 @@ class TabBarController: UITabBarController {
         if let tabBar = self.tabBar as? CustomTabBar {
             tabBar.invalidateIntrinsicContentSize() // Ensure proper layout
         }
-        tabIconView1.tintColor = UIColor.colorFFD200
+        tabIconView1.tintColor = UIColor.color333333
         tabIconView2.tintColor = UIColor.colorACAEBB
         setupCustomTabBar()
         GetMembers(shouldShowLoader: false) {
@@ -137,9 +137,9 @@ class TabBarController: UITabBarController {
         case 0:
             delegateTab?.selectedTab?(idx: sender.tag)
             selectedIndex = sender.tag
-            lblTask.textColor = UIColor.colorFFD200
+            lblTask.textColor = UIColor.color333333       //colorFFD200
             lblTermine.textColor = UIColor.colorACAEBB
-            tabIconView1.tintColor = UIColor.colorFFD200
+            tabIconView1.tintColor = UIColor.color333333 //colorFFD200
             tabIconView2.tintColor = UIColor.colorACAEBB
             
         case 2:
@@ -147,9 +147,9 @@ class TabBarController: UITabBarController {
                 delegateTab?.selectedTab?(idx: sender.tag)
                 selectedIndex = sender.tag
                 lblTask.textColor = UIColor.colorACAEBB
-                lblTermine.textColor = UIColor.colorFFD200
+                lblTermine.textColor = UIColor.color333333
                 tabIconView1.tintColor = UIColor.colorACAEBB
-                tabIconView2.tintColor = UIColor.colorFFD200
+                tabIconView2.tintColor = UIColor.color333333
             } else {
                 return
             }

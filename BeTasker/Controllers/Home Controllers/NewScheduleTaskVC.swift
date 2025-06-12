@@ -201,6 +201,17 @@ class NewScheduleTaskVC: UIViewController {
        }
     }
     
+    func redirectToSuccessScreen() {
+        let vc = Constants.Home.instantiateViewController(withIdentifier: "AddTaskSuccessVC") as! AddTaskSuccessVC
+        vc.tabBarVC = self.tabBarVC
+        self.navigationController?.dismiss(animated: true, completion: {
+            if let nav = UIApplication.topViewController()?.navigationController {
+                vc.modalPresentationStyle = .fullScreen
+                nav.present(vc, animated: true)
+            }
+        })
+    }
+    
     // MARK: - Button Action Methods
     @IBAction func segmentControll_Action(_ sender: UISegmentedControl) {
         Global.setVibration()
@@ -494,14 +505,12 @@ extension NewScheduleTaskVC {
                         NotificationCenter.default.post(name: .updateTaskChat, object: nil)
                     }
                     NotificationCenter.default.post(name: .updateTaksList, object: nil)
-                    let vc = Constants.Home.instantiateViewController(withIdentifier: "AddTaskSuccessVC") as! AddTaskSuccessVC
-                    vc.tabBarVC = self.tabBarVC
-                    self.navigationController?.dismiss(animated: true, completion: {
-                        if let nav = UIApplication.topViewController()?.navigationController {
-                            vc.modalPresentationStyle = .fullScreen
-                            nav.present(vc, animated: true)
-                        }
-                    })
+                    
+                    if self.isFromChat {
+                        self.navigationController?.dismiss(animated: true)
+                    } else {
+                        self.redirectToSuccessScreen()
+                    }
                     break
                 case .failure(_):
                     break

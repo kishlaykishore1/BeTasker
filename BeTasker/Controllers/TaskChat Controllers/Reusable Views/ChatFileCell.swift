@@ -11,12 +11,14 @@ import SDWebImage
 class ChatFileCell: UITableViewCell {
     
     // MARK: - Outlets
+    @IBOutlet weak var viewWithImage: UIView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var imgFile: UIImageView!
     @IBOutlet weak var userCollectionView: UICollectionView!
     
     // MARK: - Variables
+    private var swipeHandler: SwipeToReplyHandler?
     var arrMembers: [TempProfileViewModel] = [] {
         didSet {
             arrMembers.count > 0 ? (userCollectionView.isHidden = false) : (userCollectionView.isHidden = true)
@@ -28,6 +30,7 @@ class ChatFileCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        swipeHandler = SwipeToReplyHandler(for: viewWithImage, in: self)
         self.userCollectionView.register(UINib(nibName: "ImgUserCollectionCell", bundle: nil), forCellWithReuseIdentifier: "ImgUserCollectionCell")
     }
 

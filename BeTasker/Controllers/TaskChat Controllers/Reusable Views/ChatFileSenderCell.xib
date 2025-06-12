@@ -118,6 +118,7 @@
                 <outlet property="imgUser" destination="Tab-wr-imN" id="2bp-Pi-Iem"/>
                 <outlet property="lblName" destination="I7H-44-4hy" id="RI9-L8-zke"/>
                 <outlet property="userCollectionView" destination="YIg-ev-xxX" id="EGN-rx-2gk"/>
+                <outlet property="viewWithImage" destination="6Yi-e4-NBn" id="HAs-zk-1EX"/>
             </connections>
             <point key="canvasLocation" x="19.847328244274809" y="83.450704225352112"/>
         </tableViewCell>

@@ -153,6 +153,7 @@ enum HpAPI: String {
     case taskArchiveList = "task/archive-list"
     case userPremium     = "users/premium"
     case chatNotify      = "task/chat-notify"
+    case updateTaskNotification = "task/update-task-notification-setting"
     //MARK: - Generic Function to fetch/Post data from API
     func DataAPI<T: Decodable>(params: [String: Any], shouldShowError: Bool, shouldShowSuccess: Bool, shouldShowInfo: Bool = false, key: String?, completion: @escaping (Result<T, Error>) ->()) {
         

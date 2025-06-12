@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Graphik-Regular.otf">
+            <string>Graphik-Regular</string>
+        </array>
+        <array key="GraphikMedium.otf">
+            <string>Graphik-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReplyFileView" customModule="BeTasker" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="gcR-U0-Tf6" id="ikg-PS-y0Z"/>
+                <outlet property="lblFileName" destination="MhO-a1-VHc" id="n57-IU-aiU"/>
+                <outlet property="lblFileSize" destination="knv-h1-8Pu" id="HdH-Ae-FCg"/>
+                <outlet property="outerView" destination="7mg-2N-CtK" id="vLv-SC-edt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gcR-U0-Tf6">
+            <rect key="frame" x="0.0" y="0.0" width="248" height="92"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mg-2N-CtK">
+                    <rect key="frame" x="0.0" y="12" width="222" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wB-CU-DXD">
+                            <rect key="frame" x="0.0" y="0.0" width="222" height="60"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_PdfIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8CU-Sn-sSy">
+                                    <rect key="frame" x="12" y="12" width="30" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="8CU-Sn-sSy" secondAttribute="height" multiplier="5:6" id="Gho-xQ-c9K"/>
+                                        <constraint firstAttribute="height" constant="36" id="yxE-uL-MsK"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="DgC-E0-Dkd">
+                                    <rect key="frame" x="58" y="16" width="136" height="28"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="indice_23oct2025.pdf" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhO-a1-VHc">
+                                            <rect key="frame" x="0.0" y="0.0" width="136" height="13"/>
+                                            <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="13"/>
+                                            <color key="textColor" name="Color4A4A4A-FFFFFF"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23Mo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knv-h1-8Pu">
+                                            <rect key="frame" x="0.0" y="15" width="34.333333333333336" height="13"/>
+                                            <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
+                                            <color key="textColor" name="Color4A4A4A-FFFFFF"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f7E-Ui-UY1">
+                                    <rect key="frame" x="210" y="30" width="0.0" height="0.0"/>
+                                    <subviews>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2j-bn-X1R">
+                                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="Hvb-AW-wc7"/>
+                                                <constraint firstAttribute="width" secondItem="P2j-bn-X1R" secondAttribute="height" multiplier="1:1" id="Lsi-RV-Ogl"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="ic_cloudDownload"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" name="ColorFFFFFF-202020"/>
+                            <constraints>
+                                <constraint firstItem="8CU-Sn-sSy" firstAttribute="top" secondItem="0wB-CU-DXD" secondAttribute="top" constant="12" id="6v8-dG-tLx"/>
+                                <constraint firstItem="DgC-E0-Dkd" firstAttribute="centerY" secondItem="8CU-Sn-sSy" secondAttribute="centerY" id="8LQ-Jc-P6E"/>
+                                <constraint firstItem="f7E-Ui-UY1" firstAttribute="leading" secondItem="DgC-E0-Dkd" secondAttribute="trailing" constant="16" id="90z-dY-n6J"/>
+                                <constraint firstAttribute="bottom" secondItem="8CU-Sn-sSy" secondAttribute="bottom" constant="12" id="Cka-Bk-MgQ"/>
+                                <constraint firstItem="DgC-E0-Dkd" firstAttribute="leading" secondItem="8CU-Sn-sSy" secondAttribute="trailing" constant="16" id="MKa-Eb-mVn"/>
+                                <constraint firstAttribute="trailing" secondItem="f7E-Ui-UY1" secondAttribute="trailing" constant="12" id="XcB-jo-xAg"/>
+                                <constraint firstItem="f7E-Ui-UY1" firstAttribute="centerY" secondItem="DgC-E0-Dkd" secondAttribute="centerY" id="gEr-mn-wdg"/>
+                                <constraint firstItem="8CU-Sn-sSy" firstAttribute="leading" secondItem="0wB-CU-DXD" secondAttribute="leading" constant="12" id="kX1-wI-32A"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="0wB-CU-DXD" secondAttribute="bottom" id="C9p-jp-Quz"/>
+                        <constraint firstAttribute="trailing" secondItem="0wB-CU-DXD" secondAttribute="trailing" id="fNd-Cy-ehj"/>
+                        <constraint firstItem="0wB-CU-DXD" firstAttribute="top" secondItem="7mg-2N-CtK" secondAttribute="top" id="g4Z-KB-VvE"/>
+                        <constraint firstItem="0wB-CU-DXD" firstAttribute="leading" secondItem="7mg-2N-CtK" secondAttribute="leading" id="pMe-Ln-07L"/>
+                        <constraint firstItem="0wB-CU-DXD" firstAttribute="top" secondItem="7mg-2N-CtK" secondAttribute="top" id="rE5-xr-djR"/>
+                        <constraint firstAttribute="trailing" secondItem="0wB-CU-DXD" secondAttribute="trailing" id="uBF-45-IuG"/>
+                        <constraint firstItem="0wB-CU-DXD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7mg-2N-CtK" secondAttribute="leading" id="yX0-0D-Lf3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="7mg-2N-CtK" firstAttribute="top" secondItem="gcR-U0-Tf6" secondAttribute="top" constant="12" id="46l-0l-BKk"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7mg-2N-CtK" secondAttribute="bottom" constant="8" id="GcS-B5-66S"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7mg-2N-CtK" secondAttribute="trailing" constant="20" id="dgT-vt-iSY"/>
+                <constraint firstItem="7mg-2N-CtK" firstAttribute="leading" secondItem="gcR-U0-Tf6" secondAttribute="leading" id="gFt-sb-v1V"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="64.122137404580144" y="37.323943661971832"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_PdfIcon" width="29" height="37"/>
+        <image name="ic_cloudDownload" width="20" height="19"/>
+        <namedColor name="Color4A4A4A-FFFFFF">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorFFFFFF-202020">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

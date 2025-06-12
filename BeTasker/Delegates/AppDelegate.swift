@@ -256,7 +256,18 @@ extension AppDelegate {
     }
     
     func callgeneralSettingApi() {
-        HpAPI.STATIC.apiGeneralSettingData { completed in }
+        HpAPI.STATIC.apiGeneralSettingData { completed in
+            if completed {
+                if let settingsData = HpGlobal.shared.settingsData {
+                    let config = AppUpdateConfig(
+                        forceUpdate: settingsData.forceStatusIos,
+                        latestVersion: settingsData.appVersionIos,
+                        shouldShowPopUp: settingsData.shouldShowPopup
+                    )
+                    AppUpdateManager.checkForAppUpdate(config: config)
+                }
+            }
+        }
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             for purchase in purchases {
                 switch purchase.transaction.transactionState {

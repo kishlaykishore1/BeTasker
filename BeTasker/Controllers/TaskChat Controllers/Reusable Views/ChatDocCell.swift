@@ -21,6 +21,7 @@ class ChatDocCell: UITableViewCell {
     @IBOutlet weak var userCollectionView: UICollectionView!
     
     // MARK: - Variables
+    private var swipeHandler: SwipeToReplyHandler?
     var arrMembers: [TempProfileViewModel] = [] {
         didSet {
             arrMembers.count > 0 ? (userCollectionView.isHidden = false) : (userCollectionView.isHidden = true)
@@ -33,6 +34,7 @@ class ChatDocCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        swipeHandler = SwipeToReplyHandler(for: viewOuter, in: self)
         DispatchQueue.main.async {[weak self] in
             self?.viewOuter.applyShadow(radius: 4, opacity: 0.1, offset: .zero)
         }

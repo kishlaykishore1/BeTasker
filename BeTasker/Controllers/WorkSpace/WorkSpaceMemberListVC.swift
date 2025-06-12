@@ -82,6 +82,48 @@ class WorkSpaceMemberListVC: UIViewController {
         }
     }
     
+    override func rightBtnTapAction(sender: UIButton) {
+        btnAddMemberAction()
+    }
+    
+    func handelFlowOnDelete() {
+        if let currentWorkSpace {
+            let selectedMemberUsers = arrMemberUsers.map({"\($0.id)"}).joined(separator: ",")
+            let selectedAdminUsers = arrAdminUsers.map({"\($0.id)"}).joined(separator: ",")
+            self.WorkSpaceAddUpdate(name: currentWorkSpace.workSpaceName, memberIds: selectedMemberUsers, adminIds: selectedAdminUsers)
+        } else {
+            closeVC()
+        }
+    }
+    
+    func shouldShowThreeDotButton(for memberID: Int) -> Bool {
+        guard let loginUserId = HpGlobal.shared.userInfo?.userId,
+              let currentWorkSpace = currentWorkSpace else {
+            return false
+        }
+
+        let isCreator = currentWorkSpace.isWorkspaceCreator
+
+        // ❌ Never show for workspace creator — even if it's the current user
+        if loginUserId == memberID && isCreator {
+            return false
+        }
+
+        // ✅ Show for self (only if not the creator, already checked above)
+        if memberID == loginUserId {
+            return true
+        }
+
+        // ✅ Admin can manage others (not including the creator, already checked above)
+        if currentWorkSpace.isAdmin {
+            return true
+        }
+
+        // ❌ Default: no permission
+        return false
+    }
+
+    
     func WorkSpaceAddUpdate(name:String,memberIds:String,adminIds:String) {
         var params: [String: Any] = [
             "title": name,
@@ -118,9 +160,7 @@ class WorkSpaceMemberListVC: UIViewController {
         }
     }
     
-    override func rightBtnTapAction(sender: UIButton) {
-        btnAddMemberAction()
-    }
+    
     
     @IBAction func showTable(_ sender: UIControl) {
         btnAddMemberAction()
@@ -195,6 +235,7 @@ class WorkSpaceMemberListVC: UIViewController {
             self.viewEmpty.isHidden = self.arrMembers.count > 0
             self.isEdited = true
             self.tblView.reloadData()
+            self.handelFlowOnDelete()
         }))
         alert.addAction(UIAlertAction(title: Messages.txtCancel, style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -303,7 +344,8 @@ extension WorkSpaceMemberListVC: UITableViewDelegate, UITableViewDataSource {
             cell.imgProfile.sd_imageTransition = SDWebImageTransition.fade
             let img = #imageLiteral(resourceName: "profile")
             cell.imgProfile.sd_setImage(with: data.profilePicURL, placeholderImage: img)
-            cell.btnMenu.isHidden = data.memberUserId == currentWorkSpace?.userId
+            cell.btnMenu.isHidden = !shouldShowThreeDotButton(for: data.memberUserId)
+            //data.memberUserId == currentWorkSpace?.userId
             cell.moreMenuClosure = { [weak self] sender in
                 let loginUserId = HpGlobal.shared.userInfo?.userId
                 self?.btnMoreTapaction(member: data, isMe: data.memberUserId == loginUserId, memberType: data.type, sender: sender, idx: indexPath.row)

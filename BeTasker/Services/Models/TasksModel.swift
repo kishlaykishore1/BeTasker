@@ -192,6 +192,7 @@ struct TasksModel: Codable {
     var message: String?
     var is_recalled: Bool? //true,
     var is_notification: Bool? //true,
+    var is_notification_enable: Bool? //true
     var is_archive: Bool?
     var created: String? //"2024-12-03 10:29"
     var recall_message: String?
@@ -348,6 +349,15 @@ struct TasksViewModel {
     }
     var isUrgent: Bool {
         return data.is_notification ?? false
+    }
+    
+    var taskNotificationEnabled: Bool {
+        get {
+            return data.is_notification_enable ?? false
+        }
+        set {
+            data.is_notification_enable = newValue
+        }
     }
     
     var isArchivedTask: Bool {

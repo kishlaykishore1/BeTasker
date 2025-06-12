@@ -18,6 +18,24 @@ struct Section {
     var arrChatMessage: [ChatViewModel]
 }
 
+struct ReplyData {
+    var isReplied: Bool
+    var selectedChatMessage: ChatViewModel?
+    
+    init(isReplied: Bool = false, selectedChatMessage: ChatViewModel? = nil) {
+        self.isReplied = isReplied
+        self.selectedChatMessage = selectedChatMessage
+    }
+    
+    var isEmpty: Bool {
+        return isReplied == false && selectedChatMessage == nil
+    }
+    
+    mutating func clear() {
+        self = ReplyData()
+    }
+}
+
 class ChatVC: BaseViewController {
     
     // MARK: - Outlets
@@ -41,6 +59,12 @@ class ChatVC: BaseViewController {
     @IBOutlet weak var mainTableViewBottom: NSLayoutConstraint!
     @IBOutlet weak var statusCollViewBottom: NSLayoutConstraint!
     @IBOutlet weak var tagTableHeight: NSLayoutConstraint!
+   // Reply Overlay UI
+    @IBOutlet weak var viewReplyOverlay: UIView!
+    @IBOutlet weak var imgReplyUser: UIImageView!
+    @IBOutlet weak var lblReplyUser: UILabel!
+    @IBOutlet weak var currentReplyType: UIView!
+    @IBOutlet weak var btnHideReplyView: UIButton!
     
     // MARK: - Variables
     var sections = [Section]()
@@ -64,6 +88,7 @@ class ChatVC: BaseViewController {
     var allMentionedUsers: [Mention] = []
     var filteredMentionedUsers: [Mention] = []
     private var pendingStatusReloads: [Int: [IndexPath]] = [:]
+    private var replyStorage = ReplyData()
 
     
     // MARK: - View Life Cycle
@@ -159,6 +184,7 @@ class ChatVC: BaseViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(refreshChatData), name: .updateTaskChat, object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(handleTaskUpdate(_:)), name: .taskUpdatedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didSwipeToReply(_:)), name: .didSwipeToReply, object: nil)
         
         TaskStatusViewModel.taskStatusList { [weak self] list in
             guard let self = self else { return }
@@ -295,6 +321,17 @@ class ChatVC: BaseViewController {
               let updatedTask = userInfo["updatedTask"] as? TasksViewModel,
               updatedTask.taskId == self.taskData?.taskId else { return }
         self.taskData = updatedTask
+    }
+    
+    @objc private func didSwipeToReply(_ notification: Notification) {
+        self.replyStorage.clear()
+        guard let cell = notification.object as? UITableViewCell,
+              let indexPath = tableView.indexPath(for: cell) else { return }
+        Global.setVibration()
+        let data = sections[indexPath.section].arrChatMessage[indexPath.row]
+        self.setReplyToViewData(data)
+        self.replyStorage = ReplyData(isReplied: true, selectedChatMessage: data)
+        print("Reached Here")
     }
 
     
@@ -497,6 +534,10 @@ class ChatVC: BaseViewController {
         btnSend.tintColor = UIColor.colorE8E8E8
         btnSend.isUserInteractionEnabled = false
         btnClearMsgText.isHidden = true
+        if !replyStorage.isEmpty {
+            viewReplyOverlay.isHidden = true
+            replyStorage.clear()
+        }
         self.scrollToBottom()
     }
     
@@ -525,6 +566,11 @@ class ChatVC: BaseViewController {
         }
     }
     
+    @IBAction func btnRemoveReplyView_Action(_ sender: UIButton) {
+        Global.setVibration()
+        self.viewReplyOverlay.isHidden = true
+        self.replyStorage.clear()
+    }
     
     
     //MARK: - Add to chats 🔥
@@ -567,6 +613,9 @@ class ChatVC: BaseViewController {
             chatNodeData["pdfSize"] = pdfSize
         case .message:
             chatNodeData["mentionIds"] = mentionIds
+            if !self.replyStorage.isEmpty {
+                chatNodeData["replyOf"] = getDataForReply(data: self.replyStorage.selectedChatMessage)
+            }
             if !isFirstMessage {
                 self.addLocalDataToChatList(chatData: chatNodeData)
             }
@@ -579,6 +628,35 @@ class ChatVC: BaseViewController {
                 NotificationCenter.default.post(name: .updateTaksList, object: nil)
             }
         }
+    }
+    
+    func getDataForReply(data: ChatViewModel?) -> [String: Any] {
+        guard let chatMessage = data else { return [:] }
+        guard let userData = HpGlobal.shared.userInfo else { return [:] }
+        
+        var chatNodeData: [String: Any] = ["chatId": chatMessage.chatId, "message":chatMessage.message, "senderId": chatMessage.senderId, "timestamp": chatMessage.timestamp, "readBy": ["\(userData.userId)"], "chatType": chatMessage.chatType.rawValue]
+        
+        switch chatMessage.chatType {
+        case .image:
+            chatNodeData["message"] = ""
+            chatNodeData["imageURL"] = chatMessage.rawImageURL
+        case .status:
+            chatNodeData["arrFiles"] = chatMessage.arrFileDict
+            chatNodeData["taskStatusId"] = chatMessage.taskStatusId
+            chatNodeData["taskTitle"] = chatMessage.title
+            chatNodeData["color_code"] = chatMessage.colorCode
+        case .pdf:
+            chatNodeData["message"] = ""
+            chatNodeData["imageURL"] = chatMessage.rawImageURL
+            chatNodeData["pdfName"] = chatMessage.pdfName
+            chatNodeData["pdfSize"] = chatMessage.rawPdfSize
+        case .message:
+            chatNodeData["mentionIds"] = chatMessage.mentionedUserIds
+        default:
+            break
+        }
+        
+        return chatNodeData
     }
     
     func updateMessageFireBase(message: String, mentionIds: [String] = [], chatMessage: ChatViewModel, type: EnumChatType = .message) {
@@ -875,7 +953,7 @@ extension ChatVC: UITableViewDataSource {
             case .message:
                 let identifier = data.isMine ? "ChatMessageCell" : "ChatMessageSenderCell"
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ChatMessageCell
-                cell.configureTextView(with: data.message, mentionIds: data.mentionedUserIds, allmentionedUsers: allMentionedUsers)
+                cell.configureCellView(with: data, allmentionedUsers: allMentionedUsers)
                 cell.linkDelegate = self
                 cell.userCollectionView.semanticContentAttribute = .forceRightToLeft
                 DispatchQueue.main.async {
@@ -884,6 +962,10 @@ extension ChatVC: UITableViewDataSource {
                 if !data.isMine {
                     let senderData = extractUserOnBlankSender(currentIndexSender: data.senderId)
                     cell.setTheUserData(userData: senderData, messageTime: data.chatTimeOnly)
+                }
+                if data.hasReply {
+                    let senderData = extractUserOnBlankSender(currentIndexSender: data.replyOfMessage?.senderId ?? 0)
+                    cell.setTheRepliedToUserData(userData: senderData)
                 }
                 let seenUsers = getLastSeenByForMessage(at: indexPath)
                 cell.arrMembers = seenUsers
@@ -1269,6 +1351,13 @@ extension ChatVC {
         })
         alert.addAction(recipientsAction)
         
+        let title = taskData?.taskNotificationEnabled ?? false ? "Désactiver les notifications".localized : "Réactiver les notifications".localized
+        let notifyAction = UIAlertAction(title: title, style: .default, handler: { _ in
+            let status  = self.taskData?.taskNotificationEnabled ?? false ? 0 : 1
+            self.enableTaskNotification(currentStatus: status)
+        })
+        alert.addAction(notifyAction)
+        
         if checkForIsAdmin {
             let modifyOriginAction = UIAlertAction(title: "Modifier l’origine".localized, style: .default, handler: { _ in
                 self.editTask(program: self.taskData)
@@ -1474,6 +1563,31 @@ extension ChatVC {
         }
     }
     
+    func enableTaskNotification(currentStatus: Int) {
+        guard let taskData = self.taskData else { return }
+        let params: [String: Any] = [
+            "task_id": taskData.taskId,
+            "is_notification_enable": currentStatus,
+        ]
+        
+        Global.showLoadingSpinner(sender: self.view)
+        
+        HpAPI.updateTaskNotification.DataAPI(params: params, shouldShowError: true, shouldShowSuccess: true, key: nil) { (response: Result<GeneralModel, Error>) in
+            DispatchQueue.main.async {
+                Global.dismissLoadingSpinner(self.view)
+                switch response {
+                case .success(_):
+                    debugPrint("Success")
+                    self.taskData?.taskNotificationEnabled = (currentStatus != 0) ? true : false
+                    break
+                case .failure(_):
+                    debugPrint("failure")
+                    break
+                }
+            }
+        }
+    }
+    
     private func getTaskDetails(taskID: Int) {
         Global.showLoadingSpinner(sender: self.view)
         TasksViewModel.getTaskDetails(id: taskID, type: "task") { [weak self] taskData in
@@ -1621,6 +1735,54 @@ extension ChatVC: QLPreviewControllerDataSource {
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
         return pdfURL! as NSURL
+    }
+}
+
+// MARK: - Reply View Setup Methods
+extension ChatVC {
+    func setReplyToViewData(_ data: ChatViewModel) {
+        let senderData = extractUserOnBlankSender(currentIndexSender: data.senderId)
+        lblReplyUser.text = senderData?.name
+        let img = #imageLiteral(resourceName: "no-user")
+        imgReplyUser.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        imgReplyUser.sd_imageTransition = SDWebImageTransition.fade
+        imgReplyUser.sd_setImage(with: senderData?.profilePicURL, placeholderImage: img)
+        configureReplyView(with: data, allmentionedUsers: allMentionedUsers)
+    }
+    
+    private func configureReplyView(with dataModel: ChatViewModel, allmentionedUsers: [Mention]) {
+        currentReplyType.subviews.forEach { $0.removeFromSuperview() }
+        
+        var replyView: UIView
+        
+        switch dataModel.chatType {
+        case .message:
+            replyView = ReplyTextView(dataModel: dataModel, allmentionedUsers: allmentionedUsers)
+        case .image:
+            replyView = ReplyImageView(dataModel: dataModel)
+        case .pdf:
+            replyView = ReplyFileView(dataModel: dataModel)
+        case .status:
+            replyView = ReplyStatusView(dataModel: dataModel)
+        case .taskDescription:
+            replyView = UIView()
+        case .video:
+            replyView = UIView()
+        @unknown default:
+            replyView = UIView()
+        }
+        
+        viewReplyOverlay.isHidden = false
+        viewReplyOverlay.bringSubviewToFront(btnHideReplyView)
+        replyView.translatesAutoresizingMaskIntoConstraints = false
+        currentReplyType.addSubview(replyView)
+        
+        NSLayoutConstraint.activate([
+            replyView.topAnchor.constraint(equalTo: currentReplyType.topAnchor, constant: 1),
+            replyView.bottomAnchor.constraint(equalTo: currentReplyType.bottomAnchor, constant: -1),
+            replyView.leadingAnchor.constraint(equalTo: currentReplyType.leadingAnchor, constant: 1),
+            replyView.trailingAnchor.constraint(equalTo: currentReplyType.trailingAnchor, constant: -1)
+        ])
     }
 }
 

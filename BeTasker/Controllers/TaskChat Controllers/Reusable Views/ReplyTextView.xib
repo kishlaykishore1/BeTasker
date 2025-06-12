@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GraphikMedium.otf">
+            <string>Graphik-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReplyTextView" customModule="BeTasker" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="TNu-pe-63M" id="C5t-vz-7A6"/>
+                <outlet property="tvMessage" destination="iQm-MN-Xzi" id="ibl-4D-2rC"/>
+                <outlet property="viewMessage" destination="fe9-QD-eIE" id="o4b-Vv-lnV"/>
+                <outlet property="viewMessageContent" destination="1hs-pv-DBN" id="mBq-JU-oHn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TNu-pe-63M">
+            <rect key="frame" x="0.0" y="0.0" width="367" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe9-QD-eIE">
+                    <rect key="frame" x="0.0" y="4" width="367" height="85"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hs-pv-DBN">
+                            <rect key="frame" x="0.0" y="0.0" width="367" height="65.666666666666671"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iQm-MN-Xzi">
+                                    <rect key="frame" x="16" y="15.999999999999996" width="339" height="33.666666666666657"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="NAb-Oe-qKs"/>
+                                    </constraints>
+                                    <color key="textColor" name="Color2D2D2D-F8F8F8"/>
+                                    <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="16"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" name="Color777777-FFFFFF"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="iQm-MN-Xzi" secondAttribute="trailing" constant="12" id="Gfh-vh-auu"/>
+                                <constraint firstAttribute="bottom" secondItem="iQm-MN-Xzi" secondAttribute="bottom" constant="16" id="M7D-6O-l8I"/>
+                                <constraint firstItem="iQm-MN-Xzi" firstAttribute="top" secondItem="1hs-pv-DBN" secondAttribute="top" constant="16" id="dKt-Ax-LD6"/>
+                                <constraint firstItem="iQm-MN-Xzi" firstAttribute="leading" secondItem="1hs-pv-DBN" secondAttribute="leading" constant="16" id="w3l-FD-tqD"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="1hs-pv-DBN" firstAttribute="leading" secondItem="fe9-QD-eIE" secondAttribute="leading" id="5aA-um-bHf"/>
+                        <constraint firstAttribute="trailing" secondItem="1hs-pv-DBN" secondAttribute="trailing" id="G4M-Y3-9PG"/>
+                        <constraint firstItem="1hs-pv-DBN" firstAttribute="top" secondItem="fe9-QD-eIE" secondAttribute="top" id="OIp-Ya-fbq"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1hs-pv-DBN" secondAttribute="bottom" id="feX-r5-vQ1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fe9-QD-eIE" firstAttribute="leading" secondItem="TNu-pe-63M" secondAttribute="leading" id="D1K-xd-dH2"/>
+                <constraint firstItem="fe9-QD-eIE" firstAttribute="top" secondItem="TNu-pe-63M" secondAttribute="top" constant="4" id="Zgn-qa-HZE"/>
+                <constraint firstAttribute="trailing" secondItem="fe9-QD-eIE" secondAttribute="trailing" id="gjz-hS-Q9j"/>
+                <constraint firstAttribute="bottom" secondItem="fe9-QD-eIE" secondAttribute="bottom" constant="4" id="v1i-ZA-Ph1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="180.91603053435114" y="205.28169014084509"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Color2D2D2D-F8F8F8">
+            <color red="0.17599999904632568" green="0.17599999904632568" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color777777-FFFFFF">
+            <color red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
