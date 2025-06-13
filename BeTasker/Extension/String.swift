@@ -81,6 +81,12 @@ extension String {
         return formatter.date(from: self) ?? Date()
     }
     
+    var isOnlyEmojis: Bool {
+        // Removes all emoji scalars and trims whitespace
+        let emojiPattern = "[\\p{Emoji_Presentation}\\p{Emoji}\\u200d]+"
+        let nonEmoji = self.replacingOccurrences(of: emojiPattern, with: "", options: .regularExpression)
+        return nonEmoji.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
 }
 
 extension StringProtocol {

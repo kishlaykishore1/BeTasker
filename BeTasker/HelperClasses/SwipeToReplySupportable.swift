@@ -2,7 +2,8 @@ class SwipeToReplyHandler: NSObject {
 
     private weak var cell: UITableViewCell?
     private weak var targetView: UIView?
-    private var arrowView = UIImageView()
+    private let arrowContainerView = UIView()
+    private let arrowImageView = UIImageView()
     private var hapticFired = false
 
     init(for targetView: UIView, in cell: UITableViewCell) {
@@ -16,21 +17,37 @@ class SwipeToReplyHandler: NSObject {
     private func setupArrowView() {
         guard let contentView = cell?.contentView else { return }
 
-        arrowView.image = UIImage(systemName: "arrowshape.turn.up.left.fill")
-        arrowView.tintColor = .white
-        arrowView.backgroundColor = .systemGray3
-        arrowView.layer.cornerRadius = 18
-        arrowView.clipsToBounds = true
-        arrowView.alpha = 0
-        arrowView.translatesAutoresizingMaskIntoConstraints = false
+        // Setup container view
+        arrowContainerView.backgroundColor = .colorE8E8E8
+        arrowContainerView.layer.cornerRadius = 18
+        arrowContainerView.clipsToBounds = true
+        arrowContainerView.alpha = 0
+        arrowContainerView.translatesAutoresizingMaskIntoConstraints = false
 
-        contentView.addSubview(arrowView)
+        // Setup image view
+        arrowImageView.image = UIImage(named: "ic_SwipeReply")
+        //arrowImageView.tintColor = .white
+        arrowImageView.contentMode = .scaleAspectFit
+        arrowImageView.translatesAutoresizingMaskIntoConstraints = false
 
+        // Add views
+        arrowContainerView.addSubview(arrowImageView)
+        contentView.addSubview(arrowContainerView)
+
+        // Container constraints
         NSLayoutConstraint.activate([
-            arrowView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -12),
-            arrowView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
-            arrowView.widthAnchor.constraint(equalToConstant: 36),
-            arrowView.heightAnchor.constraint(equalToConstant: 36)
+            arrowContainerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -12),
+            arrowContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            arrowContainerView.widthAnchor.constraint(equalToConstant: 36),
+            arrowContainerView.heightAnchor.constraint(equalToConstant: 36)
+        ])
+
+        // Image constraints inside container
+        NSLayoutConstraint.activate([
+            arrowImageView.centerXAnchor.constraint(equalTo: arrowContainerView.centerXAnchor),
+            arrowImageView.centerYAnchor.constraint(equalTo: arrowContainerView.centerYAnchor),
+            arrowImageView.widthAnchor.constraint(equalToConstant: 20),
+            arrowImageView.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
 
@@ -54,7 +71,7 @@ class SwipeToReplyHandler: NSObject {
                 let limited = min(swipeX, 100)
                 let eased = limited * 0.7
                 view.transform = CGAffineTransform(translationX: eased, y: 0)
-                arrowView.alpha = min(eased / 80, 1.0)
+                arrowContainerView.alpha = min(eased / 80, 1.0)
 
                 if eased > 70, !hapticFired {
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
@@ -69,7 +86,7 @@ class SwipeToReplyHandler: NSObject {
 
             UIView.animate(withDuration: 0.25, animations: {
                 view.transform = .identity
-                self.arrowView.alpha = 0
+                self.arrowContainerView.alpha = 0
             })
 
             hapticFired = false

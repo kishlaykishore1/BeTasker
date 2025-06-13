@@ -89,6 +89,8 @@ class ChatVC: BaseViewController {
     var filteredMentionedUsers: [Mention] = []
     private var pendingStatusReloads: [Int: [IndexPath]] = [:]
     private var replyStorage = ReplyData()
+    var hasStartedObserving = false
+    var loadedMessageKeys: Set<String> = []
 
     
     // MARK: - View Life Cycle
@@ -212,31 +214,7 @@ class ChatVC: BaseViewController {
         //        }
         
         self.setupStartView()
-        
-        self.getLatestMessage { [weak self] data in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                Global.dismissLoadingSpinner(self.view)
-                if let data = data {
-                    if !self.sections.isEmpty {
-                        let sectionIndex = (self.sections.count) - 1
-                        // Match by timestamp or temporary ID logic
-                        if let messageIndex = self.sections[safe: sectionIndex]?.arrChatMessage.firstIndex(where: { vm in
-                            return abs(vm.timestamp - (data.timestamp)) < 1000 && vm.chatId == ""
-                        }) {
-                            self.sections[sectionIndex].arrChatMessage[messageIndex] = data
-                        } else {
-                            self.addChatNode(chatData: data)
-                        }
-                    } else {
-                        self.addChatNode(chatData: data)
-                    }
-                    self.scrollToBottom()
-                    self.tableView.reloadData()
-                    //NotificationCenter.default.post(name: .updateTaksList, object: nil)
-                }
-            }
-        }
+        self.handelLatestMessage()
         
         if let taskData {
             self.taskTitleLabel.text = taskData.randomId.0
@@ -304,6 +282,8 @@ class ChatVC: BaseViewController {
         self.tableView.register(UINib(nibName: "ChatStatusSenderCell", bundle: nil), forCellReuseIdentifier: "ChatStatusSenderCell")
         self.tableView.register(UINib(nibName: "ChatMessageCell", bundle: nil), forCellReuseIdentifier: "ChatMessageCell")
         self.tableView.register(UINib(nibName: "ChatMessageSenderCell", bundle: nil), forCellReuseIdentifier: "ChatMessageSenderCell")
+        self.tableView.register(UINib(nibName: "EmojiMessageCell", bundle: nil), forCellReuseIdentifier: "EmojiMessageCell")
+        self.tableView.register(UINib(nibName: "EmojiMessageSenderCell", bundle: nil), forCellReuseIdentifier: "EmojiMessageSenderCell")
         self.tableView.register(UINib(nibName: "ChatTaskCell", bundle: nil), forCellReuseIdentifier: "ChatTaskCell")
         self.tableView.register(UINib(nibName: "ChatDocCell", bundle: nil), forCellReuseIdentifier: "ChatDocCell")
         self.tableView.register(UINib(nibName: "ChatDocSenderCell", bundle: nil), forCellReuseIdentifier: "ChatDocSenderCell")
@@ -490,6 +470,40 @@ class ChatVC: BaseViewController {
             self.mainTableViewBottom.constant = 0
             self.statusCollViewBottom.constant = 16
         }
+    }
+    
+    func handelLatestMessage() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.getLatestMessage { [weak self] data in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    Global.dismissLoadingSpinner(self.view)
+                    if let data = data {
+                        if !self.sections.isEmpty {
+                            let sectionIndex = (self.sections.count) - 1
+                            // Match by timestamp or temporary ID logic
+                            if let messageIndex = self.sections[safe: sectionIndex]?.arrChatMessage.firstIndex(where: { vm in
+                                return abs(vm.timestamp - (data.timestamp)) < 1000 && vm.chatId == ""
+                            }) {
+                                self.sections[sectionIndex].arrChatMessage[messageIndex] = data
+                            } else {
+                                self.addChatNode(chatData: data)
+                            }
+                        } else {
+                            self.addChatNode(chatData: data)
+                        }
+                        self.scrollToBottom()
+                        self.tableView.reloadData()
+                        //NotificationCenter.default.post(name: .updateTaksList, object: nil)
+                    }
+                }
+            }
+        }
+    }
+    
+    func checkForStatusChange(for screenStatusData: [TaskStatusViewModel], from taskStatusId: Int?) {
+        let statusData = screenStatusData.first { $0.id == taskStatusId }
+        setupTheTopTicketStatusView(data: statusData)
     }
     
     // MARK: - Button Action Methods
@@ -744,6 +758,7 @@ class ChatVC: BaseViewController {
                             let dict = resData.map({$0.value})
                             let data = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
                             let arr = try JSONDecoder().decode([ChatModel].self, from: data)
+                            print("Showing Count",arr.count)
                             let result = arr.map({ChatViewModel(data: $0)})
                             completion(result.filter{$0.isArchivActionAvailable == false})
                         } catch (let err) {
@@ -765,22 +780,28 @@ class ChatVC: BaseViewController {
         
         let ref = Constants.firebseReference
         
-        ref.child(Constants.taskChatNode).child(chatNodeId).observe(.childAdded) { snapshot in
-            
-            //DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        ref.child(Constants.taskChatNode).child(chatNodeId).queryLimited(toLast: 1) .observe(.childAdded) { [weak self] snapshot in
             if snapshot.exists() {
-                if let resData = snapshot.value as? [String: Any] {
-                    do {
-                        let data = try JSONSerialization.data(withJSONObject: resData, options: .prettyPrinted)
-                        let chatData = try JSONDecoder().decode(ChatModel.self, from: data)
-                        let result = ChatViewModel(data: chatData)
-                        completion(result.isArchivActionAvailable == false ? result : nil)
-                    } catch (let err) {
-                        print(err.localizedDescription)
-                        completion(nil)
+                guard let self = self,
+                      let resData = snapshot.value as? [String: Any] else {
+                    completion(nil)
+                    return
+                }
+                if !self.hasStartedObserving {
+                    // First childAdded call might be from history — skip it
+                    self.hasStartedObserving = true
+                    return
+                }
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: resData, options: .prettyPrinted)
+                    let chatData = try JSONDecoder().decode(ChatModel.self, from: data)
+                    let result = ChatViewModel(data: chatData)
+                    if result.chatType == .status && chatData.taskStatusId != 0 {
+                        self.checkForStatusChange(for: self.arrStatus, from: chatData.taskStatusId)
                     }
-                    
-                } else {
+                    completion(result.isArchivActionAvailable == false ? result : nil)
+                } catch (let err) {
+                    print(err.localizedDescription)
                     completion(nil)
                 }
             } else {
@@ -951,46 +972,67 @@ extension ChatVC: UITableViewDataSource {
                 cell.setTheUserData(userData: senderData, messageTime: data.chatDate.dateString)
                 return cell
             case .message:
-                let identifier = data.isMine ? "ChatMessageCell" : "ChatMessageSenderCell"
-                let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ChatMessageCell
-                cell.configureCellView(with: data, allmentionedUsers: allMentionedUsers)
-                cell.linkDelegate = self
-                cell.userCollectionView.semanticContentAttribute = .forceRightToLeft
-                DispatchQueue.main.async {
-                    cell.vwMessageContent.roundCorners(corners, radius: 13.3)
+                if data.message.isOnlyEmojis {
+                    let identifier = data.isMine ? "EmojiMessageCell" : "EmojiMessageSenderCell"
+                    let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! EmojiMessageCell
+                    cell.configureCellView(with: data)
+                    cell.userCollectionView.semanticContentAttribute = .forceRightToLeft
+                    if !data.isMine {
+                        let senderData = extractUserOnBlankSender(currentIndexSender: data.senderId)
+                        cell.setTheUserData(userData: senderData, messageTime: data.chatTimeOnly)
+                    }
+                    let seenUsers = getLastSeenByForMessage(at: indexPath)
+                    cell.arrMembers = seenUsers
+                    return cell
+                } else {
+                    let identifier = data.isMine ? "ChatMessageCell" : "ChatMessageSenderCell"
+                    let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ChatMessageCell
+                    cell.configureCellView(with: data, allmentionedUsers: allMentionedUsers)
+                    cell.linkDelegate = self
+                    cell.userCollectionView.semanticContentAttribute = .forceRightToLeft
+                    DispatchQueue.main.async {
+                        cell.vwMessageContent.roundCorners(corners, radius: 13.3)
+                    }
+                    if !data.isMine {
+                        let senderData = extractUserOnBlankSender(currentIndexSender: data.senderId)
+                        cell.setTheUserData(userData: senderData, messageTime: data.chatTimeOnly)
+                    }
+                    if data.hasReply {
+                        let senderData = extractUserOnBlankSender(currentIndexSender: data.replyOfMessage?.senderId ?? 0)
+                        cell.setTheRepliedToUserData(userData: senderData)
+                    }
+                    let seenUsers = getLastSeenByForMessage(at: indexPath)
+                    cell.arrMembers = seenUsers
+                    return cell
                 }
-                if !data.isMine {
-                    let senderData = extractUserOnBlankSender(currentIndexSender: data.senderId)
-                    cell.setTheUserData(userData: senderData, messageTime: data.chatTimeOnly)
-                }
-                if data.hasReply {
-                    let senderData = extractUserOnBlankSender(currentIndexSender: data.replyOfMessage?.senderId ?? 0)
-                    cell.setTheRepliedToUserData(userData: senderData)
-                }
-                let seenUsers = getLastSeenByForMessage(at: indexPath)
-                cell.arrMembers = seenUsers
-                return cell
             case .image:
                 let identifier = data.isMine ? "ChatFileCell" : "ChatFileSenderCell"
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ChatFileCell
+                cell.imgFile.image = nil
                 cell.imgFile.contentMode = .center
+                cell.imgFile.sd_cancelCurrentImageLoad()
                 cell.userCollectionView.semanticContentAttribute = .forceRightToLeft
                 if let imageDataLocal = data.imageData {
-                    cell.imgFile.contentMode = .scaleAspectFill
                     cell.imgFile.image = UIImage(data: imageDataLocal)
-                    cell.imgFile.sd_imageIndicator = SDWebImageActivityIndicator.gray
-                    cell.imgFile.sd_imageIndicator?.startAnimatingIndicator()
+                    cell.imgFile.contentMode = .scaleAspectFill
                 } else {
                     let img = UIImage(named: "img_PlaceHolder")
                     cell.imgFile.sd_imageIndicator = SDWebImageActivityIndicator.gray
                     cell.imgFile.sd_imageTransition = SDWebImageTransition.fade
-                    cell.imgFile.sd_setImage(with: data.imageURL, placeholderImage: img) { [weak imgFile = cell.imgFile] image, error,_,_ in
-                        if let _ = error {
-                            imgFile?.contentMode = .center
-                            imgFile?.image = img
-                        } else {
-                            imgFile?.contentMode = .scaleAspectFill
+                    if let url = data.imageURL {
+                        cell.imgFile.sd_setImage(with: url, placeholderImage: img) { [weak imgView = cell.imgFile] image, error, _, _ in
+                            guard let imgView = imgView else { return }
+                            if error != nil || image == nil {
+                                imgView.contentMode = .center
+                                imgView.image = img
+                            } else {
+                                imgView.contentMode = .scaleAspectFill
+                            }
                         }
+                    } else {
+                        print("Hit Error Block",data.imageURL)
+                        cell.imgFile.image = img
+                        cell.imgFile.contentMode = .center
                     }
                 }
                 let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleImageLongPress(_:)))
@@ -1757,7 +1799,11 @@ extension ChatVC {
         
         switch dataModel.chatType {
         case .message:
-            replyView = ReplyTextView(dataModel: dataModel, allmentionedUsers: allmentionedUsers)
+            if dataModel.message.isOnlyEmojis {
+                replyView = ReplyEmojiView(dataModel: dataModel)
+            } else {
+                replyView = ReplyTextView(dataModel: dataModel, allmentionedUsers: allmentionedUsers)
+            }
         case .image:
             replyView = ReplyImageView(dataModel: dataModel)
         case .pdf:

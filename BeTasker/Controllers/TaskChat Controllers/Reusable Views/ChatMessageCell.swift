@@ -67,7 +67,11 @@ class ChatMessageCell: UITableViewCell {
             
             switch reply.chatType {
             case .message:
-                replyView = ReplyTextView(dataModel: reply, allmentionedUsers: allmentionedUsers)
+                if reply.message.isOnlyEmojis {
+                    replyView = ReplyEmojiView(dataModel: reply)
+                } else {
+                    replyView = ReplyTextView(dataModel: reply, allmentionedUsers: allmentionedUsers)
+                }
             case .image:
                 replyView = ReplyImageView(dataModel: reply)
             case .pdf:

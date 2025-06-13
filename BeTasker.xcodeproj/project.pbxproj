@@ -26,7 +26,11 @@
 		04F177332D49ED2400767E30 /* WorkSpace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F177322D49ED2400767E30 /* WorkSpace.storyboard */; };
 		04F177392D49EDEA00767E30 /* MyWorkSpaceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F177382D49EDEA00767E30 /* MyWorkSpaceListVC.swift */; };
 		04FB73F92D55D80900F0D210 /* ArchivedTaskListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB73F82D55D80900F0D210 /* ArchivedTaskListVC.swift */; };
-		6E158B162DB2C114004C9070 /* CustomFooterCollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E158B152DB2C114004C9070 /* CustomFooterCollCell.xib */; };
+		6E0FDD8F2DFBAFD40089AD20 /* EmojiMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E0FDD8E2DFBAFD40089AD20 /* EmojiMessageCell.xib */; };
+		6E0FDD912DFBAFFB0089AD20 /* EmojiMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0FDD902DFBAFFB0089AD20 /* EmojiMessageCell.swift */; };
+		6E0FDD932DFBB4330089AD20 /* EmojiMessageSenderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E0FDD922DFBB4330089AD20 /* EmojiMessageSenderCell.xib */; };
+		6E0FDD952DFBB9AD0089AD20 /* ReplyEmojiView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E0FDD942DFBB9AD0089AD20 /* ReplyEmojiView.xib */; };
+		6E0FDD972DFBBA1A0089AD20 /* ReplyEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0FDD962DFBBA1A0089AD20 /* ReplyEmojiView.swift */; };
 		6E158B182DB2C130004C9070 /* CustomFooterCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E158B172DB2C130004C9070 /* CustomFooterCollCell.swift */; };
 		6E158B1A2DB2EFA9004C9070 /* ImageZoomGalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E158B192DB2EFA9004C9070 /* ImageZoomGalleryVC.swift */; };
 		6E30811D2DCB1F150052EDC4 /* InitialWorkspaceScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E30811C2DCB1F150052EDC4 /* InitialWorkspaceScreenVC.swift */; };
@@ -102,6 +106,7 @@
 		6ED372832D75A9BE00E97644 /* StatusCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED372822D75A9BE00E97644 /* StatusCollectionCell.xib */; };
 		6ED372852D75A9E300E97644 /* StatusCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED372842D75A9E300E97644 /* StatusCollectionCell.swift */; };
 		6ED966292DDE2AF1002E0CB2 /* SignUp6VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED966282DDE2AF1002E0CB2 /* SignUp6VC.swift */; };
+		6EE0D9532DFC22C700E627F9 /* CustomFooterCollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE0D9522DFC22C700E627F9 /* CustomFooterCollCell.xib */; };
 		6EE1630C2DF2AE3800677880 /* ReplyTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE1630B2DF2AE3800677880 /* ReplyTextView.xib */; };
 		6EE1630E2DF2AE4F00677880 /* ReplyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE1630D2DF2AE4F00677880 /* ReplyTextView.swift */; };
 		6EE163102DF2AE6700677880 /* ReplyImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE1630F2DF2AE6700677880 /* ReplyImageView.xib */; };
@@ -291,7 +296,11 @@
 		04F177382D49EDEA00767E30 /* MyWorkSpaceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkSpaceListVC.swift; sourceTree = "<group>"; };
 		04FB73F82D55D80900F0D210 /* ArchivedTaskListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedTaskListVC.swift; sourceTree = "<group>"; };
 		0C5E7EE6ABF8D6DFCB2D6982 /* Pods-BeTasker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeTasker.debug.xcconfig"; path = "Target Support Files/Pods-BeTasker/Pods-BeTasker.debug.xcconfig"; sourceTree = "<group>"; };
-		6E158B152DB2C114004C9070 /* CustomFooterCollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomFooterCollCell.xib; sourceTree = "<group>"; };
+		6E0FDD8E2DFBAFD40089AD20 /* EmojiMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiMessageCell.xib; sourceTree = "<group>"; };
+		6E0FDD902DFBAFFB0089AD20 /* EmojiMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMessageCell.swift; sourceTree = "<group>"; };
+		6E0FDD922DFBB4330089AD20 /* EmojiMessageSenderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiMessageSenderCell.xib; sourceTree = "<group>"; };
+		6E0FDD942DFBB9AD0089AD20 /* ReplyEmojiView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyEmojiView.xib; sourceTree = "<group>"; };
+		6E0FDD962DFBBA1A0089AD20 /* ReplyEmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyEmojiView.swift; sourceTree = "<group>"; };
 		6E158B172DB2C130004C9070 /* CustomFooterCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFooterCollCell.swift; sourceTree = "<group>"; };
 		6E158B192DB2EFA9004C9070 /* ImageZoomGalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomGalleryVC.swift; sourceTree = "<group>"; };
 		6E30811C2DCB1F150052EDC4 /* InitialWorkspaceScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialWorkspaceScreenVC.swift; sourceTree = "<group>"; };
@@ -369,6 +378,9 @@
 		6ED372822D75A9BE00E97644 /* StatusCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusCollectionCell.xib; sourceTree = "<group>"; };
 		6ED372842D75A9E300E97644 /* StatusCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCollectionCell.swift; sourceTree = "<group>"; };
 		6ED966282DDE2AF1002E0CB2 /* SignUp6VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp6VC.swift; sourceTree = "<group>"; };
+		6EE0D9512DFC22C700E627F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomFooterCollCell.xib; sourceTree = "<group>"; };
+		6EE0D9562DFC22E300E627F9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/CustomFooterCollCell.strings; sourceTree = "<group>"; };
+		6EE0D9582DFC22E400E627F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CustomFooterCollCell.strings; sourceTree = "<group>"; };
 		6EE1630B2DF2AE3800677880 /* ReplyTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyTextView.xib; sourceTree = "<group>"; };
 		6EE1630D2DF2AE4F00677880 /* ReplyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyTextView.swift; sourceTree = "<group>"; };
 		6EE1630F2DF2AE6700677880 /* ReplyImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyImageView.xib; sourceTree = "<group>"; };
@@ -636,6 +648,9 @@
 				6E5D71942D83E24700C4FA10 /* ChatMessageCell.xib */,
 				6E5D71A22D83EF4F00C4FA10 /* ChatMessageSenderCell.xib */,
 				6E5D71962D83E25300C4FA10 /* ChatMessageCell.swift */,
+				6E0FDD8E2DFBAFD40089AD20 /* EmojiMessageCell.xib */,
+				6E0FDD922DFBB4330089AD20 /* EmojiMessageSenderCell.xib */,
+				6E0FDD902DFBAFFB0089AD20 /* EmojiMessageCell.swift */,
 				6E5D71982D83E62600C4FA10 /* ChatTaskCell.xib */,
 				6E5D719A2D83E64200C4FA10 /* ChatTaskCell.swift */,
 				6E5D719C2D83EA9200C4FA10 /* ChatTableHeaderCell.xib */,
@@ -662,6 +677,8 @@
 				6EE163152DF2AEE400677880 /* ReplyFileView.swift */,
 				6EE163192DF2B37600677880 /* ReplyStatusView.xib */,
 				6EE163172DF2AEF400677880 /* ReplyStatusView.swift */,
+				6E0FDD942DFBB9AD0089AD20 /* ReplyEmojiView.xib */,
+				6E0FDD962DFBBA1A0089AD20 /* ReplyEmojiView.swift */,
 			);
 			path = "Reusable Views";
 			sourceTree = "<group>";
@@ -771,7 +788,7 @@
 				6E3459BF2D9AB146005EE12E /* SelectTimeCollCell.swift */,
 				6E693BF12DEB3F0800233F34 /* AddMoreTimeCollCell.xib */,
 				6E3459C52D9AD6C5005EE12E /* AddMoreTimeCollCell.swift */,
-				6E158B152DB2C114004C9070 /* CustomFooterCollCell.xib */,
+				6EE0D9522DFC22C700E627F9 /* CustomFooterCollCell.xib */,
 				6E158B172DB2C130004C9070 /* CustomFooterCollCell.swift */,
 				6E69F6922DE0212300ED3283 /* DestinatairesCollectionCell.xib */,
 				6E69F6942DE0213500ED3283 /* DestinatairesCollectionCell.swift */,
@@ -1175,7 +1192,7 @@
 				D2EE50192C09B7D600CB11F3 /* Profile.storyboard in Resources */,
 				D25AB0CE2BE8B68B00A13CFB /* Colors.xcassets in Resources */,
 				6E4CCF232DD520FF00E06B5B /* CollectionBigFileCell.xib in Resources */,
-				6E158B162DB2C114004C9070 /* CustomFooterCollCell.xib in Resources */,
+				6EE0D9532DFC22C700E627F9 /* CustomFooterCollCell.xib in Resources */,
 				6E5D71A92D83F91800C4FA10 /* CollectionFileCell.xib in Resources */,
 				6EFA87352D8D020900C65638 /* StatusArchiveCell.xib in Resources */,
 				6E5D71952D83E24700C4FA10 /* ChatMessageCell.xib in Resources */,
@@ -1200,6 +1217,7 @@
 				6E5D71A52D83F20B00C4FA10 /* ChatFileSenderCell.xib in Resources */,
 				6E8F74C22DF96C8E00608B74 /* CollectionSmallFileCell.xib in Resources */,
 				6EFA872F2D8C875300C65638 /* StatusHistoryTableCell.xib in Resources */,
+				6E0FDD952DFBB9AD0089AD20 /* ReplyEmojiView.xib in Resources */,
 				6E693BF22DEB3F0800233F34 /* AddMoreTimeCollCell.xib in Resources */,
 				6E68A2A72DD5E13C00887B9A /* ImgUserCollectionCell.xib in Resources */,
 				6E3459B22D9AAFFE005EE12E /* ReccurringHoursCollCell.xib in Resources */,
@@ -1212,6 +1230,7 @@
 				D2E032C72D3E431600C7B9C2 /* DMSans-Medium.ttf in Resources */,
 				D2E032C82D3E431600C7B9C2 /* DMSans-Regular.ttf in Resources */,
 				6EE163102DF2AE6700677880 /* ReplyImageView.xib in Resources */,
+				6E0FDD8F2DFBAFD40089AD20 /* EmojiMessageCell.xib in Resources */,
 				D2E032C92D3E431600C7B9C2 /* GraphikMedium.otf in Resources */,
 				6E3459AE2D9AAFD1005EE12E /* ReccuringDaysCollCell.xib in Resources */,
 				D2E032CA2D3E431600C7B9C2 /* SFProText-Medium.ttf in Resources */,
@@ -1219,6 +1238,7 @@
 				8F2FD0352DE59A09009667C8 /* custom_alert.wav in Resources */,
 				D2122ECC2CF842FD004C15C9 /* ViewTaskHistory.xib in Resources */,
 				D2BC0C9E2BE8AC240006D065 /* Base in Resources */,
+				6E0FDD932DFBB4330089AD20 /* EmojiMessageSenderCell.xib in Resources */,
 				D2E88B5A2D03412300135538 /* ViewUser.xib in Resources */,
 				6E3459B62D9AB041005EE12E /* InitialOccurCollCell.xib in Resources */,
 				6EE97A142D8E852300494535 /* SelectWorkspaceTableCell.xib in Resources */,
@@ -1382,6 +1402,7 @@
 				D29D26F32BE8BAD50090C5E2 /* PulseAnimation.swift in Sources */,
 				6E9A255D2D7FC213009C91CF /* BaseViewController.swift in Sources */,
 				D29D26D02BE8BAD40090C5E2 /* FAQViewModel.swift in Sources */,
+				6E0FDD972DFBBA1A0089AD20 /* ReplyEmojiView.swift in Sources */,
 				0496D3872D4A2D5E00D26FAD /* WorkSpaceMemberListVC.swift in Sources */,
 				D29D26E52BE8BAD50090C5E2 /* UIView.swift in Sources */,
 				D246CB862CF9ABA3000B1923 /* SubscriptionVC.swift in Sources */,
@@ -1441,6 +1462,7 @@
 				6EC9A6592DF5485B006773DA /* SwipeToReplySupportable.swift in Sources */,
 				D29D26D52BE8BAD50090C5E2 /* PlanViewModel.swift in Sources */,
 				D24E51D22D3F835D009DCB5E /* GrowingTextView.swift in Sources */,
+				6E0FDD912DFBAFFB0089AD20 /* EmojiMessageCell.swift in Sources */,
 				6E3459B82D9AB051005EE12E /* InitialOccurCollCell.swift in Sources */,
 				6EC5AA532DE33F6100FB213D /* HomeStatusCollCell.swift in Sources */,
 				D29D26ED2BE8BAD50090C5E2 /* TTTAttributedLabel.m in Sources */,
@@ -1478,6 +1500,16 @@
 				6E693BF72DEB3F1C00233F34 /* en */,
 			);
 			name = AddMoreTimeCollCell.xib;
+			sourceTree = "<group>";
+		};
+		6EE0D9522DFC22C700E627F9 /* CustomFooterCollCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EE0D9512DFC22C700E627F9 /* Base */,
+				6EE0D9562DFC22E300E627F9 /* fr */,
+				6EE0D9582DFC22E400E627F9 /* en */,
+			);
+			name = CustomFooterCollCell.xib;
 			sourceTree = "<group>";
 		};
 		8F40F5682DBF5F3100BE20A0 /* Chat.storyboard */ = {

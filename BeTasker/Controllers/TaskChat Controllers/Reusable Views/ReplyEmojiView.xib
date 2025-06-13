@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GraphikMedium.otf">
+            <string>Graphik-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReplyEmojiView" customModule="BeTasker" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="gv4-vJ-5Yw" id="jmw-W2-vtN"/>
+                <outlet property="tvMessage" destination="kIM-RN-ORe" id="rre-lZ-6QU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gv4-vJ-5Yw">
+            <rect key="frame" x="0.0" y="0.0" width="367" height="76"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGW-uv-spM">
+                    <rect key="frame" x="0.0" y="4" width="367" height="68"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwB-pg-azj">
+                            <rect key="frame" x="0.0" y="0.0" width="367" height="65.666666666666671"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="😒☺️" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kIM-RN-ORe">
+                                    <rect key="frame" x="0.0" y="15.999999999999996" width="355" height="33.666666666666657"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="nSt-9j-Mfk"/>
+                                    </constraints>
+                                    <color key="textColor" name="Color2D2D2D-F8F8F8"/>
+                                    <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="16"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="kIM-RN-ORe" firstAttribute="leading" secondItem="fwB-pg-azj" secondAttribute="leading" id="1YI-ax-lhz"/>
+                                <constraint firstAttribute="trailing" secondItem="kIM-RN-ORe" secondAttribute="trailing" constant="12" id="Kb8-mU-m1m"/>
+                                <constraint firstItem="kIM-RN-ORe" firstAttribute="top" secondItem="fwB-pg-azj" secondAttribute="top" constant="16" id="NrX-6n-ixl"/>
+                                <constraint firstAttribute="bottom" secondItem="kIM-RN-ORe" secondAttribute="bottom" constant="16" id="mEk-bH-3y0"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="fwB-pg-azj" secondAttribute="trailing" id="VKM-Oz-ud8"/>
+                        <constraint firstItem="fwB-pg-azj" firstAttribute="top" secondItem="kGW-uv-spM" secondAttribute="top" id="scU-Sq-9fj"/>
+                        <constraint firstItem="fwB-pg-azj" firstAttribute="leading" secondItem="kGW-uv-spM" secondAttribute="leading" id="wPo-JW-zwC"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fwB-pg-azj" secondAttribute="bottom" id="yxE-j3-cCU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="kGW-uv-spM" secondAttribute="bottom" constant="4" id="3je-yi-zSz"/>
+                <constraint firstItem="kGW-uv-spM" firstAttribute="top" secondItem="gv4-vJ-5Yw" secondAttribute="top" constant="4" id="6SK-S2-uet"/>
+                <constraint firstAttribute="trailing" secondItem="kGW-uv-spM" secondAttribute="trailing" id="8hU-P2-8DC"/>
+                <constraint firstItem="kGW-uv-spM" firstAttribute="leading" secondItem="gv4-vJ-5Yw" secondAttribute="leading" id="EAG-Qz-5rA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="180.91603053435114" y="199.29577464788733"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Color2D2D2D-F8F8F8">
+            <color red="0.17599999904632568" green="0.17599999904632568" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

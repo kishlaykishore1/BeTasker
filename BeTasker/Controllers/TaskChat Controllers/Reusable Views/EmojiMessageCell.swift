@@ -1,22 +1,24 @@
 //
-//  ChatFileCell.swift
+//  EmojiMessageCell.swift
 //  BeTasker
 //
-//  Created by kishlay kishore on 14/03/25.
+//  Created by kishlay kishore on 13/06/25.
 //
 
 import UIKit
 import SDWebImage
 
-class ChatFileCell: UITableViewCell {
+class EmojiMessageCell: UITableViewCell {
     
     // MARK: - Outlets
-    @IBOutlet weak var viewWithImage: UIView!
-    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var vwMessageContent: UIView!
+    @IBOutlet weak var vwMessage: UIView!
+    @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var imgUser: UIImageView!
-    @IBOutlet weak var imgFile: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var userCollectionView: UICollectionView!
-    
+
     // MARK: - Variables
     private var swipeHandler: SwipeToReplyHandler?
     var arrMembers: [TempProfileViewModel] = [] {
@@ -30,14 +32,8 @@ class ChatFileCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        swipeHandler = SwipeToReplyHandler(for: viewWithImage, in: self)
+        swipeHandler = SwipeToReplyHandler(for: mainStackView, in: self)
         self.userCollectionView.register(UINib(nibName: "ImgUserCollectionCell", bundle: nil), forCellWithReuseIdentifier: "ImgUserCollectionCell")
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imgFile.image = nil
-        imgFile.sd_cancelCurrentImageLoad()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -45,6 +41,20 @@ class ChatFileCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configureCellView(with dataModel: ChatViewModel) {
+        configureTextView(with: dataModel.message)
+    }
+    
+    private func configureTextView(with text: String) {
+        messageTextView.text = text
+        messageTextView.isEditable = false
+        messageTextView.isScrollEnabled = false
+        messageTextView.textContainerInset = .zero
+        messageTextView.textContainer.lineFragmentPadding = 0
+        messageTextView.backgroundColor = .clear
+    }
+    
     
     func setTheUserData(userData: TempProfileViewModel?, messageTime: String?) {
         self.lblName.text = userData?.name
@@ -58,7 +68,7 @@ class ChatFileCell: UITableViewCell {
 }
 
 // MARK: - Collection View Delegate methods
-extension ChatFileCell: UICollectionViewDataSource, UICollectionViewDelegate {
+extension EmojiMessageCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrMembers.count
     }
@@ -77,7 +87,7 @@ extension ChatFileCell: UICollectionViewDataSource, UICollectionViewDelegate {
 }
 
 // MARK: - Collection View DelegateFlowLayout Methods
-extension ChatFileCell: UICollectionViewDelegateFlowLayout {
+extension EmojiMessageCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 16, height: 16)

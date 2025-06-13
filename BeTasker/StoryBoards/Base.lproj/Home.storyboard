@@ -422,7 +422,7 @@ Merci de revenir plus tard.</string>
                                     <state key="normal" image="ic_AddTaskHome">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
-                                    <state key="highlighted" title="New" image="ic_AddTaskHome"/>
+                                    <state key="highlighted" image="ic_AddTaskHome"/>
                                     <connections>
                                         <action selector="btnAddtask_Action:" destination="jp0-iZ-FN8" eventType="touchUpInside" id="anY-b1-gLu"/>
                                     </connections>
@@ -1381,13 +1381,13 @@ Merci de revenir plus tard.</string>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vk3-vm-4ra">
                                                     <rect key="frame" x="86" y="20.5" width="272" height="35"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lucas S." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCH-33-aQA">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lucas S." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCH-33-aQA">
                                                             <rect key="frame" x="0.0" y="0.0" width="272" height="18"/>
                                                             <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="18"/>
                                                             <color key="textColor" name="TextColor-Black"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#34RRT56" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxh-YW-d5O">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="#34RRT56" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxh-YW-d5O">
                                                             <rect key="frame" x="0.0" y="22" width="272" height="13"/>
                                                             <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                             <color key="textColor" name="Color777777"/>
