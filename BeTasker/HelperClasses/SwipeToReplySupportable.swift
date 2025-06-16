@@ -36,7 +36,7 @@ class SwipeToReplyHandler: NSObject {
 
         // Container constraints
         NSLayoutConstraint.activate([
-            arrowContainerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -12),
+            arrowContainerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -6),
             arrowContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
             arrowContainerView.widthAnchor.constraint(equalToConstant: 36),
             arrowContainerView.heightAnchor.constraint(equalToConstant: 36)
