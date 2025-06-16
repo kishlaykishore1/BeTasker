@@ -69,30 +69,30 @@ class MentionHelper {
         let defaultColor = UIColor(named: "Color2D2D2D-F8F8F8")!
         
         let attributed = NSMutableAttributedString(
-                string: message,
-                attributes: [
-                    .font: defaultFont,
-                    .foregroundColor: defaultColor
-                ]
-            )
-
-            for mention in mentions {
-                let mentionText = "@\(mention.displayName)"
-                var searchRange = NSRange(location: 0, length: attributed.length)
-
-                while true {
-                    let range = (attributed.string as NSString).range(of: mentionText, options: [], range: searchRange)
-                    if range.location == NSNotFound { break }
-
-                    attributed.addAttribute(.foregroundColor, value: defaultColor, range: range)
-                    attributed.addAttribute(.font, value: isFromEditToTextView ? UIFont(name: Constants.KMonteserratSemibold, size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold) : UIFont(name: Constants.KGraphikSemibold, size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .medium), range: range)
-                    attributed.addAttribute(.mention, value: mention.id, range: range)
-
-                    let nextLocation = range.location + range.length
-                    if nextLocation >= attributed.length { break }
-                    searchRange = NSRange(location: nextLocation, length: attributed.length - nextLocation)
-                }
+            string: message,
+            attributes: [
+                .font: defaultFont,
+                .foregroundColor: defaultColor
+            ]
+        )
+        
+        for mention in mentions {
+            let mentionText = "@\(mention.displayName)"
+            var searchRange = NSRange(location: 0, length: attributed.length)
+            
+            while true {
+                let range = (attributed.string as NSString).range(of: mentionText, options: [], range: searchRange)
+                if range.location == NSNotFound { break }
+                
+                attributed.addAttribute(.foregroundColor, value: defaultColor, range: range)
+                attributed.addAttribute(.font, value: isFromEditToTextView ? UIFont(name: Constants.KMonteserratSemibold, size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold) : UIFont(name: Constants.KGraphikSemibold, size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .medium), range: range)
+                attributed.addAttribute(.mention, value: mention.id, range: range)
+                
+                let nextLocation = range.location + range.length
+                if nextLocation >= attributed.length { break }
+                searchRange = NSRange(location: nextLocation, length: attributed.length - nextLocation)
             }
+        }
         
         return attributed
     }
@@ -153,7 +153,26 @@ class MentionHelper {
             .font: UIFont(name: Constants.KMonteserratMedium, size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .medium)
         ]
     }
+    
+    static func getCurrentMentionQuery(_ textView: UITextView) -> (query: String, range: NSRange)? {
+        guard let selectedRange = textView.selectedTextRange else { return nil }
+        let cursorPosition = textView.offset(from: textView.beginningOfDocument, to: selectedRange.start)
+        let text = textView.text as NSString
+        let upToCursor = text.substring(to: cursorPosition)
 
+        // Find last occurrence of '@' followed by word characters before cursor
+        if let match = upToCursor.range(of: "@[a-zA-Z0-9_]*$", options: .regularExpression) {
+            let nsRange = NSRange(match, in: upToCursor)
+            let mentionText = (upToCursor as NSString).substring(with: nsRange)
+            let query = mentionText.replacingOccurrences(of: "@", with: "")
+            return (query: query, range: nsRange)
+        }
+
+        return nil
+    }
+
+    
+    
 }
 
 extension NSAttributedString.Key {

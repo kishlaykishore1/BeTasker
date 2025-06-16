@@ -60,6 +60,7 @@ class AddTaskVC: BaseViewController {
         self.vwSliderContainerView.applyShadow(radius: 3, opacity: 0.1, offset: CGSize(width: 0.0, height: 3.0))
         self.vwScheduleTask.applyShadow(radius: 3, opacity: 0.1, offset: CGSize(width: 0.0, height: 3.0))
         self.clnUsers.register(UINib(nibName: "DestinatairesCollectionCell", bundle: nil), forCellWithReuseIdentifier: "DestinatairesCollectionCell")
+        self.clnUsers.register(UINib(nibName: "AddUserCollCell", bundle: nil), forCellWithReuseIdentifier: "AddUserCollCell")
         DispatchQueue.main.async {
             self.btnNext.setShadowWithColor(color: .black, opacity: 0.1, offset: CGSize(width: 0.0, height: 3.0), radius: 3, viewCornerRadius: self.btnNext.frame.height / 2)
             self.vwScheduleTask.layer.cornerRadius = self.vwScheduleTask.frame.height / 2
@@ -416,17 +417,15 @@ extension AddTaskVC: UICollectionViewDataSource, UICollectionViewDelegate {
             }
             return cell
         default:
-            //            if arrUsers[indexPath.row].isAddType {
-            //                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddMoreCollectionCell", for: indexPath) as! AddMoreCollectionCell
-            //                return cell
-            //            } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DestinatairesCollectionCell", for: indexPath) as! DestinatairesCollectionCell
-            cell.configureCell(with: arrUsers[indexPath.row])
-            
-            return cell
-            //}
+            if arrUsers[indexPath.row].isAddType {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddUserCollCell", for: indexPath) as! AddUserCollCell
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DestinatairesCollectionCell", for: indexPath) as! DestinatairesCollectionCell
+                cell.configureCell(with: arrUsers[indexPath.row])
+                return cell
+            }
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -441,25 +440,28 @@ extension AddTaskVC: UICollectionViewDataSource, UICollectionViewDelegate {
                 clnUsers.deselectItem(at: indexPath, animated: false)
             }
             
-            let allSelected = arrUsers.allSatisfy { $0.isSelected }
+            let allSelected = arrUsers
+                .filter { !$0.isAddType } // Exclude 'add type' users
+                .allSatisfy { $0.isSelected }
             viewSelectAll.isHidden = allSelected
-            
             clnUsers.reloadItems(at: [indexPath])
-            //            if arrUsers[indexPath.row].isAddType {
-            //                let vc = Constants.Home.instantiateViewController(withIdentifier: "TeamUsersListVC") as! TeamUsersListVC
-            //
-            //                vc.arrMembers = self.arrUsers.dropLast()
-            //                vc.delegate = self
-            //                if isFromPeogrammimgMenu || isFromChat {
-            //                    vc.workspaceId = self.taskData?.workSpaceId
-            //                } else {
-            //                    vc.workspaceId = self.currentWorkSpace?.id
-            //                }
-            //                vc.selecetedWorkspace = self.currentWorkSpace
-            //                let nvc = UINavigationController(rootViewController: vc)
-            //                nvc.isModalInPresentation = true
-            //                self.present(nvc, animated: true, completion: nil)
-            //            }
+            
+            if arrUsers[indexPath.row].isAddType {
+                let vc = Constants.Home.instantiateViewController(withIdentifier: "TeamUsersListVC") as! TeamUsersListVC
+
+                vc.arrMembers = self.arrUsers.dropLast()
+                vc.arrExcludedMembers = self.arrUsers.dropLast()
+                vc.delegate = self
+                if isFromPeogrammimgMenu || isFromChat {
+                    vc.workspaceId = self.taskData?.workSpaceId
+                } else {
+                    vc.workspaceId = self.currentWorkSpace?.id
+                }
+                vc.selecetedWorkspace = self.currentWorkSpace
+                let nvc = UINavigationController(rootViewController: vc)
+                nvc.isModalInPresentation = true
+                self.present(nvc, animated: true, completion: nil)
+            }
         }
     }
     
@@ -488,7 +490,8 @@ extension AddTaskVC: SlideToSendDelegate {
 }
 extension AddTaskVC: PrTeamMember {
     func setSelectedMembers(arrMembers: [MembersDataViewModel]) {
-        self.arrUsers = arrMembers
+        self.arrUsers = self.arrUsers.dropLast()
+        self.arrUsers += arrMembers
         var obj = MembersDataModel()
         obj.isAddType = true
         self.arrUsers.append(MembersDataViewModel(data: obj))
@@ -721,10 +724,10 @@ extension AddTaskVC {
                     return modifiedMember
                 }
                 
-                //                // Add the "+ Add" user cell at the end
-                //                var obj = MembersDataModel()
-                //                obj.isAddType = true
-                //                self.arrUsers.append(MembersDataViewModel(data: obj))
+                // Add the "+ Add" user cell at the end
+                var obj = MembersDataModel()
+                obj.isAddType = true
+                self.arrUsers.append(MembersDataViewModel(data: obj))
                 
                 self.workSpacetitleLabel.text = taskData.workSpaceTitle
                 self.txtTitle.text = taskData.title
@@ -762,9 +765,9 @@ extension AddTaskVC {
         MembersViewModel.GetWorkSpaceMembersList(workSpaceId: workSpaceId ?? 0, page: 1, limit: 10000, sender: self, shouldShowLoader: shouldShowLoader) { [weak self] arrMembers in
             DispatchQueue.main.async {
                 self?.arrUsers = arrMembers
-                //                var obj = MembersDataModel()
-                //                obj.isAddType = true
-                //                self?.arrUsers.append(MembersDataViewModel(data: obj))
+                var obj = MembersDataModel()
+                obj.isAddType = true
+                self?.arrUsers.append(MembersDataViewModel(data: obj))
                 self?.clnUsers.reloadData()
             }
         }

@@ -53,6 +53,8 @@
 		6E4B07BD2DAE7887002E5B97 /* PushNotifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4B07BC2DAE7887002E5B97 /* PushNotifyModel.swift */; };
 		6E4CCF232DD520FF00E06B5B /* CollectionBigFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4CCF222DD520FF00E06B5B /* CollectionBigFileCell.xib */; };
 		6E4FDB322DE6ED4000B765C3 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4FDB312DE6ED4000B765C3 /* ReviewManager.swift */; };
+		6E5031B82E00184400B45D99 /* AddUserCollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E5031B72E00184400B45D99 /* AddUserCollCell.xib */; };
+		6E5031BA2E00185900B45D99 /* AddUserCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5031B92E00185900B45D99 /* AddUserCollCell.swift */; };
 		6E5445D02DB0E99300F16638 /* DrawingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5445CF2DB0E99300F16638 /* DrawingVC.swift */; };
 		6E5D71892D82BB6500C4FA10 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E5D71882D82BB6500C4FA10 /* Montserrat-Medium.ttf */; };
 		6E5D718D2D83DAE700C4FA10 /* ChatFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E5D718C2D83DAE700C4FA10 /* ChatFileCell.xib */; };
@@ -323,6 +325,8 @@
 		6E4B07BC2DAE7887002E5B97 /* PushNotifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifyModel.swift; sourceTree = "<group>"; };
 		6E4CCF222DD520FF00E06B5B /* CollectionBigFileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionBigFileCell.xib; sourceTree = "<group>"; };
 		6E4FDB312DE6ED4000B765C3 /* ReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
+		6E5031B72E00184400B45D99 /* AddUserCollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserCollCell.xib; sourceTree = "<group>"; };
+		6E5031B92E00185900B45D99 /* AddUserCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserCollCell.swift; sourceTree = "<group>"; };
 		6E5445CF2DB0E99300F16638 /* DrawingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingVC.swift; sourceTree = "<group>"; };
 		6E5D71882D82BB6500C4FA10 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		6E5D718C2D83DAE700C4FA10 /* ChatFileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatFileCell.xib; sourceTree = "<group>"; };
@@ -800,6 +804,8 @@
 				6EC5AA562DE34C2900FB213D /* ArchiveTaskTblCell.swift */,
 				6EC5AA582DE353A800FB213D /* NewTaskCell.xib */,
 				6EC5AA5A2DE353B600FB213D /* NewTaskCell.swift */,
+				6E5031B72E00184400B45D99 /* AddUserCollCell.xib */,
+				6E5031B92E00185900B45D99 /* AddUserCollCell.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -1214,6 +1220,7 @@
 				D2E032C22D3E431600C7B9C2 /* DMSans-Bold.ttf in Resources */,
 				6E5D719D2D83EA9200C4FA10 /* ChatTableHeaderCell.xib in Resources */,
 				D2E032C32D3E431600C7B9C2 /* Gilroy-Medium.ttf in Resources */,
+				6E5031B82E00184400B45D99 /* AddUserCollCell.xib in Resources */,
 				6E5D71A52D83F20B00C4FA10 /* ChatFileSenderCell.xib in Resources */,
 				6E8F74C22DF96C8E00608B74 /* CollectionSmallFileCell.xib in Resources */,
 				6EFA872F2D8C875300C65638 /* StatusHistoryTableCell.xib in Resources */,
@@ -1445,6 +1452,7 @@
 				04FB73F92D55D80900F0D210 /* ArchivedTaskListVC.swift in Sources */,
 				0496D3852D49FA6800D26FAD /* AddWorkSpaceVC.swift in Sources */,
 				D2122ED22CF849CE004C15C9 /* ViewTaskHistoryReason.swift in Sources */,
+				6E5031BA2E00185900B45D99 /* AddUserCollCell.swift in Sources */,
 				D29D26F02BE8BAD50090C5E2 /* LocationManager.swift in Sources */,
 				D29D26832BE8BAA30090C5E2 /* WelcomeVC.swift in Sources */,
 				D29D26EE2BE8BAD50090C5E2 /* Common.swift in Sources */,

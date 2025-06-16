@@ -459,16 +459,19 @@ class ChatVC: BaseViewController {
     }
     
     func tohandelTagTableView(show: Bool = false) {
-        if show {
-            self.taggingTableView.isHidden = false
-            self.tagTableHeight.constant = 200
-            self.mainTableViewBottom.constant = -self.tagTableHeight.constant
-            self.statusCollViewBottom.constant = -self.tagTableHeight.constant - 16
-        } else {
-            self.taggingTableView.isHidden = true
-            self.tagTableHeight.constant = 0
-            self.mainTableViewBottom.constant = 0
-            self.statusCollViewBottom.constant = 16
+        UIView.animate(withDuration: 0.25) {
+            if show {
+                self.taggingTableView.isHidden = false
+                self.tagTableHeight.constant = 200
+                self.mainTableViewBottom.constant = -self.tagTableHeight.constant
+                self.statusCollViewBottom.constant = -self.tagTableHeight.constant - 16
+            } else {
+                self.taggingTableView.isHidden = true
+                self.tagTableHeight.constant = 0
+                self.mainTableViewBottom.constant = 0
+                self.statusCollViewBottom.constant = 16
+            }
+            self.view.layoutIfNeeded()
         }
     }
     
@@ -573,6 +576,7 @@ class ChatVC: BaseViewController {
         Global.setVibration()
         self.tfMessage.text = ""
         self.btnClearMsgText.isHidden = true
+        self.tohandelTagTableView()
         if chatMessageToModify != nil {
             chatMessageToModify = nil
             self.textViewDidChange(self.tfMessage)
@@ -901,12 +905,20 @@ class ChatVC: BaseViewController {
     }
     
     func filterList(query: String) {
-        if query.isEmpty {
-            filteredMentionedUsers = allMentionedUsers
+        filteredMentionedUsers = allMentionedUsers.filter { $0.displayName.lowercased().contains(query.lowercased()) }
+        if filteredMentionedUsers.isEmpty {
+            tohandelTagTableView(show: false)
         } else {
-            filteredMentionedUsers = allMentionedUsers.filter { $0.displayName.lowercased().contains(query.lowercased()) }
+            tohandelTagTableView(show: true)
         }
         taggingTableView.reloadData()
+        
+//        if query.isEmpty {
+//            filteredMentionedUsers = allMentionedUsers
+//        } else {
+//            filteredMentionedUsers = allMentionedUsers.filter { $0.displayName.lowercased().contains(query.lowercased()) }
+//        }
+//        taggingTableView.reloadData()
     }
 }
 
@@ -1159,7 +1171,6 @@ extension ChatVC: UITableViewDelegate {
             
             MentionHelper.insertMention(filteredMentionedUsers[indexPath.row], into: tfMessage, allMentions: allMentionedUsers)
             self.tohandelTagTableView(show: false)
-            self.filteredMentionedUsers.removeAll()
             self.mentionQuery = ""
             self.isMentioning = false
         } else {
@@ -1267,34 +1278,91 @@ extension ChatVC: UITextViewDelegate {
         btnSend.isUserInteractionEnabled = txt != ""
         btnClearMsgText.isHidden = txt == ""
         tfMessage.setNeedsDisplay()
+        
+        // Mention handling
+        if let mention = MentionHelper.getCurrentMentionQuery(textView) {
+            let query = mention.query.trimmingCharacters(in: .whitespacesAndNewlines)
+            if query.isEmpty {
+                filteredMentionedUsers = allMentionedUsers
+            } else {
+                filteredMentionedUsers = allMentionedUsers.filter {
+                    $0.displayName.lowercased().contains(query.lowercased())
+                }
+            }
+            
+            tohandelTagTableView(show: !filteredMentionedUsers.isEmpty)
+            taggingTableView.reloadData()
+            
+        } else {
+            tohandelTagTableView(show: false)
+        }
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let str = String(tfMessage.text)
-        var lastCharacter = "nothing"
+//        let str = String(tfMessage.text)
+//        var lastCharacter = "nothing"
+//        
+//        if !str.isEmpty && range.location != 0{
+//            lastCharacter = String(str[str.index(before: str.endIndex)])
+//        }
         
-        if !str.isEmpty && range.location != 0{
-            lastCharacter = String(str[str.index(before: str.endIndex)])
+        let currentText = tfMessage.text ?? ""
+        var newText = (currentText as NSString).replacingCharacters(in: range, with: text)
+    
+        let cursorPosition = range.location
+        var lastCharacter: String = " "
+        if cursorPosition > 0 {
+            let index = newText.index(newText.startIndex, offsetBy: cursorPosition - 1)
+            lastCharacter = String(newText[index])
         }
+        
+        // Detect start of a mention
+        if !isMentioning, text == "@", (cursorPosition == 0 || lastCharacter == " " || lastCharacter == "\n") {
+            isMentioning = true
+            mentionQuery = "" // Start fresh
+            tohandelTagTableView(show: true)
+            return true
+        }
+        
         if isMentioning {
-            if text == " " || (text.count == 0 &&  self.mentionQuery == "") { // If Space or delete the "@"
-                self.isMentioning = false
-                self.tohandelTagTableView()
-            } else if text.count == 0 {
-                self.mentionQuery.remove(at: self.mentionQuery.index(before: self.mentionQuery.endIndex))
-                self.filterList(query: self.mentionQuery)
+            if text == " " {
+                isMentioning = false
+                mentionQuery = ""
+                tohandelTagTableView()
+            } else if text.isEmpty { // backspace
+                if !mentionQuery.isEmpty {
+                    mentionQuery.removeLast()
+                    filterList(query: mentionQuery)
+                } else {
+                    isMentioning = false
+                    tohandelTagTableView()
+                }
             } else {
-                self.mentionQuery += text
-                self.filterList(query: self.mentionQuery)
-            }
-        } else {
-            /* (Beginning of textView) OR (space then @) OR (Beginning of new line) */
-            if text == "@" && ( range.location == 0 || lastCharacter == " " || lastCharacter == "\n") {
-                self.isMentioning = true
-                self.filterList(query: self.mentionQuery)
-                self.tohandelTagTableView(show: true)
+                mentionQuery += text
+                filterList(query: mentionQuery)
             }
         }
+        
+        
+//        if isMentioning {
+//            if text == " " || (text.count == 0 &&  self.mentionQuery == "") { // If Space or delete the "@"
+//                self.isMentioning = false
+//                self.tohandelTagTableView()
+//            } else if text.count == 0 {
+//                self.mentionQuery.remove(at: self.mentionQuery.index(before: self.mentionQuery.endIndex))
+//                self.filterList(query: self.mentionQuery)
+//            } else {
+//                self.mentionQuery += text
+//                self.filterList(query: self.mentionQuery)
+//            }
+//        } else {
+//            /* (Beginning of textView) OR (space then @) OR (Beginning of new line) */
+//            if text == "@" && ( range.location == 0 || lastCharacter == " " || lastCharacter == "\n") {
+//                self.isMentioning = true
+//                self.filterList(query: self.mentionQuery)
+//                //self.tohandelTagTableView(show: true)
+//            }
+//        }
         
         if range.location == 0 && tfMessage.text.count == 0 {
             let newString = (tfMessage.text as NSString).replacingCharacters(in: range, with: text) as NSString

@@ -162,7 +162,6 @@ class TasksVC: BaseViewController {
     func updateEmptyTexts() {
         if listFor == .assignedByMe {
             self.emptytextLbl.text = "Commencez maintenant et envoyez une nouvelle tâche à vos équipes.".localized
-            self.vwButton.isHidden = false
             self.emptyTextButton.text = "Nouvelle task".localized
             self.emptyTextTitleLabel.text = "Faites-le !".localized
             self.emptyLogoImageview.image = UIImage(named: "green-share-icon")
