@@ -178,6 +178,33 @@ extension UIView {
         layer.borderColor = color.cgColor
         layer.borderWidth = width
     }
+    
+    func applyTopCornersAndShadow(cornerRadius: CGFloat = 12, shadowColor: UIColor = .black, shadowOpacity: Float = 0.10, shadowRadius: CGFloat = 4) {
+        layer.cornerRadius = cornerRadius
+        layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner] // Top-left & top-right
+        layer.masksToBounds = false
+
+        layer.shadowColor = shadowColor.cgColor
+        layer.shadowOpacity = shadowOpacity
+        layer.shadowRadius = shadowRadius
+        layer.shadowOffset = CGSize(width: 0, height: -1) // Slight upward shadow
+
+        // Make sure layout is done before applying shadow path
+        DispatchQueue.main.async {
+            let width = self.bounds.width
+            let height = self.bounds.height
+
+            let shadowPath = UIBezierPath()
+            shadowPath.move(to: CGPoint(x: 0, y: height))
+            shadowPath.addLine(to: CGPoint(x: 0, y: cornerRadius))
+            shadowPath.addQuadCurve(to: CGPoint(x: cornerRadius, y: 0), controlPoint: CGPoint(x: 0, y: 0))
+            shadowPath.addLine(to: CGPoint(x: width - cornerRadius, y: 0))
+            shadowPath.addQuadCurve(to: CGPoint(x: width, y: cornerRadius), controlPoint: CGPoint(x: width, y: 0))
+            shadowPath.addLine(to: CGPoint(x: width, y: height))
+            self.layer.shadowPath = shadowPath.cgPath
+        }
+    }
+
 }
 
 protocol Bluring {

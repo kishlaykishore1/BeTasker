@@ -63,7 +63,15 @@ class SwipeToReplyHandler: NSObject {
         guard let view = targetView, let cell = cell else { return }
 
         let translation = gesture.translation(in: view)
+        let velocity = gesture.velocity(in: view)
+
         let swipeX = translation.x
+        let swipeY = abs(translation.y)
+
+        // Prevent false positives when scrolling vertically
+        if swipeX < 15 || swipeX < swipeY {
+            return
+        }
 
         switch gesture.state {
         case .began, .changed:
@@ -84,16 +92,18 @@ class SwipeToReplyHandler: NSObject {
                 NotificationCenter.default.post(name: .didSwipeToReply, object: cell)
             }
 
-            UIView.animate(withDuration: 0.25, animations: {
+            UIView.animate(withDuration: 0.25) {
                 view.transform = .identity
                 self.arrowContainerView.alpha = 0
-            })
+            }
 
             hapticFired = false
 
-        default: break
+        default:
+            break
         }
     }
+
 }
 
 extension SwipeToReplyHandler: UIGestureRecognizerDelegate {

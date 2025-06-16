@@ -552,7 +552,7 @@ class ChatVC: BaseViewController {
         btnSend.isUserInteractionEnabled = false
         btnClearMsgText.isHidden = true
         if !replyStorage.isEmpty {
-            viewReplyOverlay.isHidden = true
+            hideReplyOverlay()
             replyStorage.clear()
         }
         self.scrollToBottom()
@@ -586,7 +586,7 @@ class ChatVC: BaseViewController {
     
     @IBAction func btnRemoveReplyView_Action(_ sender: UIButton) {
         Global.setVibration()
-        self.viewReplyOverlay.isHidden = true
+        self.hideReplyOverlay()
         self.replyStorage.clear()
     }
     
@@ -912,13 +912,6 @@ class ChatVC: BaseViewController {
             tohandelTagTableView(show: true)
         }
         taggingTableView.reloadData()
-        
-//        if query.isEmpty {
-//            filteredMentionedUsers = allMentionedUsers
-//        } else {
-//            filteredMentionedUsers = allMentionedUsers.filter { $0.displayName.lowercased().contains(query.lowercased()) }
-//        }
-//        taggingTableView.reloadData()
     }
 }
 
@@ -1042,7 +1035,6 @@ extension ChatVC: UITableViewDataSource {
                             }
                         }
                     } else {
-                        print("Hit Error Block",data.imageURL)
                         cell.imgFile.image = img
                         cell.imgFile.contentMode = .center
                     }
@@ -1299,15 +1291,9 @@ extension ChatVC: UITextViewDelegate {
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        let str = String(tfMessage.text)
-//        var lastCharacter = "nothing"
-//        
-//        if !str.isEmpty && range.location != 0{
-//            lastCharacter = String(str[str.index(before: str.endIndex)])
-//        }
-        
+
         let currentText = tfMessage.text ?? ""
-        var newText = (currentText as NSString).replacingCharacters(in: range, with: text)
+        let newText = (currentText as NSString).replacingCharacters(in: range, with: text)
     
         let cursorPosition = range.location
         var lastCharacter: String = " "
@@ -1342,28 +1328,7 @@ extension ChatVC: UITextViewDelegate {
                 filterList(query: mentionQuery)
             }
         }
-        
-        
-//        if isMentioning {
-//            if text == " " || (text.count == 0 &&  self.mentionQuery == "") { // If Space or delete the "@"
-//                self.isMentioning = false
-//                self.tohandelTagTableView()
-//            } else if text.count == 0 {
-//                self.mentionQuery.remove(at: self.mentionQuery.index(before: self.mentionQuery.endIndex))
-//                self.filterList(query: self.mentionQuery)
-//            } else {
-//                self.mentionQuery += text
-//                self.filterList(query: self.mentionQuery)
-//            }
-//        } else {
-//            /* (Beginning of textView) OR (space then @) OR (Beginning of new line) */
-//            if text == "@" && ( range.location == 0 || lastCharacter == " " || lastCharacter == "\n") {
-//                self.isMentioning = true
-//                self.filterList(query: self.mentionQuery)
-//                //self.tohandelTagTableView(show: true)
-//            }
-//        }
-        
+    
         if range.location == 0 && tfMessage.text.count == 0 {
             let newString = (tfMessage.text as NSString).replacingCharacters(in: range, with: text) as NSString
             return newString.rangeOfCharacter(from: NSCharacterSet.whitespacesAndNewlines).location != 0
@@ -1850,6 +1815,28 @@ extension ChatVC: QLPreviewControllerDataSource {
 
 // MARK: - Reply View Setup Methods
 extension ChatVC {
+    
+    func showReplyOverlay() {
+        if viewReplyOverlay.superview != nil {
+            viewReplyOverlay.removeFromSuperview()
+        }
+        
+        viewReplyOverlay.translatesAutoresizingMaskIntoConstraints = false
+        view.insertSubview(viewReplyOverlay, belowSubview: viewTF)
+        viewReplyOverlay.applyTopCornersAndShadow()
+        
+        // Set constraints relative to tfMessage
+        NSLayoutConstraint.activate([
+            viewReplyOverlay.leadingAnchor.constraint(equalTo: viewTF.leadingAnchor),
+            viewReplyOverlay.trailingAnchor.constraint(equalTo: viewTF.trailingAnchor),
+            viewReplyOverlay.bottomAnchor.constraint(equalTo: tfMessage.topAnchor,constant: -18),
+        ])
+    }
+    
+    func hideReplyOverlay() {
+        self.viewReplyOverlay.removeFromSuperview()
+    }
+
     func setReplyToViewData(_ data: ChatViewModel) {
         let senderData = extractUserOnBlankSender(currentIndexSender: data.senderId)
         lblReplyUser.text = senderData?.name
@@ -1886,8 +1873,7 @@ extension ChatVC {
             replyView = UIView()
         }
         
-        viewReplyOverlay.isHidden = false
-        viewReplyOverlay.bringSubviewToFront(btnHideReplyView)
+        showReplyOverlay()
         replyView.translatesAutoresizingMaskIntoConstraints = false
         currentReplyType.addSubview(replyView)
         

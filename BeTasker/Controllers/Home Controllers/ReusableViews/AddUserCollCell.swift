@@ -25,7 +25,7 @@ class AddUserCollCell: UICollectionViewCell {
             bkgBorderView.layer.cornerRadius = bkgBorderView.frame.height / 2
             imgUser.layer.cornerRadius = imgUser.frame.height / 2
             
-            bkgBorderView.applyShadow(radius: 3, opacity: 0.1, offset: CGSize(width: 0.0, height: 3.0))
+            //bkgBorderView.applyShadow(radius: 3, opacity: 0.1, offset: CGSize(width: 0.0, height: 3.0))
         }
     }
 }

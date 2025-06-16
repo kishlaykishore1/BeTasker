@@ -434,18 +434,6 @@ extension AddTaskVC: UICollectionViewDataSource, UICollectionViewDelegate {
             selectedIndex = indexPath.row
             self.showFileSelectionSheet()
         default:
-            arrUsers[indexPath.item].isSelected.toggle()
-            
-            if !arrUsers[indexPath.item].isSelected {
-                clnUsers.deselectItem(at: indexPath, animated: false)
-            }
-            
-            let allSelected = arrUsers
-                .filter { !$0.isAddType } // Exclude 'add type' users
-                .allSatisfy { $0.isSelected }
-            viewSelectAll.isHidden = allSelected
-            clnUsers.reloadItems(at: [indexPath])
-            
             if arrUsers[indexPath.row].isAddType {
                 let vc = Constants.Home.instantiateViewController(withIdentifier: "TeamUsersListVC") as! TeamUsersListVC
 
@@ -461,6 +449,18 @@ extension AddTaskVC: UICollectionViewDataSource, UICollectionViewDelegate {
                 let nvc = UINavigationController(rootViewController: vc)
                 nvc.isModalInPresentation = true
                 self.present(nvc, animated: true, completion: nil)
+            } else {
+                arrUsers[indexPath.item].isSelected.toggle()
+                
+                if !arrUsers[indexPath.item].isSelected {
+                    clnUsers.deselectItem(at: indexPath, animated: false)
+                }
+                
+                let allSelected = arrUsers
+                    .filter { !$0.isAddType } // Exclude 'add type' users
+                    .allSatisfy { $0.isSelected }
+                viewSelectAll.isHidden = allSelected
+                clnUsers.reloadItems(at: [indexPath])
             }
         }
     }
