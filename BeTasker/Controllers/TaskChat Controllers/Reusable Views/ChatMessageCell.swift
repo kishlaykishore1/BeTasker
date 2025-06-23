@@ -107,7 +107,7 @@ class ChatMessageCell: UITableViewCell {
         messageTextView.isEditable = false
         messageTextView.isScrollEnabled = false
         messageTextView.dataDetectorTypes = [.link]
-        messageTextView.textContainerInset = .zero
+        messageTextView.textContainerInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         messageTextView.textContainer.lineFragmentPadding = 0
         let mentions = mentionIds.compactMap { id in
             allmentionedUsers.first(where: { $0.id == id })

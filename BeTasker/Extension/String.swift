@@ -82,16 +82,24 @@ extension String {
     }
     
     var isOnlyEmojis: Bool {
-        // Removes all emoji scalars and trims whitespace
-        let emojiPattern = "[\\p{Emoji_Presentation}\\p{Emoji}\\u200d]+"
-        let nonEmoji = self.replacingOccurrences(of: emojiPattern, with: "", options: .regularExpression)
-        return nonEmoji.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let trimmed = self.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return false }
+        
+        for scalar in trimmed.unicodeScalars {
+            if !scalar.properties.isEmoji { return false }
+            if CharacterSet.ascii.contains(scalar) { return false }
+        }
+        return true
     }
 }
 
 extension StringProtocol {
     var firstUppercased: String { return prefix(1).uppercased() + dropFirst() }
     var firstCapitalized: String { return prefix(1).capitalized + dropFirst() }
+}
+
+extension CharacterSet {
+    static let ascii = CharacterSet(charactersIn: Unicode.Scalar(0)...Unicode.Scalar(127))
 }
 
 //extension UITapGestureRecognizer {

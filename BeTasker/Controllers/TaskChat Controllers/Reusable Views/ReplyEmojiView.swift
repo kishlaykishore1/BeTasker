@@ -48,7 +48,7 @@ class ReplyEmojiView: UIView {
         tvMessage.text = text
         tvMessage.isEditable = false
         tvMessage.isScrollEnabled = false
-        tvMessage.textContainerInset = .zero
+        tvMessage.textContainerInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         tvMessage.textContainer.lineFragmentPadding = 0
         tvMessage.backgroundColor = .clear
     }

@@ -1292,12 +1292,15 @@ extension ChatVC: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 
-        let currentText = tfMessage.text ?? ""
-        let newText = (currentText as NSString).replacingCharacters(in: range, with: text)
-    
-        let cursorPosition = range.location
+        guard let currentText = tfMessage.text,
+                 let stringRange = Range(range, in: currentText) else {
+               return false
+           }
+        
+        let newText = currentText.replacingCharacters(in: stringRange, with: text)
+        let cursorPosition = newText.distance(from: newText.startIndex, to: stringRange.lowerBound) + text.count
         var lastCharacter: String = " "
-        if cursorPosition > 0 {
+        if cursorPosition > 1 {
             let index = newText.index(newText.startIndex, offsetBy: cursorPosition - 1)
             lastCharacter = String(newText[index])
         }
@@ -1329,7 +1332,7 @@ extension ChatVC: UITextViewDelegate {
             }
         }
     
-        if range.location == 0 && tfMessage.text.count == 0 {
+        if range.location == 0 && currentText.isEmpty {
             let newString = (tfMessage.text as NSString).replacingCharacters(in: range, with: text) as NSString
             return newString.rangeOfCharacter(from: NSCharacterSet.whitespacesAndNewlines).location != 0
         } else {
