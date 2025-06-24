@@ -165,6 +165,7 @@ class AddTaskVC: BaseViewController {
     func redirectToChatScreen(taskdata: TasksViewModel) {
         let vc = Constants.Chat.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
         vc.taskData = taskdata
+        vc.isFirstDataLoad = true
         self.dismiss(animated: true, completion: {
             let nav = UINavigationController(rootViewController: vc)
             nav.isModalInPresentation = true
@@ -348,19 +349,18 @@ class AddTaskVC: BaseViewController {
                     let data = TasksViewModel(data: res)
                     NotificationCenter.default.post(name: .updateTaksList, object: nil)
                     NotificationCenter.default.post(name: .taskUpdatedNotification, object: nil, userInfo: ["updatedTask": data])
-
-                    let newdata = ["taskTitle": data.title, "description": data.description, "displayLink": data.displayLink, "chatType": EnumChatType.taskDescription.rawValue, "isEdited": true, "message": "", "arrFiles": data.arrFileDict]
-                    
-                    Global().updateTaskDescriptionMessage(for: data.taskId, with: newdata, view: self.view ?? UIView()) { [weak self] result in
-                        if result {
-                            if self?.isFromChat ?? false {
-                                NotificationCenter.default.post(name: .updateTaskChat, object: nil)
-                            }
-                        }
-                    }
                     
                     if self.isFromChat {
-                        self.dismiss(animated: true)
+                        let newdata = ["taskTitle": data.title, "description": data.description, "displayLink": data.displayLink, "chatType": EnumChatType.taskDescription.rawValue, "isEdited": true, "message": "", "arrFiles": data.arrFileDict]
+                        
+                        Global().updateTaskDescriptionMessage(for: data.taskId, with: newdata, view: self.view ?? UIView()) { [weak self] result in
+                            if result {
+                                if self?.isFromChat ?? false {
+                                    NotificationCenter.default.post(name: .updateTaskChat, object: nil)
+                                }
+                            }
+                            self?.dismiss(animated: true)
+                        }
                     } else if self.isFromPeogrammimgMenu {
                         self.redirectToSuceessScreen()
                     } else {
@@ -449,19 +449,20 @@ extension AddTaskVC: UICollectionViewDataSource, UICollectionViewDelegate {
                 let nvc = UINavigationController(rootViewController: vc)
                 nvc.isModalInPresentation = true
                 self.present(nvc, animated: true, completion: nil)
-            } else {
-                arrUsers[indexPath.item].isSelected.toggle()
-                
-                if !arrUsers[indexPath.item].isSelected {
-                    clnUsers.deselectItem(at: indexPath, animated: false)
-                }
-                
-                let allSelected = arrUsers
-                    .filter { !$0.isAddType } // Exclude 'add type' users
-                    .allSatisfy { $0.isSelected }
-                viewSelectAll.isHidden = allSelected
-                clnUsers.reloadItems(at: [indexPath])
+                return
             }
+            
+            arrUsers[indexPath.item].isSelected.toggle()
+            
+            if !arrUsers[indexPath.item].isSelected {
+                clnUsers.deselectItem(at: indexPath, animated: false)
+            }
+            
+            let allSelected = arrUsers
+                .filter { !$0.isAddType } // Exclude 'add type' users
+                .allSatisfy { $0.isSelected }
+            viewSelectAll.isHidden = allSelected
+            clnUsers.reloadData()
         }
     }
     

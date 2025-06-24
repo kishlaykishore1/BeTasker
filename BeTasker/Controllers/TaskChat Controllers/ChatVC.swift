@@ -90,6 +90,7 @@ class ChatVC: BaseViewController {
     private var pendingStatusReloads: [Int: [IndexPath]] = [:]
     private var replyStorage = ReplyData()
     var hasStartedObserving = false
+    var isFirstDataLoad = false
     var loadedMessageKeys: Set<String> = []
 
     
@@ -270,6 +271,7 @@ class ChatVC: BaseViewController {
                     self?.tableView.reloadData()
                 } else {
                     self?.sendMessageFireBase(message: "", type: .taskDescription, isFirstMessage: true)
+                    self?.isFirstDataLoad = true
                 }
             }
         }
@@ -791,7 +793,7 @@ class ChatVC: BaseViewController {
                     completion(nil)
                     return
                 }
-                if !self.hasStartedObserving {
+                if !self.hasStartedObserving && !self.isFirstDataLoad {
                     // First childAdded call might be from history — skip it
                     self.hasStartedObserving = true
                     return
@@ -1350,6 +1352,8 @@ extension ChatVC {
         let openAction = UIAlertAction(title: "Ouvrir le lien".localized, style: .default, handler: { _ in
             if let link = URL(string: url) {
                 UIApplication.shared.open(link)
+            } else {
+                Common.showAlertMessage(message: "Impossible d'ouvrir le lien !".localized, alertType: .error, isPreferLightStyle: false)
             }
         })
         alert.addAction(openAction)
