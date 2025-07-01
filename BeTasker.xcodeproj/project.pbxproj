@@ -33,6 +33,7 @@
 		6E0FDD972DFBBA1A0089AD20 /* ReplyEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0FDD962DFBBA1A0089AD20 /* ReplyEmojiView.swift */; };
 		6E158B182DB2C130004C9070 /* CustomFooterCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E158B172DB2C130004C9070 /* CustomFooterCollCell.swift */; };
 		6E158B1A2DB2EFA9004C9070 /* ImageZoomGalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E158B192DB2EFA9004C9070 /* ImageZoomGalleryVC.swift */; };
+		6E25A70D2E132C3D001EE3B0 /* QRVerifyLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E25A70C2E132C3D001EE3B0 /* QRVerifyLoginVC.swift */; };
 		6E30811D2DCB1F150052EDC4 /* InitialWorkspaceScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E30811C2DCB1F150052EDC4 /* InitialWorkspaceScreenVC.swift */; };
 		6E3459AE2D9AAFD1005EE12E /* ReccuringDaysCollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E3459AD2D9AAFD1005EE12E /* ReccuringDaysCollCell.xib */; };
 		6E3459B02D9AAFE1005EE12E /* ReccuringDaysCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3459AF2D9AAFE1005EE12E /* ReccuringDaysCollCell.swift */; };
@@ -305,6 +306,7 @@
 		6E0FDD962DFBBA1A0089AD20 /* ReplyEmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyEmojiView.swift; sourceTree = "<group>"; };
 		6E158B172DB2C130004C9070 /* CustomFooterCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFooterCollCell.swift; sourceTree = "<group>"; };
 		6E158B192DB2EFA9004C9070 /* ImageZoomGalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomGalleryVC.swift; sourceTree = "<group>"; };
+		6E25A70C2E132C3D001EE3B0 /* QRVerifyLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRVerifyLoginVC.swift; sourceTree = "<group>"; };
 		6E30811C2DCB1F150052EDC4 /* InitialWorkspaceScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialWorkspaceScreenVC.swift; sourceTree = "<group>"; };
 		6E3459AD2D9AAFD1005EE12E /* ReccuringDaysCollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReccuringDaysCollCell.xib; sourceTree = "<group>"; };
 		6E3459AF2D9AAFE1005EE12E /* ReccuringDaysCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccuringDaysCollCell.swift; sourceTree = "<group>"; };
@@ -718,6 +720,7 @@
 				D29D26212BE8BAA20090C5E2 /* FaqVC.swift */,
 				D26056FB2CFD6C9D00E584D5 /* MyProgramsVC.swift */,
 				6E49CBFF2DA75D8700F1CB5A /* DisplayScannerVC.swift */,
+				6E25A70C2E132C3D001EE3B0 /* QRVerifyLoginVC.swift */,
 				6E5E020F2D8A5E0E00C521BD /* ReusableViews */,
 			);
 			path = "Settings Controllers";
@@ -1436,6 +1439,7 @@
 				D29D26E82BE8BAD50090C5E2 /* CircularSlider.swift in Sources */,
 				6EE163122DF2AE7400677880 /* ReplyImageView.swift in Sources */,
 				D29D26652BE8BAA20090C5E2 /* EditProfileVC.swift in Sources */,
+				6E25A70D2E132C3D001EE3B0 /* QRVerifyLoginVC.swift in Sources */,
 				6E3459C62D9AD6C5005EE12E /* AddMoreTimeCollCell.swift in Sources */,
 				D29D26802BE8BAA20090C5E2 /* TutorialVC.swift in Sources */,
 				D237C0272BEDD90D00FC208B /* TemplatesResponseModel.swift in Sources */,
