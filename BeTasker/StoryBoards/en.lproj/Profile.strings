@@ -284,6 +284,9 @@
 /* Class = "UILabel"; text = "Mes réglages"; ObjectID = "xz6-G9-rf6"; */
 "xz6-G9-rf6.text" = "My settings";
 
+/* Class = "UILabel"; text = "Mes réglages"; ObjectID = "I7Q-18-Jal"; */
+"I7Q-18-Jal.text" = "Link Device";
+
 /* Class = "UILabel"; text = "#435GHO"; ObjectID = "zoU-Ej-waE"; */
 "zoU-Ej-waE.text" = "#435GHO";
 

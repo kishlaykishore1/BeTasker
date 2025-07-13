@@ -106,15 +106,9 @@ class ProfileVC: BaseViewController {
             let vc = Constants.Profile.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
             self.navigationController?.pushViewController(vc, animated: true)
         case 105:
-            //            if UserDefaults.standard.bool(forKey: Constants.kPlanAddIntroShown) == false {
-            //                let vc = Constants.Profile.instantiateViewController(withIdentifier: "EquipmentPlanVC") as! EquipmentPlanVC
-            //                self.navigationController?.pushViewController(vc, animated: true)
-            //            } else {
-            //                let vc = Constants.Profile.instantiateViewController(withIdentifier: "TemplateListVC") as! TemplateListVC
-            //                self.navigationController?.pushViewController(vc, animated: true)
-            //            }
-            break
-        case 106:
+            let vc = Constants.Profile.instantiateViewController(withIdentifier: "QRVerifyLoginVC") as! QRVerifyLoginVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 107:
             if PremiumManager.shared.isPremium {
                 Common.showAlertMessage(message: "Vous êtes déjà Premium 💃".localized, alertType: .success, isPreferLightStyle: false)
             } else {
@@ -127,7 +121,7 @@ class ProfileVC: BaseViewController {
                 let rootNavView = UINavigationController(rootViewController: vc)
                 getNav.present(rootNavView, animated: true, completion: nil)
             }
-        case 107:
+        case 108:
             guard let data = HpGlobal.shared.userInfo else { return }
             let url = HpGlobal.shared.settingsData?.shareInvitation ?? ""
             let textToShare = "\("Voici mon identifiant BeTasker :".localized) \(data.randomId.plain) \n\("Obtenez l'application BeTasker et ajoutez-moi à votre équipe.".localized)\n\(url)"

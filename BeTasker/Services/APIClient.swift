@@ -57,7 +57,7 @@ enum HpAPI: String {
     case REGISTER                   =  "users/register" //"recruteurs/register"
     case EDITSETTING                = "users/edit-setting" //Edit profile
     case GETPROFILE                 = "users/view-profile"
-    case QRLOGIN                    = "users/verify-qr-login"
+    case QRLOGIN                    = "users/verify-qr-login" //For QR Login or Link Devices
    
     case DELETEACCOUNT              = "users/delete-user-account"
     case LOGOUT                     = "users/logout"

@@ -11,14 +11,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GraphikMedium.otf">
-            <string>Graphik-Medium</string>
-        </array>
-        <array key="GraphikRegular.otf">
+        <array key="Graphik-Regular.otf">
             <string>Graphik-Regular</string>
         </array>
-        <array key="GraphikSemibold.otf">
+        <array key="Graphik-Semibold.otf">
             <string>Graphik-Semibold</string>
+        </array>
+        <array key="GraphikMedium.otf">
+            <string>Graphik-Medium</string>
         </array>
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
@@ -275,7 +275,35 @@
                                                             <action selector="viewTapAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nv7-KS-8Pu"/>
                                                         </connections>
                                                     </view>
-                                                    <view hidden="YES" tag="105" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIo-EM-el8" customClass="UIControl">
+                                                    <view hidden="YES" tag="105" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W38-vx-1Zo" customClass="UIControl">
+                                                        <rect key="frame" x="0.0" y="228" width="374" height="0.0"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting-Green-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Xo7-Re-Nu9">
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="Xo7-Re-Nu9" secondAttribute="height" multiplier="1:1" id="osP-3j-ggg"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lier un appareil" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7Q-18-Jal">
+                                                                <rect key="frame" x="16" y="-8" width="358" height="16"/>
+                                                                <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="16"/>
+                                                                <color key="textColor" name="TextColor-Black"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Xo7-Re-Nu9" firstAttribute="top" secondItem="W38-vx-1Zo" secondAttribute="top" id="04v-i6-QsQ"/>
+                                                            <constraint firstItem="Xo7-Re-Nu9" firstAttribute="leading" secondItem="W38-vx-1Zo" secondAttribute="leading" id="2vA-Lg-kZR"/>
+                                                            <constraint firstItem="I7Q-18-Jal" firstAttribute="leading" secondItem="Xo7-Re-Nu9" secondAttribute="trailing" constant="16" id="Kwm-QZ-jqC"/>
+                                                            <constraint firstItem="I7Q-18-Jal" firstAttribute="centerY" secondItem="Xo7-Re-Nu9" secondAttribute="centerY" id="O94-IW-4uf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="I7Q-18-Jal" secondAttribute="trailing" id="lhe-qQ-h6R"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Xo7-Re-Nu9" secondAttribute="bottom" id="yro-eL-6Yf"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <action selector="viewTapAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xmk-Mg-rt0"/>
+                                                        </connections>
+                                                    </view>
+                                                    <view hidden="YES" tag="106" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIo-EM-el8" customClass="UIControl">
                                                         <rect key="frame" x="0.0" y="228" width="374" height="36"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PartPlan" translatesAutoresizingMaskIntoConstraints="NO" id="pyz-6U-Ga2">
@@ -300,7 +328,7 @@
                                                             <action selector="viewTapAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="j6z-yW-4Me"/>
                                                         </connections>
                                                     </view>
-                                                    <view tag="106" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9B-Re-dzg" customClass="UIControl">
+                                                    <view tag="107" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9B-Re-dzg" customClass="UIControl">
                                                         <rect key="frame" x="0.0" y="240" width="374" height="36"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buy_equipmnt" translatesAutoresizingMaskIntoConstraints="NO" id="B3B-IU-ayy">
@@ -329,7 +357,7 @@
                                                             <action selector="viewTapAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="60x-lG-v2f"/>
                                                         </connections>
                                                     </view>
-                                                    <view tag="107" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhd-WE-QrH" customClass="UIControl">
+                                                    <view tag="108" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhd-WE-QrH" customClass="UIControl">
                                                         <rect key="frame" x="0.0" y="300" width="374" height="36"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share" translatesAutoresizingMaskIntoConstraints="NO" id="h6j-0O-bi4">
@@ -4233,39 +4261,14 @@ pour ajouter un nouveau contact.</string>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="xji-uL-Zpe"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFd-MX-394">
-                                        <rect key="frame" x="40" y="789.5" width="334" height="0.5"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.34000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="0.65000000000000002" id="KBr-H0-NVi"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pR6-eU-Oqr">
-                                        <rect key="frame" x="49" y="806" width="316" height="30"/>
-                                        <string key="text">Votre contact n’est pas encore sur BeTasker ?
-Invitez-le à télécharger l’app </string>
-                                        <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="FFd-MX-394" firstAttribute="leading" secondItem="p0A-Pc-bbg" secondAttribute="leading" constant="40" id="48x-iZ-Ryq"/>
-                                    <constraint firstItem="pR6-eU-Oqr" firstAttribute="centerX" secondItem="FFd-MX-394" secondAttribute="centerX" id="4ad-WM-l43"/>
-                                    <constraint firstAttribute="bottom" secondItem="pR6-eU-Oqr" secondAttribute="bottom" constant="60" id="Ccs-qk-RBD"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pR6-eU-Oqr" secondAttribute="trailing" constant="20" id="LqG-fU-9d5"/>
-                                    <constraint firstItem="pR6-eU-Oqr" firstAttribute="top" secondItem="FFd-MX-394" secondAttribute="bottom" constant="16" id="NhV-jV-Jlt"/>
-                                    <constraint firstItem="pR6-eU-Oqr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p0A-Pc-bbg" secondAttribute="leading" constant="20" id="OfX-lq-u61"/>
                                     <constraint firstItem="y2z-zb-HIg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p0A-Pc-bbg" secondAttribute="leading" constant="20" id="Pih-fn-Kg7"/>
                                     <constraint firstItem="6ug-bh-cZC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p0A-Pc-bbg" secondAttribute="leading" constant="20" id="TTv-0S-tqa"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6ug-bh-cZC" secondAttribute="trailing" constant="20" id="V9Z-z9-BFX"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="y2z-zb-HIg" secondAttribute="trailing" constant="20" id="cVg-JR-Tc8"/>
                                     <constraint firstItem="y2z-zb-HIg" firstAttribute="centerX" secondItem="6ug-bh-cZC" secondAttribute="centerX" id="f3I-in-brH"/>
-                                    <constraint firstAttribute="trailing" secondItem="FFd-MX-394" secondAttribute="trailing" constant="40" id="mMu-PA-pVT"/>
                                     <constraint firstItem="6ug-bh-cZC" firstAttribute="centerX" secondItem="p0A-Pc-bbg" secondAttribute="centerX" id="yhd-cC-ze5"/>
                                     <constraint firstItem="y2z-zb-HIg" firstAttribute="top" secondItem="6ug-bh-cZC" secondAttribute="bottom" constant="32" id="zWx-wG-9qB"/>
                                 </constraints>
@@ -4289,7 +4292,6 @@ Invitez-le à télécharger l’app </string>
                     <connections>
                         <outlet property="cameraView" destination="pWd-JA-JKr" id="jEa-bY-goz"/>
                         <outlet property="frameView" destination="y2z-zb-HIg" id="3Fn-8N-aHA"/>
-                        <outlet property="lblInvite" destination="pR6-eU-Oqr" id="njf-qP-Yfq"/>
                         <outlet property="viewWithObjects" destination="p0A-Pc-bbg" id="zjm-pB-L6u"/>
                     </connections>
                 </viewController>

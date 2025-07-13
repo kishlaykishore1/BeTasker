@@ -8,12 +8,18 @@
 import UIKit
 import AVFoundation
 
+struct QRPayload: Decodable {
+    let action: String
+    let token: String
+    let app: String
+    let url: String
+}
+
 class QRVerifyLoginVC: BaseViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var frameView: UIView!
     @IBOutlet weak var cameraView: UIView!
-    @IBOutlet weak var lblInvite: UILabel!
     @IBOutlet weak var viewWithObjects: UIView!
     
     // MARK: - Variables
@@ -29,10 +35,6 @@ class QRVerifyLoginVC: BaseViewController {
         view.backgroundColor = .black
         self.setupTheAVSession()
         self.setupOverlay()
-        let tapLabel = UITapGestureRecognizer(target: self, action: #selector(tapLabel(tap:)))
-        lblInvite.addGestureRecognizer(tapLabel)
-        lblInvite.isUserInteractionEnabled = true
-        self.setupContactShareText()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +51,7 @@ class QRVerifyLoginVC: BaseViewController {
     
     override func backBtnTapAction() {
         Global.setVibration()
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Helper Function
@@ -111,30 +113,10 @@ class QRVerifyLoginVC: BaseViewController {
     }
     
     private func setupOverlay() {
-        let frame = CGRect(x: frameView.frame.origin.x, y: frameView.frame.origin.y + 40, width: frameView.frame.width, height: frameView.frame.height)
+        let frame = CGRect(x: frameView.frame.origin.x, y: frameView.frame.origin.y + 80, width: frameView.frame.width, height: frameView.frame.height)
         let overlay = ScannerOverlayView(frame: view.bounds, scanFrame: frame)
         view.addSubview(overlay)
         view.bringSubviewToFront(viewWithObjects)
-    }
-    
-    func setupContactShareText() {
-        let clr = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        lblInvite.numberOfLines = 0
-        lblInvite.textColor = clr
-        let txtYourContact = NSMutableAttributedString(string: "Votre contact n’est pas encore sur BeTasker ? \n".localized, attributes: [NSAttributedString.Key.foregroundColor: clr, NSAttributedString.Key.font: UIFont(name: Constants.KGraphikRegular, size: lblInvite.font.pointSize) ?? UIFont.systemFont(ofSize: lblInvite.font.pointSize, weight: .regular)])
-        let txtDownload = NSMutableAttributedString(string: "Invitez-le à télécharger l’app ".localized, attributes: [NSAttributedString.Key.foregroundColor: clr, NSAttributedString.Key.font: UIFont(name: Constants.KGraphikMedium, size: lblInvite.font.pointSize) ?? UIFont.systemFont(ofSize: lblInvite.font.pointSize, weight: .medium)])
-        let finalString = NSMutableAttributedString()
-        finalString.append(txtYourContact)
-        finalString.append(txtDownload)
-        lblInvite.attributedText = finalString
-    }
-    
-    @objc func tapLabel(tap: UITapGestureRecognizer) {
-        Global.setVibration()
-        let textToShare = Global.shareToConnect()
-        let activityVC = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
-        activityVC.setValue("Découvre l'app BeTasker".localized, forKey: "Subject")
-        self.present(activityVC, animated: true, completion: nil)
     }
     
     func detectQRCode(in image: UIImage) -> String? {
@@ -164,26 +146,48 @@ extension QRVerifyLoginVC : AVCaptureMetadataOutputObjectsDelegate {
                   let stringValue = readableObject.stringValue else { return }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             debugPrint("Scanned value: \(stringValue)")
-            delegate?.didScan(result: stringValue)
+            guard let token = self.extractTokenFromString(receivedString: stringValue) else {
+                Common.showAlertMessage(message: "Aucune donnée de connexion trouvée".localized, alertType: .error, isPreferLightStyle: false)
+                return }
+            self.apiToLinkUserDevice(token: token)
         }
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
-//// MARK: - Gallery Methods Function
-//extension QRVerifyLoginVC {
-//    
-//    override func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        
-//        if let originalImage = info[.originalImage] as? UIImage {
-//            if let qrString = detectQRCode(in: originalImage) {
-//                print("QR Code Data: \(qrString)")
-//                delegate?.didScan(result: qrString)
-//            } else {
-//                Common.showAlertMessage(message: "No QR code found.!".localized, alertType: .success, isPreferLightStyle: false)
-//            }
-//        }
-//        picker.dismiss(animated: true)
-//        self.dismiss(animated: true)
-//    }
-//}
+// MARK: - Api Calling to Link devices
+extension QRVerifyLoginVC {
+    
+    func extractTokenFromString(receivedString scannedValue: String) -> String? {
+        guard let data = scannedValue.data(using: .utf8) else {
+            print("Failed to convert string to Data")
+            return nil
+        }
+        // Decode JSON
+        do {
+            let payload = try JSONDecoder().decode(QRPayload.self, from: data)
+            return payload.token
+        } catch {
+            print("JSON decoding failed:", error)
+            return nil
+        }
+    }
+    
+    func apiToLinkUserDevice(token: String) {
+        guard let currentProfileData = HpGlobal.shared.userInfo else { return }
+        
+        let params: [String: Any] = [
+            "token": token,
+            "user_id": currentProfileData.userId,
+        ]
+        DispatchQueue.main.async {
+            Global.showLoadingSpinner()
+        }
+        HpAPI.QRLOGIN.DataAPI(params: params, shouldShowError: false, shouldShowSuccess: false, key: nil) { (response: Result<[String: String], Error>) in
+            DispatchQueue.main.async {
+                Global.dismissLoadingSpinner()
+                //clearLogoutDataFromApp()
+            }
+        }
+    }
+}

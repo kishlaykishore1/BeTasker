@@ -544,6 +544,21 @@ extension Global {
         }
         return image
     }
+    
+    public class func openURLSafely(_ urlString: String) {
+        var formatted = urlString.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if !formatted.lowercased().hasPrefix("http://") && !formatted.lowercased().hasPrefix("https://") {
+            formatted = "https://\(formatted)"
+        }
+
+        if let url = URL(string: formatted) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            print("Invalid URL: \(formatted)")
+        }
+    }
+
 
 }
 

@@ -111,9 +111,6 @@ class ChatTaskCell: UITableViewCell {
         imgSeeMoreArrow.isHidden = !shouldShowMore
     }
 
-
-
-    
     func setTheAttributedLabel(text: String, link: String) {
         lblTaskLink.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))

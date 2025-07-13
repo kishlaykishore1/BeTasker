@@ -101,7 +101,11 @@ class ChatVC: BaseViewController {
             self.getTaskDetails(taskID: self.taskId)
             Constants.kAppDelegate.removeNotificationsWithTaskId("\(self.taskId)")
         } else {
-            setupTheScreenFlow()
+            if let task = taskData {
+                self.getTaskDetails(taskID: task.taskId)
+            } else {
+                setupTheScreenFlow()
+            }
             Constants.kAppDelegate.removeNotificationsWithTaskId("\(taskData?.taskId ?? 0)")
         }
         tohandelTagTableView()
@@ -1350,11 +1354,7 @@ extension ChatVC {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let openAction = UIAlertAction(title: "Ouvrir le lien".localized, style: .default, handler: { _ in
-            if let link = URL(string: url) {
-                UIApplication.shared.open(link)
-            } else {
-                Common.showAlertMessage(message: "Impossible d'ouvrir le lien !".localized, alertType: .error, isPreferLightStyle: false)
-            }
+            Global.openURLSafely(url)
         })
         alert.addAction(openAction)
         

@@ -191,7 +191,7 @@ extension QRScannerVC {
                 print("QR Code Data: \(qrString)")
                 delegate?.didScan(result: qrString)
             } else {
-                Common.showAlertMessage(message: "No QR code found.!".localized, alertType: .success, isPreferLightStyle: false)
+                Common.showAlertMessage(message: "No QR code found.!".localized, alertType: .error, isPreferLightStyle: false)
             }
         }
         picker.dismiss(animated: true)
